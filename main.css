@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&family=IM+Fell+English:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap');
+
+/*nav bar styling*/
+
+
+
+/*scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 0.7em;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #baceaf; 
+  }
+   
+  /* Handle */
+
+  ::-webkit-scrollbar-thumb {
+    background: #4f6244; 
+  }
+  
+  /* Handle on hover */
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #75826e;}
+body{
+    background-image: url(/assets/tsbg.png);
+    
+
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+/*nab bar*/
+
+header{
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: larger;
+    color: black;
+    text-decoration: none;
+  
+}
+.navTitle{
+    text-decoration: none;
+ padding-top: 15%;
+ padding-left: 20%;
+ color: inherit;
+}
+nav{
+    display: inline-flex;
+position: absolute;
+left: 77%;
+}
+
+.ulNav{
+    display: inline-flex;
+    text-decoration: none;
+    list-style: none;
+
+
+}
+.liNav{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.aNav{
+    text-decoration: none;
+    color: inherit;
+}
+.aNav:hover{
+    color: #5c6a55;
+    text-decoration: underline;
+}
+.aNav :active{
+    color: #5c6a55;
+    text-decoration: underline;
+}
+
+footer{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    font-family: 'IM Fell DW Pica', serif;
+    font-style: italic;
+    font-size: smaller; 
+    color: #5c6a55;
+
+}
+
+/*footer*/
+.universalFoot{
+    position: relative;
+    bottom: 0;
+}
+.ulFoot{
+    display: inline-flex;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+ 
+
+}
+.liFoot{
+    padding-right: 10px;
+}
+.aFoot{
+    color: #5c6a55;
+    text-decoration: none;
+
+}
+.aFoot :hover{
+    text-decoration: underline;
+    color: black;
+}
+
+/*home page */
+h1{
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 36px;
+
+}
+#homeIntro{
+    font-family: 'IM Fell DW Pica', serif;
+    font-style: italic;
+    font-size: larger; 
+    text-align: center;
+}
+
+#displayName{
+    font-style: italic;
+}
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    font-family: 'IM Fell DW Pica', serif; 
+    font-style: italic;
+    background-color: #757c71;
+    border: 0px;
+    border-radius: 30px;
+    padding: 15px;
+    width: 200px;
+}
+button:hover{
+    background-color: #757c7179;
+}
+#loginImg{
+    width: 400px;
+}
+
+
+/*blog selection*/
+
+h1{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+article{
+    display: flex;
+    flex-direction: row;
+    border-width: 5px;
+   padding-top: 2%;
+   padding-bottom: 2%;
+}
+article:hover{
+    background-color: #5c5c5c8b;
+}
+#blogOneImg{
+    width: 100px;
+    
+}
+h2{
+    font-family: 'IM Fell DW Pica', serif;
+    font-style: italic;
+    color: black;
+    padding-left: 5%;  
+    padding-right: 5%;
+}
+#blogLinks{
+    text-decoration: none;
+    font-family: 'IM Fell DW Pica', serif;
+    font-style: italic;
+    color: inherit;
+    
+}
+#blogLinks:hover{
+    color:#5c6a55
+}
+#hr1{
+    border: 2px solid black;
+    background-color: black;
+ transform: rotate(30deg);
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*blog template for all blogs*/
+/*mini nav*/
+#btHeading{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+#blogselectionNav{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'IM Fell DW Pica', serif;
+  max-height: 30px;
+color: inherit;
+    padding: 0;
+}
+
+#blogselectionNav ul li a {
+    font-size: 12px;
+  text-decoration: none;
+  list-style: none;
+   padding: 0;
+    color: black;
+   
+    max-height: 30px;
+   
+}
+
+/*blog info*/
+
+#hr2{
+ margin-right: 10%;
+  background-color: black;
+}
+
+#blogInfo{
+   margin-left: 10%;
+   font-family: 'IM Fell DW Pica', serif;
+   font-size: large;
+   color: rgb(115, 115, 115);
+}
+.blogPostList{
+    list-style: circle;
+    display: flex;
+    flex-direction: column;
+
+}
+#point{
+    font-size: 20px;
+}
+/*main text*/
+
+#blogMain{
+   padding-left: 10%;
+   padding-right: 10%;
+   padding-bottom: 5%;
+   padding-top: 5%;
+
+   font-family: 'Overpass Mono', monospace;
+}
+
+
+/*reference list*/ 
+
+#referenceList ol li a {
+    display: flexbox;
+    flex-direction: column;
+    padding: 1em;
+}
+#referenceList{
+    display: flexbox;
+    flex-direction: column;
+    background-color: #7f885766;
+    border-radius: 10px;
+    width: 90%;
+    margin-left: 5%;
+    padding: 1em;
+
+    font-family: 'Overpass Mono', monospace;
+    line-height: 200%;
+}
+
+/*buttons*/ 
+
+#buttonNav{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1em;
+    background-color: none;
+    text-decoration: none;
+    color: inherit;
+}
+#buttonNav a{
+    text-decoration: none;
+    color: black;
+}
+#buttonNav button{
+    margin: 1em;
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*design*/
+
+#designImg{
+    width: 100px;
+    
+}
+#designLinks{
+    text-decoration: none;
+    font-family: 'IM Fell DW Pica', serif;
+    font-style: italic;
+    color: inherit;
+    
+}
+#designLinks:hover{
+    color:#5c6a55;}
+
+    /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*data*/
+#dataImg{
+    width: 100px;
+    
+}
+#dataLinks{
+    text-decoration: none;
+    font-family: 'IM Fell DW Pica', serif;
+    font-style: italic;
+    color: inherit;
+    
+}
+#dataLinks:hover{
+    color:#5c6a55;}
+
+    .bar:hover{
+        fill: red;
+    }
+
+
+    #tooltip{
+        position:absolute;
+        width: 200px;
+        height: auto;
+        padding: 10px;
+        background-color: #5c6a55;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    #tooltip.hiddem{
+        display: none;
+    }
+    #tooltip p{
+        margin: 0;
+        font-family: 'IM Fell DW Pica', serif;
+        font-size: 16px;
+        line-height: 20px;
+
+    }
