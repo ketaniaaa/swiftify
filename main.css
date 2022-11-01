@@ -214,7 +214,7 @@ h2{
     align-self: center;
     justify-content: center;
 }
-#blogselectionNav{
+.blogQuickSelect{
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -225,7 +225,7 @@ color: inherit;
     padding: 0;
 }
 
-#blogselectionNav ul li a {
+.blogQuickSelect ul li a {
     font-size: 12px;
   text-decoration: none;
   list-style: none;
