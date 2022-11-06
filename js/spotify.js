@@ -125,7 +125,7 @@
               }, success: function (list){
              console.log("artist: " + list.items); 
 
-             data.items.map(function(title) {
+             list.items.map(function(title) {
                 let item = $('<li>' + title.name + '</li>');
                 item.appendTo($('#placeHere'));
              });
