@@ -93,14 +93,9 @@
   
         }
              //new function 
-        $("#folkloreBut").on('click', function(){
-            $("#folkloreArt").fadeIn('fast');
-            $("#folkloreBut").hide();
-            $("#evermoreBut").show();
 
+        if (access_token){
 
-
-            console.log ('fetching data');
             $.ajax({
                 url: 'https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks', 
                dataType: "json",
@@ -109,10 +104,12 @@
               }, success: function (data){
                 var json = parseJSON(data);
                 var trackName = json.items.name;
+                console.log('made request');
               }
 
             })
-          });
+            
+        }
  
   
   
@@ -133,17 +130,7 @@
 
 
             console.log ('fetching data');
-            $.ajax({
-                url: 'https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks', 
-               dataType: "json",
-               headers: {
-                'Authorization': 'Bearer ' + access_token
-              }, success: function (data){
-                var json = parseJSON(data);
-                var trackName = json.items.name;
-              }
-
-            })
+         
           });
 
 
