@@ -98,7 +98,7 @@
           window.location = url; //open authentication tab 
         }, false);
 
-
+/*
         $(document).ready(function(){
 
 
@@ -151,7 +151,7 @@ $("#toggling").fadeIn('fast');
 
             });//end document ready bc i get confused with all the brackets
 
-
+*/
 
 
 
