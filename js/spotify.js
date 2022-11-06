@@ -153,18 +153,19 @@ $("#toggling").fadeIn('fast');
 
           $('folkloreBut').on('click', function(){
 
-            var apiData;
-      $.ajax({
-url: "https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks",
-type: "GET",
-headers: {
-    'Authorization': 'Bearer ' + access_token
-  },
-success: function(data){
-    apiData = data;
-    console.log(data);
-}
-      });
+    $.ajax({
+        url: "https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks",
+        type: "GET",
+        headers: {
+            'Authorization': 'Bearer ' + access_token 
+        },
+        dataType: "json",
+        success: function(data){
+            console.log(data);
+        }, error: function(){
+            console.log("error with API");
+        }
+    });
           });
 
             });//end document ready bc i get confused with all the brackets
