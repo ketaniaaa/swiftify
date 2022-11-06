@@ -107,17 +107,17 @@
 var preJSON = JSON.stringify(data.items);
 var postJSON = JSON.parse(preJSON);
 var chart = bubbleChart(postJSON);
-d3.select("bubbleChart").data(postJSON).call(chart);
+d3.select("#bubbleChart").data(postJSON).call(chart);
 
 
-             data.items.map(function(artist) {
-                let item = $('<li>' + artist.name + '</li>');
-                item.appendTo($('#placeHere'));
-             });
+            
               }
 
-            })
+            });
             
+        }
+        function bubbleChart(){
+            const svg = d3.select('#bubbleChart');
         }
        
   
