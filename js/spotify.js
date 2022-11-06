@@ -72,9 +72,7 @@
   
         }
   
-  function startViz(){
-    $('#login').hide();
-  }
+ 
   
   
   
@@ -160,4 +158,7 @@ $("#toggling").fadeIn('fast');
 
       }
     })();
+    function startViz(){
+        $('#login').hide();
+      }
     
