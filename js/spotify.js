@@ -97,12 +97,12 @@
         if (access_token){
 
             $.ajax({
-                url: 'https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks', 
+                url: "https://api.spotify.com/v1/audio-features/0Jlcvv8IykzHaSmj49uNW8", 
             
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-                userProfilePlaceholder.innerHTML = userProfileTemplate(data);
+              console.log("titles:" + data.energy);
               },
 
             })
