@@ -114,7 +114,26 @@
             })
             
         }
- 
+        if (access_token){
+
+            $.ajax({
+                url: "https://api.spotify.com/v1/albums/2fenSS68JI1h4Fo296JfGr/tracks", //check taylors top tracks in south africa!
+            type: "GET",
+            dataType: "json",
+               headers: {
+                'Authorization': 'Bearer ' + access_token
+              }, success: function (list){
+             console.log("artist: " + list.items); 
+
+             data.items.map(function(title) {
+                let item = $('<li>' + title.name + '</li>');
+                item.appendTo($('#placeHere'));
+             });
+              }
+
+            })
+            
+        }
   
   
   
