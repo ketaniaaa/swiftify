@@ -29,6 +29,8 @@
 body{
     background-image: url(assets/tsbg.png);
     
+    
+    
 
 }
 
@@ -339,10 +341,12 @@ color: inherit;
     
 }
 #dataLinks:hover{
-    color:#5c6a55;}
+    color:#5c6a55;
+
+}
 
     .bar:hover{
-        fill: red;
+        fill: rgb(93, 81, 81);
     }
 
 
@@ -354,7 +358,7 @@ color: inherit;
         background-color: #5c6a55;
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     }
-    #tooltip.hiddem{
+    #tooltip.hidden{
         display: none;
     }
     #tooltip p{
@@ -384,3 +388,98 @@ color: inherit;
   #restart{
     display: none;
   }
+
+  /*wireframes*/
+
+  .wfMain{
+   margin-left: 10%;
+   margin-right: 10%;
+   background-color: rgb(255, 255, 255);
+   padding-left: 5%;
+   padding-right: 5%;
+   border-radius: 3px;
+  }
+
+h3{
+    font-family: 'IM Fell DW Pica', serif;
+    font-style: italic;
+    color: black; 
+    justify-self: center;
+    justify-content: center;
+}
+h4{
+    font-family: 'IM Fell DW Pica', serif;
+    justify-self: center;
+}
+#wfSection{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+#wfSection ol li{
+    list-style: none;
+    
+}
+#wfA{
+    text-decoration: underline;
+}
+.wfImg{
+    max-width: 600px;
+
+}
+.wfAn{
+    max-block-size: 40%;
+}
+ #wfHR{
+    border: 2px solid black;
+    background-color: black;
+ }
+ /*slider*/
+.slider {
+    width: 600px;
+    height: 600px;
+  position: relative;
+  
+  }
+  .slide {
+    width: 600px;
+    height: 500px;
+    background-size: cover;
+    
+    animation: fade 1.5s;
+    display: none;
+  }
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    
+    top: 50%;
+   
+    padding: 16px;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    transition: 0.6s ease;
+   
+  }
+  .next {
+    right: 0;
+  }
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(202, 237, 197, 0.5);
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+ 
