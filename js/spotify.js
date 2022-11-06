@@ -107,7 +107,7 @@
         document.getElementById('login-button').addEventListener('click', function() {
   
           var client_id = 'bcb25eec45ae43cd9274eb5e53ce167c'; // client id
-          var redirect_uri = 'https://ketaniaaa.github.io/swiftify'; // call back uri
+          var redirect_uri = 'https://swiftify.netlify.app/'; // call back uri
   
           var state = generateRandomString(16);
   
