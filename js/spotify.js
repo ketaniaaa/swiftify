@@ -92,17 +92,17 @@
             $('#loggedin').hide();
   
         }
-             //new function 
+             //new function to test that api and if the values are returned 
 
         if (access_token){
 
             $.ajax({
-                url: "https://api.spotify.com/v1/audio-features/0Jlcvv8IykzHaSmj49uNW8", 
+                url: "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02/top-tracks?market=SA", //check taylors top tracks in south africa!
             
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-             document.getElementById("placeHere").innerHTML = data.energy;
+             document.getElementById("placeHere").innerHTML = data.tracks.artists.name;
               },
 
             })
