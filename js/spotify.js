@@ -102,10 +102,10 @@
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-             console.log("artist: " + data.items); 
+             console.log("artist: " + data.tracks); 
 
-             data.items.map(function(artist){
-                let item = $('<li>' + artist.name + '</li>');
+             data.items.map(function(title){
+                let item = $('<li>' + title.tracks.name + '</li>');
                 item.appendTo($('#placeHere'));
              });
               }
