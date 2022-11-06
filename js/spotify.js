@@ -74,31 +74,6 @@
   
   function startViz(){
     $('#login').hide();
-  
-  
-    $('#back').addEventListener('click', function(){
-      $('#topArtists').hide();
-      $('#new').show(); /* i wanted to make this a single page for all the data visualizations but it doesnt work.....idk man */ 
-  
-    });
-  
-    //get the information for creating the d3 charts
-    var d3 = require("d3");
-  
-    $.ajax({
-  
-      url: "https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=50",
-      type: "GET",
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', 'Bearer' + access_token);
-      }, 
-      success: function(data){
-        var beforeJSON = JSON.stringify(data.items); //convert items from top artists into a json string 
-        var myJSON = JSON.parse(beforeJSON); // transforming the results 
-        console.log('begin d3');//just so that i know that this is starting and data has been transformed into json
-  
-      }
-    });
   }
   
   
@@ -124,6 +99,20 @@
   
           window.location = url; //open authentication tab 
         }, false);
+
+
+
+
+
+
+
+
       }
     })();
-  
+    $(document).ready(function(){
+
+        
+        $("#alert").click(function(){
+        $(this).fadeOut();
+        });
+        });
