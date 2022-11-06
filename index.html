@@ -23,52 +23,64 @@
 
         <p id="homeIntro"> welcome to swiftify. learn more about taylor&#39;s music <br>
           and your listening stats </p>
-        <button id="enterData" class="btn btn-primary">start ></button>
+        <button id="login-button" class="btn btn-primary">start ></button>
     </section>
     </main>
-  <!-- Search Bar -->
-  <div class="buscar-caja">
-    <input type="text" name="" id="search-text" class="buscar-txt" placeholder="Search ....."/>
-    <button class="buscar-btn" id="search_button"> <i class="fa fa-search"></i> </button>
-  </div>
 
-  <!-- Load songs into here -->
-  <div class="container" id="song-list">
-    <div class="row">
-      <div id="song_0" class="col"></div>
-      <div id="song_1" class="col"></div>
-      <div id="song_2" class="col"></div>
-    </div>
-    <div class="row">
-      <div id="song_3" class="col"></div>
-      <div id="song_4" class="col"></div>
-      <div id="song_5" class="col"></div>
-    </div>
-    <div class="row">
-      <div id="song_6" class="col"></div>
-      <div id="song_7" class="col"></div>
-      <div id="song_8" class="col"></div>
-    </div>
-    <div class="row">
-      <div id="song_9" class="col"></div>
-      <div id="song_10" class="col"></div>
-      <div id="song_11" class="col"></div>
-    </div>
-</div>
+    <section id="loggedin">
+        <div id="user-profile">
+        </div>
+        <div id="oauth">
+        </div>
 
-<script src="https://apis.google.com/js/platform.js"></script>
+
+
+
+      </section>
+
+    
+    </main>
+
+    <script id="user-profile-template" type="text/x-handlebars-template"> <!--use handlebars to fill in name using spotify api -->
+      <h1 id="greetings">enchanted to meet you, <em id="displayName"> {{display_name}} </em>!</h1>
+<section class="introBody">
+
+<section id="topArtists">
+  <div class="content">
+     
+      <p>heres some of your top artists, lets hope youve been listening to midnights ;)</p>
+      <br />
+      <div id="bubbleChart">
+          <svg></svg>
+      </div>
+      <br />
+      <p class="footnote">* Infrequent users of Spotify may not have enough data to generate full dataset.</p>
+     
+
+    
+     
+   </div>
+</section>
+</section>
+</script>
+
+    <script id="oauth-template" type="text/x-handlebars-template">
+      <h2>oAuth info</h2>
+      <dl class="dl-horizontal">
+        <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+      </dl>
+    </script>
+]
 
 
 
  
-  <!-- Latest compiled and minified Bootstrap JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <!-- Loading our JavaScript -->
-  
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"></script>
 <script src="https://apis.google.com/js/platform.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="js/spotify.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </body>
 </html>
