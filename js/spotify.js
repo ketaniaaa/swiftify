@@ -101,10 +101,8 @@
                dataType: "json",
                headers: {
                 'Authorization': 'Bearer ' + access_token
-              }, success: function (data){
-                var json = parseJSON(data);
-                var trackName = json.items.name;
-                console.log('made request');
+              }, success: function (response){
+                userProfilePlaceholder.innerHTML = userProfileTemplate(response);
               },
 
             })
