@@ -103,10 +103,10 @@
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-             console.log("artist: " + data.tracks); 
+             console.log("artist: " + data.tracks[0].name); 
 
              data.tracks.map(function(songs){
-                let item = $('<li>' + songs.name+ '</li>');
+                let item = $('<li>' + songs.tracks[0].name + '</li>');
                 item.appendTo($('#placeHere'));
              });
               }
@@ -165,4 +165,6 @@
 
 
       }
+
+      
     
