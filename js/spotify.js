@@ -97,15 +97,16 @@
         if (access_token){
 
             $.ajax({
-                url: "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02/top-tracks?market=ZA", //check taylors top tracks in south africa!
-            
+                url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50", //check taylors top tracks in south africa!
+            type: "GET",
+            dataType: "json",
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-             console.log("artist: " + data.tracks); 
+             console.log("artist: " + data.items); 
 
-             data.items.map(function(title){
-                let item = $('<li>' + title.tracks.name + '</li>');
+             data.items.map(function(artist){
+                let item = $('<li>' + artist.name+ '</li>');
                 item.appendTo($('#placeHere'));
              });
               }
