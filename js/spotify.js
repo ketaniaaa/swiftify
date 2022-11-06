@@ -98,12 +98,17 @@
 
             $.ajax({
                 url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50", //check taylors top tracks in south africa!
-            type: "GET",
+            method: "GET",
             dataType: "json",
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
              console.log("artist: " + data.items); 
+var preJSON = JSON.stringify(data.items);
+var postJSON = JSON.parse(preJSON);
+var chart = bubbleChart(postJSON);
+d3.select("bubbleChart").data(postJSON).call(chart);
+
 
              data.items.map(function(artist) {
                 let item = $('<li>' + artist.name + '</li>');
@@ -121,6 +126,7 @@
   
 
       }
+      
     })();
     function startViz(){
         $('#login').hide();
