@@ -102,7 +102,7 @@
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-              console.log("titles:" + data.energy);
+             document.getElementById("placeHere").innerHTML = data.energy;
               },
 
             })
