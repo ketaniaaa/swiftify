@@ -103,7 +103,7 @@
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-             console.log("artist: " + data.tracks); 
+             console.log("title: " + data.tracks.name + " popularity: " + data.tracks.popularity); 
 
              data.tracks.map(function(title){
                 let item = $('<li>' + title.name+ '</li>');
