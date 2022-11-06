@@ -102,13 +102,10 @@
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-                const Myjson = JSON.parse(data);
-                document.getElementById("placeHere").innerHTML = Myjson.name;
+                var json = parseJSON(data);
+                var trackName = json.items.name;
                 console.log('made request');
-              }, 
-              error: function(){
-                console.log("error retrieving data");
-              }
+              },
 
             })
             
