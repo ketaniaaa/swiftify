@@ -63,6 +63,32 @@
   
                 $('#login').hide();
                 $('#loggedin').show(); //hides the login in page things and replaces that html content with the new data visualization content 
+
+
+
+
+                  
+        $("#folkloreBut").on('click', function(){
+            $("#folkloreArt").fadeIn('fast');
+            $("#folkloreBut").hide();
+            $("#evermoreBut").show();
+
+
+
+            console.log ('fetching data');
+            $.ajax({
+                url: 'https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks', 
+               dataType: "json",
+               headers: {
+                'Authorization': 'Bearer ' + access_token
+              }, success: function (data){
+                var json = parseJSON(data);
+                var trackName = json.items.name;
+              }
+
+            })
+          });
+
                
               }
           });
@@ -166,21 +192,6 @@ $("#toggling").fadeIn('fast');
             $("#folkloreArt").fadeIn('fast');
             $("#folkloreBut").hide();
             $("#evermoreBut").show();
-
-
-
-            console.log ('fetching data');
-            $.ajax({
-                url: 'https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks', 
-               dataType: "json",
-               headers: {
-                'Authorization': 'Bearer ' + access_token
-              }, success: function (data){
-                var json = parseJSON(data);
-                var trackName = json.items.name;
-              }
-
-            })
           });
 
 
