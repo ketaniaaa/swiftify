@@ -102,7 +102,7 @@
                headers: {
                 'Authorization': 'Bearer ' + access_token
               }, success: function (data){
-             document.getElementById("placeHere").innerHTML = data.tracks.artists.name;
+             console.log("artist: " + data.tracks.artists.name); 
               },
 
             })
