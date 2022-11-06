@@ -98,11 +98,11 @@
 
             $.ajax({
                 url: 'https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks', 
-               dataType: "json",
+            
                headers: {
                 'Authorization': 'Bearer ' + access_token
-              }, success: function (response){
-                userProfilePlaceholder.innerHTML = userProfileTemplate(response);
+              }, success: function (data){
+                userProfilePlaceholder.innerHTML = userProfileTemplate(data);
               },
 
             })
