@@ -1,7 +1,29 @@
 (function() {
   
 
-    /*spotify log in code that was a tutorial i followed for implicit grant and OAuth*/
+    document.getElementById('login-button').addEventListener('click', function() {
+  
+        var client_id = 'bcb25eec45ae43cd9274eb5e53ce167c'; // client id
+        var redirect_uri = 'https://swiftify.netlify.app/'; // call back uri
+
+        var state = generateRandomString(16);
+
+        localStorage.setItem(stateKey, state);
+        var scope = 'user-read-private user-library-read user-top-read user-library-read'; //these are the scopes that the user agrees to on login because i need top read to get top tracks, private is to get 
+        /* users name but i cannot change things to users library with these scopes  */
+
+        var url = 'https://accounts.spotify.com/authorize';
+        url += '?response_type=token';
+        url += '&client_id=' + encodeURIComponent(client_id);
+        url += '&scope=' + encodeURIComponent(scope);
+        url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
+        url += '&state=' + encodeURIComponent(state);
+
+        window.location = url; //open authentication tab 
+      }, false);
+
+
+   
       var stateKey = 'spotify_auth_state';
   
       /**
@@ -62,12 +84,15 @@
                 startViz();  //start the function that contains the stuff to acquire d3 and the d3 data 
   
                 $('#login').hide();
-                $('#loggedin').show(); //hides the login in page things and replaces that html content with the new data visualization content 
-
-
-
-
-                  
+                $('#loggedin').show(); //hides the login in page things and replaces that html content with the new data visualization content
+ }
+          });
+        } else {
+            $('#login').show(); //if log in doesnt work, the log in page will still remain visable 
+            $('#loggedin').hide();
+  
+        }
+             //new function 
         $("#folkloreBut").on('click', function(){
             $("#folkloreArt").fadeIn('fast');
             $("#folkloreBut").hide();
@@ -88,99 +113,11 @@
 
             })
           });
-
-               
-              }
-          });
-        } else {
-            $('#login').show(); //if log in doesnt work, the log in page will still remain visable 
-            $('#loggedin').hide();
-  
-        }
-  
  
   
   
   
   
-        document.getElementById('login-button').addEventListener('click', function() {
-  
-          var client_id = 'bcb25eec45ae43cd9274eb5e53ce167c'; // client id
-          var redirect_uri = 'https://swiftify.netlify.app/'; // call back uri
-  
-          var state = generateRandomString(16);
-  
-          localStorage.setItem(stateKey, state);
-          var scope = 'user-read-private user-library-read user-top-read user-library-read'; //these are the scopes that the user agrees to on login because i need top read to get top tracks, private is to get 
-          /* users name but i cannot change things to users library with these scopes  */
-  
-          var url = 'https://accounts.spotify.com/authorize';
-          url += '?response_type=token';
-          url += '&client_id=' + encodeURIComponent(client_id);
-          url += '&scope=' + encodeURIComponent(scope);
-          url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
-          url += '&state=' + encodeURIComponent(state);
-  
-          window.location = url; //open authentication tab 
-        }, false);
-
-/*
-        $(document).ready(function(){
-
-
-            //hide and show data art :)
-$("#toggling").on('click', function(){
-$("#yes").fadeIn('fast');
-$("#next").fadeIn('fast');
-$("#toggling").hide();
-});
-          $("#next").on('click', function(){
-$("#yes").hide();
-$("#next").hide();
-$("#toggling").fadeIn('fast');
-          });
-
-
-
-          $("#folkloreBut").on('click', function(){
-            $("#folkloreArt").fadeIn('fast');
-            $("#folkloreBut").hide();
-            $("#evermoreBut").show();
-          });
-
-
-          $('#evermoreBut').on('click', function(){
-     
-            $('#folkloreArt').hide();
-            $("#evermoreArt").show();
-            $('#evermoreBut').hide();
-            $('#midnightsBut').show();
-          });
-
-
-          $('#midnightsBut').on('click', function(){
-
-            $('#evermoreArt').hide();
-            $('#midnightsArt').show();
-            $('#midnightsBut').hide();
-            $('#restart').show();
-          });
-
-
-          $('#restart').on('click', function(){
-            $('#restart').hide();
-            $('#midnightsArt').hide();
-            $('#folkloreBut').show();
-          });
-
-
-
-            });//end document ready bc i get confused with all the brackets
-
-*/
-
-
-
 
       }
     })();
@@ -192,6 +129,21 @@ $("#toggling").fadeIn('fast');
             $("#folkloreArt").fadeIn('fast');
             $("#folkloreBut").hide();
             $("#evermoreBut").show();
+
+
+
+            console.log ('fetching data');
+            $.ajax({
+                url: 'https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks', 
+               dataType: "json",
+               headers: {
+                'Authorization': 'Bearer ' + access_token
+              }, success: function (data){
+                var json = parseJSON(data);
+                var trackName = json.items.name;
+              }
+
+            })
           });
 
 
