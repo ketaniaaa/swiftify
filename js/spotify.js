@@ -106,7 +106,7 @@
              console.log("artist: " + data.tracks); 
 
              data.tracks.map(function(title){
-                let item = $('<li>' + title.name+ '</li>');
+                let item = $('<li>' + title.name + '</li>');
                 item.appendTo($('#placeHere'));
              });
               }
