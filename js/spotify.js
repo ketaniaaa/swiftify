@@ -149,6 +149,24 @@ $("#toggling").fadeIn('fast');
             $('#folkloreBut').show();
           });
 
+
+
+          $('folkloreBut').on('click', function(){
+
+            var apiData;
+      $.ajax({
+url: "https://api.spotify.com/v1/albums/3lS1y25WAhcqJDATJK70Mq/tracks",
+type: "GET",
+headers: {
+    'Authorization': 'Bearer ' + access_token
+  },
+success: function(data){
+    apiData = data;
+    console.log(data);
+}
+      });
+          });
+
             });//end document ready bc i get confused with all the brackets
 
 
