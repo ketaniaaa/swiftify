@@ -364,3 +364,23 @@ color: inherit;
         line-height: 20px;
 
     }
+
+    /*toggling*/
+  #folkloreArt{
+    display: none;
+  }
+  #evermoreArt{
+    display: none;
+  }
+  #evermoreBut{
+    display: none;
+  }
+  #midnightsArt{
+    display: none;
+  }
+  #midnightsBut{
+    display: none;
+  }
+  #restart{
+    display: none;
+  }

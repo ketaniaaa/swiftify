@@ -16,53 +16,68 @@
 <body>
 
     <main id="main">
+<!--testing some stuff-->
+
+
+
+
+
+
+
 
         <section id="login">
         <h1>taylor swift</h1>
-
         <img src="assets/hpimg.jpg" alt="image of taylor swift running through a meadow" id="loginImg"> <br>
 
         <p id="homeIntro"> welcome to swiftify. learn more about taylor&#39;s music <br>
           and your listening stats </p>
         <button id="login-button" class="btn btn-primary">start ></button>
     </section>
+
+
+    
     </main>
 
     <section id="loggedin">
         <div id="user-profile">
         </div>
         <div id="oauth">
-        </div>
-
-
-
-
-      </section>
+        </div></section>
 
     
-    </main>
+  
 
     <script id="user-profile-template" type="text/x-handlebars-template"> <!--use handlebars to fill in name using spotify api -->
-      <h1 id="greetings">enchanted to meet you, <em id="displayName"> {{display_name}} </em>!</h1>
-<section class="introBody">
+      <h1 id="greetings">enchanted to meet you &nbsp<em id="displayName"> {{display_name}} </em>!</h1>
 
-<section id="topArtists">
-  <div class="content">
-     
-      <p>heres some of your top artists, lets hope youve been listening to midnights ;)</p>
-      <br />
-      <div id="bubbleChart">
-          <svg></svg>
-      </div>
-      <br />
-      <p class="footnote">* Infrequent users of Spotify may not have enough data to generate full dataset.</p>
-     
 
-    
-     
-   </div>
+<!--folklore art -->
+<section id="folkloreArt">
+<picture>
+  <p> svg goes here </p>
+</picture>
 </section>
-</section>
+<button id="folkloreBut"> folklore</button>
+
+<!--evermore art -->
+<section id="evermoreArt">
+  <picture>
+    <p>  evermore svg goes here </p>
+  </picture>
+  </section>
+
+
+<button id="evermoreBut"> evermore</button>
+<!--folklore art -->
+<section id="midnightsArt">
+  <picture>
+    <p>  midnights svg goes here </p>
+  </picture>
+  </section>
+<button id="midnightsBut">Midnights</button>
+
+<button id="restart">home</button>
+
 </script>
 
     <script id="oauth-template" type="text/x-handlebars-template">
@@ -71,7 +86,6 @@
         <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
       </dl>
     </script>
-]
 
 
 
