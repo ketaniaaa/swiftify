@@ -160,5 +160,38 @@ $("#toggling").fadeIn('fast');
     })();
     function startViz(){
         $('#login').hide();
+
+        
+        $("#folkloreBut").on('click', function(){
+            $("#folkloreArt").fadeIn('fast');
+            $("#folkloreBut").hide();
+            $("#evermoreBut").show();
+          });
+
+
+          $('#evermoreBut').on('click', function(){
+     
+            $('#folkloreArt').hide();
+            $("#evermoreArt").show();
+            $('#evermoreBut').hide();
+            $('#midnightsBut').show();
+          });
+
+
+          $('#midnightsBut').on('click', function(){
+
+            $('#evermoreArt').hide();
+            $('#midnightsArt').show();
+            $('#midnightsBut').hide();
+            $('#restart').show();
+          });
+
+
+          $('#restart').on('click', function(){
+            $('#restart').hide();
+            $('#midnightsArt').hide();
+            $('#folkloreBut').show();
+          });
+
       }
     
