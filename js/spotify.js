@@ -155,8 +155,11 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
       var node = svg.selectAll("circle").data(data).enter().append("circle").attr('r', function(d) {
           return scaleRadius(d[colRad]);
       }).style("fill", function() {
-          return '#5c6a55';
-      }).attr('transform', 'translate(' + [
+          return '#5c6a5588';
+      }).style("border", function(){
+        return '2px solid black';
+      })
+      .attr('transform', 'translate(' + [
           width / 2,
           height / 2
       ] + ')')
