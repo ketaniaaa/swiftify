@@ -373,6 +373,9 @@ color: inherit;
     align-items: center;
     justify-content: center;
 }
+#enter{
+    padding-top: 50%;
+}
 #nodeBubble{
     stroke: black;
     stroke-width: 1px;
