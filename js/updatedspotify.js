@@ -142,9 +142,9 @@ d3.select("#bubbleChart").data(postJSON).call(chart);}
 
         $('showShortTerm').on('click', function(){
             $('#shorttermBubble').fadeIn('fast');
-            $('#difArt').show();
+            $('#shortArt').show();
             $('#longtermBubble').hide();
-            $('#enterArt').hide();
+            $('#bubbleChart').hide();
             $('#showShortTerm').hide();
             $('#enter').fadeIn('fast');
 

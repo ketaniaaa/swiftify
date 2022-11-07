@@ -414,6 +414,7 @@ display: none;
  #showShortTerm{
     display: hide;
  }
+ #shortArt{display: none;}
  #folkloreBut{
     display: none;
  }
