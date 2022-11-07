@@ -108,6 +108,11 @@ var preJSON = JSON.stringify(data.items);
 var postJSON = JSON.parse(preJSON);
 var chart = bubbleChart(postJSON);
 d3.select("#bubbleChart").data(postJSON).call(chart);
+var titleLong = document.createElement("p");
+titleLong.className = "chart description";
+titleLong.innerHTML = "Here are your top artists from the last few years";
+var beforeChart = document.getElementById('bubbleChart');
+document.body.insertBefore(titleLong, beforeChart);
 
 
             
