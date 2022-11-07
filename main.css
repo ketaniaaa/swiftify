@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&family=IM+Fell+English:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap');
-
+/*IMPORT FONTS IN ONE FILE*/
 /*nav bar styling*/
 
 
@@ -94,6 +94,7 @@ footer{
     font-style: italic;
     font-size: smaller; 
     color: #5c6a55;
+
 
 }
 
@@ -207,7 +208,7 @@ h2{
 }
 
 
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////BLOG/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /*blog template for all blogs*/
 /*mini nav*/

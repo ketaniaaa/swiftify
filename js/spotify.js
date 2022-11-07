@@ -92,8 +92,8 @@
             $('#loggedin').hide();
   
         }
-             //new function to test that api and if the values are returned 
-
+             ///////////////////////////////////////////////////////////////////////////////////////////new function to test that api and if the values are returned 
+///////////////////////////////////////////////////////////////user top tracks///////////////////////////////////////////////////////////////////////////////////////////////////////////
         if (access_token){
 
             $.ajax({
@@ -132,7 +132,7 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
                 var svg = d3.select("#enterSvg");
                 svg.attr('width', width).attr('height', height);
 
-                var tooltip = selection.append("div").style("position", "absolute").style("visibility", "hidden").style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left").style("font-family", "helvetica").style("width", "200px").style("line-height", "150%").text("");
+                var tooltip = selection.append("div").style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left").style("font-family", "helvetica").style("width", "200px").style("line-height", "150%").text("");
 
                 var simulation = d3.forceSimulation(data).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
                 function ticked(e){
@@ -159,14 +159,26 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
       }).attr('transform', 'translate(' + [
           width / 2,
           height / 2
-      ] + ')').on("mouseover", function(d) {
+      ] + ')')
+      .on('mouseover', function(d){
+        tooltip.html(d[colCol] + "<br>" + "popularity: " +d[colRad]);
+        return tooltip.style("opacity", .9);
+      }).on("mousemove", function(){
+        return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+      }).on("mouseout", function() {
+        return tooltip.style("visibility", "hidden");
+    });
+      
+      
+      
+      /*  .on("mouseover", function(d) {
           tooltip.html(d[colCol] + "<br>" + "Followers: " + d.followers.total + "<br>" + "Popularity: " + d[colCol]);
           return tooltip.style("visibility", "visible");
       }).on("mousemove", function() {
           return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
       }).on("mouseout", function() {
           return tooltip.style("visibility", "hidden");
-      });
+      });*/
   }
 
   chart.width = function(value) {
@@ -185,21 +197,15 @@ chart.height = function(value) {
     return chart;
 };
 return chart;
-
-              
-            }
-            
-        }
-         
-  
-  
-  
-  
-
-      }
+ }} } //END BUBBLE CHART
       
   
     })();
+
+
+
+
+    //////////////////////////////////////////////////hide sections of home page////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function startViz(){
         $('#login').hide();
 
