@@ -97,7 +97,7 @@
         if (access_token){
 
             $.ajax({
-                url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50", //check taylors top tracks in south africa!
+                url: "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", //check taylors top tracks in south africa!
             method: "GET",
             dataType: "json",
                headers: {
