@@ -385,8 +385,9 @@ color: inherit;
 #bubbleTool{
     position: absolute;
     background-color: black;
-    color: white;
+    color: rgb(78, 66, 66);
     font-family: 'IM Fell DW Pica', serif;
+    opacity: 1;
 
 }
 #enterSvg{

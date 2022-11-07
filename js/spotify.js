@@ -163,7 +163,7 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
       .on('mouseover', function(event, d){
      const [offsetY , offsetX] = d3.pointer(event);
 
-     tooltip.style("opacity", .9);
+     tooltip.style("opacity", 1.0);
      tooltip.html(d[colCol] + "<br>" + "popularity: " + d[colRad])
      .style("left", (offsetY) + "px")
      .style("top", (offsetX)+ "px");
