@@ -115,7 +115,7 @@
           $('#folkloreBut').show();
 
 
-          if (access_token){
+         // if (access_token){
 
             $.ajax({
                 url: "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", //check taylors top tracks in south africa!
@@ -134,7 +134,7 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
             
               }
 
-            });}
+            });  //}
 
 
         });
