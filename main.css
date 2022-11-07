@@ -411,6 +411,9 @@ display: none;
  #shorttermBubble{
     display: none;
  }
+ #showShortTerm{
+    display: hide;
+ }
  #folkloreBut{
     display: none;
  }

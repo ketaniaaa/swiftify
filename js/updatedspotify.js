@@ -3,7 +3,7 @@
   //the script was originally made for node.js so I have modified it for vanilla js and jquery - jquery allows me to access objects alot easier and control what is in view since 
   //most of the visual elements are on the home page ! 
 //var has been used instead of const because this allows easy calling and redeclaration 
-   document.body.onload = alert("Log in with Spotify to see visualizations")
+ 
 
 
 document.getElementById('login-button').addEventListener('click', function() { //event listener so that the token retrival starts when the login in button is clicked 
@@ -108,11 +108,15 @@ document.getElementById('login-button').addEventListener('click', function() { /
 
     //////////////////////////////////////////////////the main visualizations////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function startViz(){ //this function starts once the user has logged in 
+
+
+         ////////////////////////////////////////////ON CLICK EVENT HANDLERS USING AJAX ////////////////////////////////////////
         $('#login').hide();
 
         $("#enter").on('click', function(){
           $('#enterArt').fadeIn('fast');
           $('#enter').fadeOut('fast');
+          $('#showShortTerm').fadeIn('fast');  //show option for short term artists 
           $('#folkloreBut').show();
           $('#shorttermBubble').hide();
           $('#longtermBubble').fadeIn('fast');
@@ -131,14 +135,28 @@ document.getElementById('login-button').addEventListener('click', function() { /
 var preJSON = JSON.stringify(data.items);
 var postJSON = JSON.parse(preJSON);
 var chart = bubbleChart(postJSON);
-d3.select("#bubbleChart").data(postJSON).call(chart);
+d3.select("#bubbleChart").data(postJSON).call(chart);}
+});  //}
+});
 
+        $('showShortTerm').on('click', function(){
+            $('#shorttermBubble').fadeIn('fast');
+            $('#longtermBubble').hide();
 
-            
-              }
+            $.ajax({
+                url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50", //check taylors top tracks in south africa!
+            method: "GET",
+            dataType: "json",
+               headers: {
+                'Authorization': 'Bearer ' + access_token
+              }, success: function (data){
+             console.log("artist: " + data.items); 
+var preJSON = JSON.stringify(data.items);
+var postJSON = JSON.parse(preJSON);
+var chart = bubbleChart(postJSON);
+d3.select("#bubbleChart").data(postJSON).call(chart); }
 
-            });  //}
-
+            }); 
 
         });
 
