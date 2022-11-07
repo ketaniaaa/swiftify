@@ -374,7 +374,7 @@ color: inherit;
     justify-content: center;
 }
 
-#user-profile-template{
+#authMain{
 
     display: flex;
     flex-direction: column;
