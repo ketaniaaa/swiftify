@@ -94,7 +94,28 @@
         }
              ///////////////////////////////////////////////////////////////////////////////////////////new function to test that api and if the values are returned 
 ///////////////////////////////////////////////////////////////user top tracks///////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if (access_token){
+        
+
+            
+}  //END BUBBLE CHART
+      
+  
+
+
+
+
+
+    //////////////////////////////////////////////////hide sections of home page////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    function startViz(){
+        $('#login').hide();
+
+        $("#enter").on('click', function(){
+          $('#enterArt').fadeIn('fast');
+          $('#enter').hide();
+          $('#folkloreBut').show();
+
+
+          if (access_token){
 
             $.ajax({
                 url: "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", //check taylors top tracks in south africa!
@@ -113,120 +134,9 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
             
               }
 
-            });
-
-            
-
-            function bubbleChart(){
-
-              //parameters
-
-              var width = 600;
-              var height = 500;
-              var colRad = "popularity"; //get popularity 
-              var colCol = "name"; //artists name 
-
-              function chart(selection){
-
-                var data =
-                selection.enter().data();
-
-                var svg = d3.select("#enterSvg");
-                svg.attr('width', width).attr('height', height);
-
-                var tooltip = selection.append("div").attr('id','bubbleTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
-
-                var simulation = d3.forceSimulation(data).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
-                function ticked(e){
-                  node.attr("cx", function(d) {
-                    return d.x * 1;
-                }).attr("cy", function(d) {
-                    return d.y * 1;
-                });
-                }
-                
-        var scaleRadius = d3.scaleLinear().domain([
-          d3.min(data, function(d) {
-              return + d[colRad];
-          }),
-          d3.max(data, function(d) {
-              return + d[colRad];
-          })
-      ]).range([10, 30]);
-
-      var node = svg.selectAll("circle").data(data).enter().append("circle").attr('r', function(d) {
-          return scaleRadius(d[colRad]);
-      }).style("fill", function() {
-          return '#5c6a55c8';
-      }).attr("id", 'nodeBubble')
-      
-      .attr('transform', 'translate(' + [
-          width / 2,
-          height / 2
-      ] + ')')
-      .on('mouseover', function(event, d){
-    // const [offsetY , offsetX] = d3.pointer(event);
-     var matrix = this.getScreenCTM()
-        .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
-
-     tooltip.style("opacity", 1.0);
-     tooltip.html(d[colCol] + "<br>" + "popularity: " + d[colRad])
-     .style("left", (window.pageXOffset + matrix.e + 15) + "px")
-     .style("top", (window.pageYOffset + matrix.f - 30)+ "px");
-       /*
-
-        .style("top", (d3.event.pageY -10)+ "px")
-        .style("left", (d3.event.pageX +10) + "px");*/
-      }).on("mouseout", function() {
-        return tooltip.style("opacity", 0);
-    });
-      
-      
-      
-      /*  .on("mouseover", function(d) {
-          tooltip.html(d[colCol] + "<br>" + "Followers: " + d.followers.total + "<br>" + "Popularity: " + d[colCol]);
-          return tooltip.style("visibility", "visible");
-      }).on("mousemove", function() {
-          return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
-      }).on("mouseout", function() {
-          return tooltip.style("visibility", "hidden");
-          return tooltip.style("opacity", 0.9)
-        .html ( d.name + "<br>" + "popularity:" + d.popularity);
-      });*/
-  }
-
-  chart.width = function(value) {
-    if (!arguments.length) {
-        return width;
-    }
-    width = value;
-    return chart;
-};
-
-chart.height = function(value) {
-    if (!arguments.length) {
-        return height;
-    }
-    height = value;
-    return chart;
-};
-return chart;
- }} } //END BUBBLE CHART
-      
-  
+            });}
 
 
-
-
-
-    //////////////////////////////////////////////////hide sections of home page////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    function startViz(){
-        $('#login').hide();
-
-        $("#enter").on('click', function(){
-          $('#enterArt').fadeIn('fast');
-          $('#enter').hide();
-          $('#folkloreBut').show();
         });
 
 
@@ -266,3 +176,99 @@ return chart;
 
 
       }
+      
+      function bubbleChart(){
+
+        //parameters
+
+        var width = 600;
+        var height = 500;
+        var colRad = "popularity"; //get popularity 
+        var colCol = "name"; //artists name 
+
+        function chart(selection){
+
+          var data =
+          selection.enter().data();
+
+          var svg = d3.select("#enterSvg");
+          svg.attr('width', width).attr('height', height);
+
+          var tooltip = selection.append("div").attr('id','bubbleTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
+
+          var simulation = d3.forceSimulation(data).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
+          function ticked(e){
+            node.attr("cx", function(d) {
+              return d.x * 1;
+          }).attr("cy", function(d) {
+              return d.y * 1;
+          });
+          }
+          
+  var scaleRadius = d3.scaleLinear().domain([
+    d3.min(data, function(d) {
+        return + d[colRad];
+    }),
+    d3.max(data, function(d) {
+        return + d[colRad];
+    })
+]).range([10, 30]);
+
+var node = svg.selectAll("circle").data(data).enter().append("circle").attr('r', function(d) {
+    return scaleRadius(d[colRad]);
+}).style("fill", function() {
+    return '#5c6a55c8';
+}).attr("id", 'nodeBubble')
+
+.attr('transform', 'translate(' + [
+    width / 2,
+    height / 2
+] + ')')
+.on('mouseover', function(event, d){
+// const [offsetY , offsetX] = d3.pointer(event);
+var matrix = this.getScreenCTM()
+  .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
+
+tooltip.style("opacity", 1.0);
+tooltip.html(d[colCol] + "<br>" + "popularity: " + d[colRad])
+.style("left", (window.pageXOffset + matrix.e + 15) + "px")
+.style("top", (window.pageYOffset + matrix.f - 30)+ "px");
+ /*
+
+  .style("top", (d3.event.pageY -10)+ "px")
+  .style("left", (d3.event.pageX +10) + "px");*/
+}).on("mouseout", function() {
+  return tooltip.style("opacity", 0);
+});
+
+
+
+/*  .on("mouseover", function(d) {
+    tooltip.html(d[colCol] + "<br>" + "Followers: " + d.followers.total + "<br>" + "Popularity: " + d[colCol]);
+    return tooltip.style("visibility", "visible");
+}).on("mousemove", function() {
+    return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+}).on("mouseout", function() {
+    return tooltip.style("visibility", "hidden");
+    return tooltip.style("opacity", 0.9)
+  .html ( d.name + "<br>" + "popularity:" + d.popularity);
+});*/
+}
+
+chart.width = function(value) {
+if (!arguments.length) {
+  return width;
+}
+width = value;
+return chart;
+};
+
+chart.height = function(value) {
+if (!arguments.length) {
+  return height;
+}
+height = value;
+return chart;
+};
+return chart;
+}
