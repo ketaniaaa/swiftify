@@ -3,9 +3,7 @@
   //the script was originally made for node.js so I have modified it for vanilla js and jquery - jquery allows me to access objects alot easier and control what is in view since 
   //most of the visual elements are on the home page ! 
 //var has been used instead of const because this allows easy calling and redeclaration 
-   function siteReady(){   //the visualizations throughout the site require log in to generate data for charts, this will let the user know to press log in immediately 
-    alert("To see visualizations please log in with spotify");
-   }
+   document.body.onload = alert("Log in with Spotify to see visualizations")
 
 
 document.getElementById('login-button').addEventListener('click', function() { //event listener so that the token retrival starts when the login in button is clicked 
