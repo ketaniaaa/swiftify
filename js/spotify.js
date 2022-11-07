@@ -156,9 +156,8 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
           return scaleRadius(d[colRad]);
       }).style("fill", function() {
           return '#5c6a55c8';
-      }).style("border", function(){
-        return 'black';
-      })
+      }).attr("id", 'nodeBubble')
+      
       .attr('transform', 'translate(' + [
           width / 2,
           height / 2

@@ -373,6 +373,10 @@ color: inherit;
     align-items: center;
     justify-content: center;
 }
+#nodeBubble{
+    stroke: black;
+    stroke-width: 1px;
+}
 
 #authMain{
 
