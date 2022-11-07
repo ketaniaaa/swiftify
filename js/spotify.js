@@ -160,10 +160,14 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
           width / 2,
           height / 2
       ] + ')')
-      .on('mouseover', function(d){
-     
-        return tooltip.style("opacity", 0.9)
-        .html ( d.name + "<br>" + "popularity:" + d.popularity); /*
+      .on('mouseover', function(event, d){
+     const [pageY , pageX] = d3.pointer(event);
+
+     tooltip.style("opacity", .9);
+     tooltip.html(d[colCol] + "<br" + "popularity: " + d[colRad])
+     .style("left", (pageY) + "px")
+     .style("top", (pageX)+ "px");
+       /*
 
         .style("top", (d3.event.pageY -10)+ "px")
         .style("left", (d3.event.pageX +10) + "px");*/
@@ -180,6 +184,8 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
           return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
       }).on("mouseout", function() {
           return tooltip.style("visibility", "hidden");
+          return tooltip.style("opacity", 0.9)
+        .html ( d.name + "<br>" + "popularity:" + d.popularity);
       });*/
   }
 
