@@ -388,6 +388,8 @@ color: inherit;
     color: rgb(78, 66, 66);
     font-family: 'IM Fell DW Pica', serif;
     opacity: 1;
+    transform: translateX(-50%);
+    transform: translateY(-60%);
 
 }
 #enterSvg{
