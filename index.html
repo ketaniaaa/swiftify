@@ -13,7 +13,7 @@
     <title>Swiftify</title>
     <link rel="icon" href="assets/swiftifylogo.png" type="image/x-icon">
 </head>
-<body>
+<body onload="siteReady()">
 
     <main id="main">
 <!--testing some stuff-->
@@ -55,6 +55,8 @@
 
 <!--start calls-->
 <section id="enterArt">
+  <h2 id="longtermBubble"> here's your long term top artists</h2>
+  <h2 id="shorttermBubble"> here are your short term top artists</h2>
   <picture id="bubbleChart">
     <svg id="enterSvg"></svg>
   </picture>
