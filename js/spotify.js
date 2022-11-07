@@ -163,9 +163,7 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
       .on('mouseover', function(d){
        /* tooltip.html(d[colCol] + "<br>" + "popularity: " +d[colRad]);*/
         return tooltip.style("opacity", 0.9)
-        .html (function(d){
-          return + d[colCol] + "<br>" + "popularity:" + d[colRad]
-        }); /*
+        .html ( d[colCol] + "<br>" + "popularity:" + d[colRad]) /*
 
         .style("top", (d3.event.pageY -10)+ "px")
         .style("left", (d3.event.pageX +10) + "px");*/
