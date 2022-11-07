@@ -119,7 +119,7 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
 
               //parameters
 
-              var width = 500;
+              var width = 600;
               var height = 500;
               var colRad = "popularity"; //get popularity 
               var colCol = "name"; //artists name 
@@ -165,8 +165,8 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
 
      tooltip.style("opacity", 1.0);
      tooltip.html(d[colCol] + "<br>" + "popularity: " + d[colRad])
-     .style("left", (offsetY) + "px")
-     .style("top", (offsetX)+ "px");
+     .style("left", (offsetY - 10) + "px")
+     .style("top", (offsetX -10)+ "px");
        /*
 
         .style("top", (d3.event.pageY -10)+ "px")
