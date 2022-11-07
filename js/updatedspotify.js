@@ -112,8 +112,10 @@ document.getElementById('login-button').addEventListener('click', function() { /
 
         $("#enter").on('click', function(){
           $('#enterArt').fadeIn('fast');
-          $('#enter').hide();
+          $('#enter').fadeOut('fast');
           $('#folkloreBut').show();
+          $('#shorttermBubble').hide();
+          $('#longtermBubble').fadeIn('fast');
 
 
          // if (access_token){

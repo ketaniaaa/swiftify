@@ -400,7 +400,15 @@ color: inherit;
 align-self: center;
 }
     /*toggling*/
+   
  #enterArt{
+    display: none;
+ }
+
+ #longtermBubble{
+display: none;
+ }
+ #shorttermBubble{
     display: none;
  }
  #folkloreBut{
