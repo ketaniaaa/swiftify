@@ -161,13 +161,14 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
           height / 2
       ] + ')')
       .on('mouseover', function(event, d){
-     const [offsetY , offsetX] = d3.pointer(event);
-     let pos = d3.select(this).node().getBoundingClientRect();
+    // const [offsetY , offsetX] = d3.pointer(event);
+     var matrix = this.getScreenCTM()
+        .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
 
      tooltip.style("opacity", 1.0);
      tooltip.html(d[colCol] + "<br>" + "popularity: " + d[colRad])
-     .style("left", (offsetY + pos['y']- 100) + "px")
-     .style("top", (offsetX)+ "px");
+     .style("left", (window.pageXOffset + matrix.e + 15) + "px")
+     .style("top", (window.pageYOffset + matrix.f - 30)+ "px");
        /*
 
         .style("top", (d3.event.pageY -10)+ "px")
