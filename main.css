@@ -358,9 +358,7 @@ color: inherit;
         background-color: #5c6a55;
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     }
-    #tooltip.hidden{
-        display: none;
-    }
+    
     #tooltip p{
         margin: 0;
         font-family: 'IM Fell DW Pica', serif;
