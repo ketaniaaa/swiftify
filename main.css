@@ -370,7 +370,13 @@ color: inherit;
     }
 
     /*toggling*/
-  #folkloreArt{
+ #enterArt{
+    display: none;
+ }
+ #folkloreBut{
+    display: none;
+ }
+    #folkloreArt{
     display: none;
   }
   #evermoreArt{
