@@ -110,7 +110,6 @@ var chart = bubbleChart(postJSON);
 d3.select("#bubbleChart").data(postJSON).call(chart);
 
 
-
             
               }
 
