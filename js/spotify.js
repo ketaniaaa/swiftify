@@ -132,7 +132,7 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
                 var svg = d3.select("#enterSvg");
                 svg.attr('width', width).attr('height', height);
 
-                var tooltip = selection.append("div").style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left").style("font-family", "helvetica").style("width", "200px").style("line-height", "150%").text("");
+                var tooltip = selection.append("div").attr('id','bubbleTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
 
                 var simulation = d3.forceSimulation(data).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
                 function ticked(e){

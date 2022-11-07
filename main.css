@@ -373,6 +373,22 @@ color: inherit;
     align-items: center;
     justify-content: center;
 }
+
+#user-profile-template{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#bubbleTool{
+    position: absolute;
+    background-color: black;
+    color: white;
+    font-family: 'IM Fell DW Pica', serif;
+
+}
 #enterSvg{
 align-self: center;
 }
