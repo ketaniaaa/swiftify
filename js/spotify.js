@@ -165,8 +165,8 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
 
      tooltip.style("opacity", .9);
      tooltip.html(d[colCol] + "<br" + "popularity: " + d[colRad])
-     .style("left", (pageY - 10) + "px")
-     .style("top", (pageX + 10)+ "px");
+     .style("left", (pageY) + "px")
+     .style("top", (pageX)+ "px");
        /*
 
         .style("top", (d3.event.pageY -10)+ "px")
