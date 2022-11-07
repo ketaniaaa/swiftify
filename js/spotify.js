@@ -113,30 +113,10 @@ d3.select("#bubbleChart").data(postJSON).call(chart);
             
               }
 
-            }); }
+            });
 
+            
 
-            function updateData(){
-              if (access_token){
-
-                $.ajax({
-                    url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50", //check taylors top tracks in south africa!
-                method: "GET",
-                dataType: "json",
-                   headers: {
-                    'Authorization': 'Bearer ' + access_token
-                  }, success: function (data){
-                 console.log("artist: " + data.items); 
-    var preJSON = JSON.stringify(data.items);
-    var postJSON = JSON.parse(preJSON);
-    var chart = bubbleChart(postJSON);
-    d3.select("#bubbleChart").data(postJSON).call(chart);
-    
-    
-                
-                  }
-    
-                });}
             function bubbleChart(){
 
               //parameters
@@ -247,31 +227,6 @@ return chart;
           $('#enterArt').fadeIn('fast');
           $('#enter').hide();
           $('#folkloreBut').show();
-
-          
-          if (access_token){
-
-            $.ajax({
-                url: "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", //check taylors top tracks in south africa!
-            method: "GET",
-            dataType: "json",
-               headers: {
-                'Authorization': 'Bearer ' + access_token
-              }, success: function (data){
-             console.log("artist: " + data.items); 
-var preJSON = JSON.stringify(data.items);
-var postJSON = JSON.parse(preJSON);
-var chart = bubbleChart(postJSON);
-d3.select("#bubbleChart").data(postJSON).call(chart);
-
-
-            
-              }
-
-            }); }
-
-
-
         });
 
 
