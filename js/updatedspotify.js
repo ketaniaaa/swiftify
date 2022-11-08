@@ -172,9 +172,9 @@ $('#taylorTopBut').on('click', function(){
       }, success: function (data3){
         console.log("taylors top tracks", data3.tracks);
        
-        var af1JSON = JSON.parse(data3.tracks);
+      
         data3.tracks.map(function(titles){
-            let track = $('<li>' + "title: " + titles.name + "album: " +  af1JSON.album[0].name + "</li>");
+            let track = $('<li>' + "title: " + titles.name + "</li>");
             track.appendTo($('#tracklist'));
         });
 
