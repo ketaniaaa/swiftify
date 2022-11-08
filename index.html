@@ -52,23 +52,43 @@
     <main id="authMain">
     
       <h1 id="greetings" class="p-name">enchanted to meet you &nbsp<em id="displayName"> {{display_name}} </em>!</h1>
+      <h2 id="enterPrompt" class="p-summary">let's look at who your top artists are</h2>  <!--what should be shown on the inital request being successful-->
+      <button id="enter" class="topartists"> long term artists</button>
+    
+
+<!--start d3 calls-->
 
 
-<!--start calls-->
-
-
-<section id="enterArt" class="h-entry">
-  <h2 id="longtermBubble" class="p-summary"> here's your long term top artists</h2>
-
-
-  <picture id="bubbleChart" class="e-content" >
+<article id="enterArt" class="h-entry">   <!--hide until long term button is clicked & when long term option is clicked too!! -->
+ 
+  <label for="topartists"> change term of top artists:</label>
+  <select  id="termSelect">
+    <option value="longTerm"> Long Term </option>
+    <option value="shortTerm"> Short Term</option>
+  </select>
+  <h2 id="longtermBubble" class="p-summary"> here's your long term top artists</h2> 
+   <picture id="bubbleChart" class="e-content" >
     <svg id="enterSvg" class="u-photo"></svg>
   </picture>
-  </section>
- </section>
-  <button id="enter" class="topartists"> long term artists</button>
+
+ 
+</article>
  
  
+<article id="shortArt" class="h-entry">  <!--show when option is selected and cause hiding of enterArt section -->
+
+  <label for="topartists"> change term of top artists:</label>
+  <select  id="termSelect">
+    <option value="longTerm"> Long Term </option>
+    <option value="shortTerm"> Short Term</option>
+  </select>
+  <h2 id="shorttermBubble" class="p-summary"> here's your short term top artists</h2>
+   <picture id="shortChart" class="e-content" >
+    <svg id="shortSvg" class="u-photo"></svg>
+  </picture>
+
+ 
+</article>
 
 
 

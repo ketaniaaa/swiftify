@@ -402,20 +402,10 @@ color: inherit;
 #enterSvg{
 align-self: center;
 }
-    /*toggling*/
+ /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////toggling*/
    
  #enterArt{
     display: none;
- }
-
- #longtermBubble{
-display: none;
- }
- #shorttermBubble{
-    display: none;
- }
- #showShortTerm{
-    display: hide;
  }
  #shortArt{display: none;}
  #folkloreBut{

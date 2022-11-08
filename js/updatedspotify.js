@@ -97,7 +97,7 @@ document.getElementById('login-button').addEventListener('click', function() { /
             $('#login').show(); //if log in doesnt work, the log in page will still remain visable 
             $('#loggedin').hide();
   
-        }
+        }}
  
       
   
@@ -109,15 +109,28 @@ document.getElementById('login-button').addEventListener('click', function() { /
     //////////////////////////////////////////////////the main visualizations////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function startViz(){ //this function starts once the user has logged in 
 
+$('#termSelect').change(function (){
+var term = this.value;
+
+if (term="longterm"){
+    longChart();
+
+}else{
+    shortChart();
+
+}
+});
+
 
          ////////////////////////////////////////////ON CLICK EVENT HANDLERS USING AJAX ////////////////////////////////////////
         $('#login').hide();
 
-        $("#enter").on('click', function(){
+        $("#enter").on('click', function longChart(){
           $('#enterArt').fadeIn('fast');
           $('#enter').fadeOut('fast');
+          $('#shortArt').hide();//hide short art until the option is selected 
           $('#folkloreBut').show(); //next page
-          $('#longtermBubble').fadeIn('fast'); //title
+          
 
 
          // if (access_token){
@@ -137,7 +150,25 @@ d3.select("#bubbleChart").data(postJSON).call(chart);}
 });  //}
 });
 
-      
+function shortChart(){
+    $("#enterArt").hide();
+    $("#shortArt").fadeIn('fast');
+
+    
+    $.ajax({
+        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50", //check taylors top tracks in south africa!
+    method: "GET",
+    dataType: "json",
+       headers: {
+        'Authorization': 'Bearer ' + access_token
+      }, success: function (data){
+     console.log(" shortartist: " + data.items); 
+var preJSON = JSON.stringify(data.items);
+var postJSON = JSON.parse(preJSON);
+var chart2 = shortChart(postJSON);
+d3.select("#shortChart").data(postJSON).call(chart2);}
+}); 
+}
 
 
         $("#folkloreBut").on('click', function(){
@@ -145,6 +176,7 @@ d3.select("#bubbleChart").data(postJSON).call(chart);}
             $("#folkloreBut").hide();
             $("#evermoreBut").show();
             $('#enterArt').hide();
+            $('#shortArt').hide();
          
           });
 
@@ -271,6 +303,90 @@ height = value;
 return chart;
 };
 return chart;
-}}
+}
 
 ///////////////////////////////////////////////////////////////////////////////SHORT TERM DATA/////////////////////////////////////////////////////////////////////////////////////////////////
+
+function shortChart(){
+
+    //parameters
+
+    var width = 600;
+    var height = 500;
+    var colRad = "popularity"; //get popularity 
+    var colCol = "name"; //artists name 
+
+    function chart2(selection){
+
+      var data2 =
+      selection.enter().data();
+
+      var svg = d3.select("#shortSvg");
+      svg.attr('width', width).attr('height', height);
+
+      var tooltipShort = selection.append("div").attr('id','bubbletwoTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
+
+      var simulation = d3.forceSimulation(data).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
+      function ticked(e){
+        node.attr("cx", function(d) {
+          return d.x * 1;
+      }).attr("cy", function(d) {
+          return d.y * 1;
+      });
+      }
+      
+var scaleRadius = d3.scaleLinear().domain([
+d3.min(data2, function(d) {
+    return + d[colRad];
+}),
+d3.max(data2, function(d) {
+    return + d[colRad];
+})
+]).range([10, 30]);
+
+var node = svg.selectAll("circle").data(data2).enter().append("circle").attr('r', function(d) {
+return scaleRadius(d[colRad]);
+}).style("fill", function() {
+return '#62445f';
+}).attr("id", 'nodeshortBubble')
+
+.attr('transform', 'translate(' + [
+width / 2,
+height / 2
+] + ')')
+.on('mouseover', function(event, d){
+// const [offsetY , offsetX] = d3.pointer(event);
+var matrix = this.getScreenCTM()
+.translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
+
+tooltipShort.style("opacity", 1.0);
+tooltipShort.html(d[colCol] + "<br>" + "popularity: " + d[colRad])
+.style("left", (window.pageXOffset + matrix.e + 15) + "px")
+.style("top", (window.pageYOffset + matrix.f - 30)+ "px");
+/*
+
+.style("top", (d3.event.pageY -10)+ "px")
+.style("left", (d3.event.pageX +10) + "px");*/
+}).on("mouseout", function() {
+return tooltipShort.style("opacity", 0);
+});
+
+}
+
+chart2.width = function(value) {
+if (!arguments.length) {
+return width;
+}
+width = value;
+return chart2;
+};
+
+chart2.height = function(value) {
+if (!arguments.length) {
+return height;
+}
+height = value;
+return chart2;
+};
+return chart2;
+}
