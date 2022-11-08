@@ -53,23 +53,23 @@
     
       <h1 id="greetings" class="p-name">enchanted to meet you &nbsp<em id="displayName"> {{display_name}} </em>!</h1>
       <h2 id="enterPrompt" class="p-summary">let's look at who your top artists are</h2>  <!--what should be shown on the inital request being successful-->
-      <button id="enter" class="topartists"> long term artists</button>
+      <button id="enter" class="topartists"> long term artists</button> <!--nts hide in start viz func and restyle!!-->
     
 
 <!--start d3 calls-->
 
 
-<article id="enterArt" class="h-entry d3-charts">   <!--hide until long term button is clicked & when long term option is clicked too!! -->
+<section id="enterArt" class="h-entry d3-charts">   <!--hide until long term button is clicked & when long term option is clicked too!! -->
  
   <label for="topartists"> change term of top artists:</label>
   <h2 id="longtermBubble" class="p-summary"> here's your long term top artists</h2> 
    <picture id="bubbleChart" class="e-content" >
     <svg id="enterSvg" class="u-photo"></svg>
   </picture>
-</article>
+</section>
  
  
-<article id="shortArt" class="h-entry d3-charts">  <!--show when option is selected and cause hiding of enterArt section -->
+<section id="shortArt" class="h-entry d3-charts">  <!--show when option is selected and cause hiding of enterArt section -->
 
   <label for="topartists"> change term of top artists:</label>
    <h2 id="shorttermBubble" class="p-summary"> here's your short term top artists</h2>
@@ -78,7 +78,7 @@
   </picture>
 
  
-</article>
+</section>
 <button id="shortBut"> short term artists</button>
 
 

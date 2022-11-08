@@ -114,6 +114,7 @@ document.getElementById('login-button').addEventListener('click', function() { /
         $("#enter").on('click', function(){
           $('#enterArt').fadeIn('fast');
           $('#enter').fadeOut('fast');
+          $('#enterPrompt').hide();
           $('#shortBut').show(); //next page
           
 
@@ -313,7 +314,7 @@ function shortChart(){
 
       var tooltipShort = selection.append("div").attr('id','bubbletwoTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
 
-      var simulation = d3.forceSimulation(data).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
+      var simulation = d3.forceSimulation(data2).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
       function ticked(e){
         node.attr("cx", function(d) {
           return d.x * 1;

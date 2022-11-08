@@ -374,7 +374,7 @@ color: inherit;
     justify-content: center;
 }
 #enter{
-    padding-top: 50%;
+   margin-top: 25%;
 }
 #nodeBubble{
     stroke: black;
