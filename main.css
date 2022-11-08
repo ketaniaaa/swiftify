@@ -399,6 +399,10 @@ color: inherit;
     transform: translateY(-60%);
 
 }
+
+.d3-charts :hover{
+ background-color: rgba(255, 255, 255, 0);
+}
 #enterSvg{
 align-self: center;
 }
@@ -430,7 +434,7 @@ align-self: center;
     display: none;
   }
 
-  /*wireframes*/
+  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wireframes*/
 
   .wfMain{
    margin-left: 10%;

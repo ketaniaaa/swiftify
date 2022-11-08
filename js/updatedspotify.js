@@ -108,28 +108,13 @@ document.getElementById('login-button').addEventListener('click', function() { /
 
     //////////////////////////////////////////////////the main visualizations////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function startViz(){ //this function starts once the user has logged in 
-
-$('#termSelect').change(function (){
-var term = this.value;
-
-if (term="longterm"){
-    longChart();
-
-}else{
-    shortChart();
-
-}
-});
-
-
          ////////////////////////////////////////////ON CLICK EVENT HANDLERS USING AJAX ////////////////////////////////////////
         $('#login').hide();
 
-        $("#enter").on('click', function longChart(){
+        $("#enter").on('click', function(){
           $('#enterArt').fadeIn('fast');
           $('#enter').fadeOut('fast');
-          $('#shortArt').hide();//hide short art until the option is selected 
-          $('#folkloreBut').show(); //next page
+          $('#shortBut').show(); //next page
           
 
 
@@ -150,9 +135,11 @@ d3.select("#bubbleChart").data(postJSON).call(chart);}
 });  //}
 });
 
-function shortChart(){
+   $('#shortBut').on('click', function(){
     $("#enterArt").hide();
     $("#shortArt").fadeIn('fast');
+    $("#shortBut").hide();
+    $("#folkloreBut").show();
 
     
     $.ajax({
@@ -168,14 +155,14 @@ var postJSON = JSON.parse(preJSON);
 var chart2 = shortChart(postJSON);
 d3.select("#shortChart").data(postJSON).call(chart2);}
 }); 
-}
+});
+
 
 
         $("#folkloreBut").on('click', function(){
             $("#folkloreArt").fadeIn('fast');
             $("#folkloreBut").hide();
             $("#evermoreBut").show();
-            $('#enterArt').hide();
             $('#shortArt').hide();
          
           });
