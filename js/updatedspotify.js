@@ -170,14 +170,12 @@ $('#taylorTopBut').on('click', function(){
        headers: {
         'Authorization': 'Bearer ' + access_token
       }, success: function (data3){
-        console.log("taylors top tracks", data3.tracks);
-       
       
-        data3.tracks.map(function(titles){
-            let track = $('<li>' + "title: " + titles.name + "</li>");
-            track.appendTo($('#tracklist'));
-        });
-
+       var unStrung = JSON.stringify(data3.tracks);
+       var afterJSON = JSON.parse(unStrung);
+       console.log("taylors top tracks: " + afterJSON.tracks);
+      
+      
      
     }
 }); 
