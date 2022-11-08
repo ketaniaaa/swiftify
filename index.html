@@ -25,13 +25,13 @@
 
 
 
-        <section id="login">
-        <h1>taylor swift</h1>
-        <img src="assets/hpimg.jpg" alt="image of taylor swift running through a meadow" id="loginImg"> <br>
+        <section id="login" class="h-card">
+        <h1 class="p-name">taylor swift</h1>
+        <img class="u-photo" src="assets/hpimg.jpg" alt="image of taylor swift running through a meadow" id="loginImg"> <br>
 
-        <p id="homeIntro"> welcome to swiftify. learn more about taylor&#39;s music <br>
+        <p id="homeIntro" class="p-summary"> welcome to swiftify. learn more about taylor&#39;s music <br>
           and your listening stats. <br>
-          <em></em>  please log in to with spotify to view data </em> </p>
+          <em class="p-note">  please log in to with spotify to view data </em> </p>
         <button id="login-button" class="btn btn-primary"> login ></button>
     </section>
 
@@ -51,18 +51,18 @@
     <script id="user-profile-template" type="text/x-handlebars-template"> <!--use handlebars to fill in name using spotify api -->
     <main id="authMain">
     
-      <h1 id="greetings">enchanted to meet you &nbsp<em id="displayName"> {{display_name}} </em>!</h1>
+      <h1 id="greetings" class="p-name">enchanted to meet you &nbsp<em id="displayName"> {{display_name}} </em>!</h1>
 
 
 <!--start calls-->
 
 
-<section id="enterArt">
-  <h2 id="longtermBubble"> here's your long term top artists</h2>
+<section id="enterArt" class="h-entry">
+  <h2 id="longtermBubble" class="p-summary"> here's your long term top artists</h2>
 
 
-  <picture id="bubbleChart">
-    <svg id="enterSvg"></svg>
+  <picture id="bubbleChart" class="e-content" >
+    <svg id="enterSvg" class="u-photo"></svg>
   </picture>
   </section>
  </section>
@@ -73,15 +73,15 @@
 
 
 <!--folklore art -->
-<section id="folkloreArt">
-<picture>
+<section id="folkloreArt" class="h-entry">
+<picture class="u-photo">
 </picture>
 </section>
 
 <button id="folkloreBut"> folklore</button>
 
 <!--evermore art -->
-<section id="evermoreArt">
+<section id="evermoreArt" class="h-entry">
   <picture>
     <p id="evermoreData">  </p>
   </picture>
@@ -90,7 +90,7 @@
 
 <button id="evermoreBut"> evermore</button>
 <!--folklore art -->
-<section id="midnightsArt">
+<section id="midnightsArt" class="h-entry">
   <picture>
     <p>  midnights svg goes here </p>
   </picture>

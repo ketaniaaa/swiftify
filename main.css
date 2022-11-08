@@ -476,11 +476,11 @@ h4{
 #wfA{
     text-decoration: underline;
 }
-.wfImg{
+#wfImg{
     max-width: 600px;
 
 }
-.wfAn{
+#wfAn{
     max-block-size: 40%;
 }
  #wfHR{
