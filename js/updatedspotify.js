@@ -144,7 +144,7 @@ d3.select("#bubbleChart").data(postJSON).call(chart);}
 
     
     $.ajax({
-        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50", //check taylors top tracks in south africa!
+        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=20", //check taylors top tracks in south africa!
     method: "GET",
     dataType: "json",
        headers: {
@@ -335,7 +335,7 @@ d3.max(data2, function(d) {
 var node = svg.selectAll("circle").data(data2).enter().append("circle").attr('r', function(d) {
 return scaleRadius(d[colRad]);
 }).style("fill", function() {
-return '#62445f';
+return '#62445fc8';
 }).attr("id", 'nodeshortBubble')
 
 .attr('transform', 'translate(' + [

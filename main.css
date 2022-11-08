@@ -380,7 +380,10 @@ color: inherit;
     stroke: black;
     stroke-width: 1px;
 }
-
+#nodeshortBubble{
+    stroke: black;
+    stroke-width: 1px;
+}
 #authMain{
 
     display: flex;
@@ -412,6 +415,7 @@ align-self: center;
     display: none;
  }
  #shortArt{display: none;}
+ #shortBut{display:none}
  #folkloreBut{
     display: none;
  }
