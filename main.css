@@ -162,7 +162,8 @@ button:hover{
     width: 400px;
 }
 #introImg{
-    width: 500px;
+    
+    max-height: 500px;
 }
 
 

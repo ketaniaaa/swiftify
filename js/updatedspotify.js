@@ -110,7 +110,7 @@ document.getElementById('login-button').addEventListener('click', function() { /
     function startViz(){ //this function starts once the user has logged in 
          ////////////////////////////////////////////ON CLICK EVENT HANDLERS USING AJAX ////////////////////////////////////////
 
-         
+
         $('#login').hide();
 
         $("#enter").on('click', function(){
@@ -174,7 +174,7 @@ $('#taylorTopBut').on('click', function(){
        
         var af1JSON = JSON.parse(data3.tracks);
         data3.tracks.map(function(titles){
-            let track = $('<li>' + "title: " + title.name + "album: " +  af1JSON.album[0].name + "</li>");
+            let track = $('<li>' + "title: " + titles.name + "album: " +  af1JSON.album[0].name + "</li>");
             track.appendTo($('#tracklist'));
         });
 
