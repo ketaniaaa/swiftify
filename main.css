@@ -161,6 +161,9 @@ button:hover{
 #loginImg{
     width: 400px;
 }
+#introImg{
+    width: 500px;
+}
 
 
 /*blog selection*/
@@ -374,7 +377,7 @@ color: inherit;
     justify-content: center;
 }
 #enter{
-   margin-top: 25%;
+   margin-top: 15%;
 }
 #nodeBubble{
     stroke: black;
@@ -410,12 +413,18 @@ color: inherit;
 align-self: center;
 }
  /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////toggling*/
-   
+   #backLong #backShort #backTop #backFolklore #backEvermore :hover{
+    color: #5c6a55;
+    text-decoration: underline;
+   }
  #enterArt{
     display: none;
  }
  #shortArt{display: none;}
- #shortBut{display:none}
+ #shortBut{display:none;}
+
+ #taylorTopTracks{display: none;}
+ #taylorTopBut{display: none;}
  #folkloreBut{
     display: none;
  }

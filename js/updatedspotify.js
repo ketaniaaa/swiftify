@@ -109,19 +109,17 @@ document.getElementById('login-button').addEventListener('click', function() { /
     //////////////////////////////////////////////////the main visualizations////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function startViz(){ //this function starts once the user has logged in 
          ////////////////////////////////////////////ON CLICK EVENT HANDLERS USING AJAX ////////////////////////////////////////
+
+         
         $('#login').hide();
 
         $("#enter").on('click', function(){
           $('#enterArt').fadeIn('fast');
           $('#enter').fadeOut('fast');
-          $('#enterPrompt').hide();
+          $('#introduction').hide();
           $('#shortBut').show(); //next page
           
-
-
-         // if (access_token){
-
-            $.ajax({
+          $.ajax({
                 url: "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", //check taylors top tracks in south africa!
             method: "GET",
             dataType: "json",
@@ -135,39 +133,67 @@ var chart = bubbleChart(postJSON);
 d3.select("#bubbleChart").data(postJSON).call(chart);}
 });  //}
 });
-
+/*////////////////////////////////////////////////////////////////////////////  SHORT TERM GRAPH START//////////////////////////////////////////////////////////////////// */
    $('#shortBut').on('click', function(){
     $("#enterArt").hide();
     $("#shortArt").fadeIn('fast');
     $("#shortBut").hide();
-    $("#folkloreBut").show();
+    $("#taylorTopBut").show();
 
     
     $.ajax({
-        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=20", //check taylors top tracks in south africa!
+        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=40", //check taylors top tracks in south africa!
     method: "GET",
     dataType: "json",
        headers: {
         'Authorization': 'Bearer ' + access_token
-      }, success: function (data){
-     console.log(" shortartist: " + data.items); 
-var preJSON = JSON.stringify(data.items);
+      }, success: function (data2){
+     console.log(" shortartist: " + data2.items); 
+var preJSON = JSON.stringify(data2.items);
 var postJSON = JSON.parse(preJSON);
 var chart2 = shortChart(postJSON);
 d3.select("#shortChart").data(postJSON).call(chart2);}
 }); 
 });
+/*////////////////////////////////////////////////////////////////////////////  TAYLOR TOP TRACKS   GRAPH START//////////////////////////////////////////////////////////////////// */
+
+$('#taylorTopBut').on('click', function(){
+    $('#shortArt').hide();
+    $("#taylorTopBut").hide();
+    $("#taylorTopTracks").fadeIn('slow');
+    $("#folkloreBut").show();
+
+    $.ajax({
+        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=40", //check taylors top tracks in south africa!
+    method: "GET",
+    dataType: "json",
+       headers: {
+        'Authorization': 'Bearer ' + access_token
+      }, success: function (data3){
+        console.log("taylors top tracks", data3.tracks);
+       
+        var af1JSON = JSON.parse(data3.tracks);
+        data3.tracks.map(function(titles){
+            let track = $('<li>' + "title: " + title.name + "album: " +  af1JSON.album[0].name + "</li>");
+            track.appendTo($('#tracklist'));
+        });
+
+     
+    }
+}); 
 
 
+});
+/*////////////////////////////////////////////////////////////////////////////  FOLKLORE GRAPH START//////////////////////////////////////////////////////////////////// */
 
         $("#folkloreBut").on('click', function(){
             $("#folkloreArt").fadeIn('fast');
             $("#folkloreBut").hide();
             $("#evermoreBut").show();
-            $('#shortArt').hide();
+            $('#taylorTopTracks').hide();
          
           });
-
+/*////////////////////////////////////////////////////////////////////////////  EVERMORE GRAPH START//////////////////////////////////////////////////////////////////// */
 
           $('#evermoreBut').on('click', function(){
      
@@ -177,7 +203,7 @@ d3.select("#shortChart").data(postJSON).call(chart2);}
             $('#midnightsBut').show();
           });
 
-
+/*////////////////////////////////////////////////////////////////////////////  MIDNIGHTS GRAPH START//////////////////////////////////////////////////////////////////// */
           $('#midnightsBut').on('click', function(){
 
             $('#evermoreArt').hide();

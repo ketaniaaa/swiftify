@@ -50,9 +50,14 @@
 
     <script id="user-profile-template" type="text/x-handlebars-template"> <!--use handlebars to fill in name using spotify api -->
     <main id="authMain">
-    
+   
       <h1 id="greetings" class="p-name">enchanted to meet you &nbsp<em id="displayName"> {{display_name}} </em>!</h1>
-      <h2 id="enterPrompt" class="p-summary">let's look at who your top artists are</h2>  <!--what should be shown on the inital request being successful-->
+      <section id="introduction">
+        <img id="introImg" class="u-photo"
+        src="assets/taylorintro.jpg" alt="Taylor Swift in a field leaning over and smiling at the camera while wearing a white linen dress">
+        <h2 id="enterPrompt" class="p-summary">let's look at who your top artists are</h2>  <!--what should be shown on the inital request being successful-->
+      </section>
+      
       <button id="enter" class="topartists"> long term artists</button> <!--nts hide in start viz func and restyle , make into sections and add a visual element to fill space !!-->
     
 
@@ -65,6 +70,7 @@
    <picture id="bubbleChart" class="e-content" >
     <svg id="enterSvg" class="u-photo"></svg>
   </picture>
+  <p id="backHome" class="u-url"> < back </p>
   <footer> if you are an infrequent spotify listener, there might not be enough data to return an accurate graph!</footer>
 </section>
  
@@ -75,18 +81,34 @@
    <h2 id="shorttermBubble" class="p-summary"> here's your short term top artists</h2>
    <picture id="shortChart" class="e-content" >
     <svg id="shortSvg" class="u-photo"></svg>
-    <footer> if you are an infrequent spotify listener, there might not be enough data to return an accurate graph!</footer>
+
+    <p id="backLong" class="u-url"> < back </p>
+    <footer class="p-description"> if you are an infrequent spotify listener, there might not be enough data to return an accurate graph!</footer>
   </picture>
 
  
 </section>
 <button id="shortBut"> short term artists</button>
 
+<!--Taylor Swift Top Tracks-->
+<section id="taylorsTopTracks">
+
+  <ul id="trackList"></ul>
+ <!-- <picture>
+    <svg id="taylorTopTrackSvg"></svg>
+  </picture>-->
+</section>
+<p id="backShort" class="u-url"> < back </p>
+<button id="taylorTopBut"> taylors top tracks > </button>
+
+
+
 
 <!--folklore art -->
 <section id="folkloreArt" class="h-entry">
 <picture class="u-photo">
 </picture>
+<p id="backTop" class="u-url"> < back </p>
 </section>
 
 <button id="folkloreBut"> folklore</button>
@@ -96,15 +118,17 @@
   <picture>
     <p id="evermoreData">  </p>
   </picture>
+  <p id="backFolklore" class="u-url"> < back </p>
   </section>
 
 
 <button id="evermoreBut"> evermore</button>
-<!--folklore art -->
+<!--midnights art -->
 <section id="midnightsArt" class="h-entry">
   <picture>
     <p>  midnights svg goes here </p>
   </picture>
+  <p id="backEvermore" class="u-url"> < back </p>
   </section>
 <button id="midnightsBut">Midnights</button>
 
