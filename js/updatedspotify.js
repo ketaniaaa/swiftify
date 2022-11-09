@@ -171,8 +171,8 @@ $('#taylorTopBut').on('click', function(){
         'Authorization': 'Bearer ' + access_token
       }, success: function (data3){ //once obtained, process data 
       
-       var unStrung = JSON.stringify(data3.tracks); //convert json into string that contains only the track data 
-       var afterJSON = JSON.parse(unStrung.name); //convert into array  aka new value to access the information from therefore since these are obj in the 
+       //var unStrung = JSON.stringify(data3.tracks); //convert json into string that contains only the track data 
+       var afterJSON = JSON.parse(data3.name); //convert into array  aka new value to access the information from therefore since these are obj in the 
        /*array, the name thing is a key and the actual name is the value so name(key): anti-hero(value) 
        let x = "";
        for (let i in afterJSON){ //x returns all values as one string so ideal x = anti-her , maroon, lavender haze etc 
@@ -180,7 +180,7 @@ $('#taylorTopBut').on('click', function(){
        }
        console.log("taylors top tracks: " + (x + ","));  */
 
-       console.log("top tracks: " + afterJSON)
+       console.log("top tracks: " + afterJSON);
       
       
      
