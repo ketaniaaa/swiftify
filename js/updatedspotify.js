@@ -164,16 +164,16 @@ $('#taylorTopBut').on('click', function(){
     $("#folkloreBut").show();
 
     $.ajax({
-        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=40", //check taylors top tracks in south africa!
+        url: "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02/top-tracks?market=ZA", //check taylors top tracks in south africa!  NTS: CHECK CORRECT URL!!!!!!!1
     method: "GET",
     dataType: "json",
        headers: {
         'Authorization': 'Bearer ' + access_token
       }, success: function (data3){
       
-       var unStrung = JSON.stringify(data3.tracks);
-       var afterJSON = JSON.parse(unStrung);
-       console.log("taylors top tracks: " + afterJSON.tracks);
+       var unStrung = JSON.stringify(data3.tracks); //cocnvert into string
+       var afterJSON = JSON.parse(unStrung); //convert into array 
+       console.log("taylors top tracks: " + afterJSON.tracks.name);
       
       
      
