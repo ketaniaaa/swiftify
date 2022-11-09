@@ -183,7 +183,7 @@ $('#taylorTopBut').on('click', function(){
                 let trackList = $('<li>' + afterJSON + '</li>');
                 $('#trackList').append(trackList);
            });*/
-           console.log("track:" + afterJSON.names);
+           console.log("track:" + afterJSON.name);
 
       
       
