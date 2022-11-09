@@ -522,6 +522,8 @@ h4{
 }
 #wfAn{
     max-block-size: 40%;
+    font-family: 'Overpass Mono', monospace;
+    color: black;
 }
  #wfHR{
     border: 2px solid black;
@@ -654,6 +656,20 @@ justify-content: center;
        align-self: center;
        justify-self: center;
     }
+    #figmaPrototype{
+        width: 600px;
+    }
+    .wfMain{
+        margin: 0;
+    }
+    #wfImg{
+        max-width: 500px;
+    }
+    #wfSection{
+        flex-direction: column;
+    }
+    
+    
 }
 
  
