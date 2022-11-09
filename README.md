@@ -14,10 +14,16 @@ github site! This link allows the OAuth process to be returned :)!
 
 
 ### To-Do 
-* add visual to chart section on index.html after logging in 
-* add back buttons for charts i.e mini nav but not with button tages 
-* media queries 
-
+- media queries 
+- update static array for indiv albums 
+- fix back navigation for visualizations 
+- use playback sdk and embeds for further music plays 
+- fix mobile wireframes 
+- update planning docs
+- research image quality loading 
+- add more microformatting and change current classes to ids 
+- improve seo for new charts 
+- add a please dont sue my taylor swift 
 
 
 

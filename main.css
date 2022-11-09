@@ -38,7 +38,7 @@ main{
     display: flex;
     flex-direction: column;
 }
-/*nab bar*/
+/*nav  bar* dynamic  creation */
 
 header{
     display: inline-flex;
@@ -136,6 +136,10 @@ h1{
     font-size: larger; 
     text-align: center;
 }
+#subIntro{
+    font-size: smaller;
+    color: rgba(0, 0, 0, 0.687);
+}
 
 #displayName{
     font-style: italic;
@@ -217,7 +221,7 @@ align-self: center;
 
  #toptrackLi{
     font-family: 'Overpass Mono', monospace;
-    
+
  }
  #folkloreBut{
     display: none;
