@@ -444,7 +444,7 @@ function toptrackChart(){
    function chart3(selection){
 
     var data3 =
-    selection.enter().data(data3);
+    selection.enter().data();
 
     var svg = d3.select("#topTrackSvg");
     svg.attr('width', width)
