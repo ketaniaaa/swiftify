@@ -414,7 +414,9 @@ color: inherit;
 align-self: center;
 }
  /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////toggling*/
-   #backLong #backShort #backTop #backFolklore #backEvermore :hover{
+  
+
+ #backLong #backShort #backTop #backFolklore #backEvermore :hover{
     color: #5c6a55;
     text-decoration: underline;
    }
