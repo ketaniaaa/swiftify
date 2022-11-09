@@ -46,7 +46,7 @@ credLinks.className ="ulFoot";
 const footItems = [
     {ftitle: 'references  /', flink: '../pages/refs.html'},
     {ftitle: 'figma  /', flink: 'https://www.figma.com/file/nXSbUGQVQb5hufBDDgLNSY/Swiftify?node-id=0%3A1'},
-    {ftitle: 'github', flink: 'https://github.com/ketaniaaa/2112886_WSOA3029'}
+    {ftitle: 'github', flink: 'https://github.com/ketaniaaa/swiftify'}
 
 ];
 
@@ -55,6 +55,7 @@ for(let item of footItems){
     const fa = document.createElement('a');
     fli.className = "liFoot";
     fa.className = "aFoot";
+    fa.target = "_blank";
     fa.innerText = item.ftitle;
     fa.href = item.flink;
     fli.appendChild(fa);

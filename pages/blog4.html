@@ -33,19 +33,18 @@
     
      <!--quick selection-->
      <aside id="main" class="blogQuickSelect">
-        <ul>
-            <li id="blogTemLi"><a href="#referenceList" id="aBT"> References</a></li>
+        <ul><li id="blogTemLi"><button id="refBut"><a href="#referenceList" id="aBTR"> References > </a></button></li>
             <li id="blogTemLi"><a href="blog2.html" id="aBT"> Blog Two</a></li>
             <li id="blogTemLi"><a href="blog3.html" id="aBT"> Blog Three</a></li>
         </ul>
     </aside>
-    <h2 id="btHeading">A Critical Reflection of my Data Art</h2>
+    <h2 id="btHeading" class="entry-title">A Critical Reflection of my Data Art</h2>
 
-    <section id="blogInfo">
+    <section id="blogInfo" class="entry-summary">
        
-        <p>Introduction to Data Artwork.</p>
+        <p class="entry-summary">Introduction to Data Artwork.</p>
        
-        <time datetime="1 November 2022">01-11-2022</time> <cite> Ketania Govender</cite>
+        <time datetime="1 November 2022" class="published">01-11-2022</time> <cite> Ketania Govender</cite>
         <hr id="hr2" >
         
         </section>
@@ -54,49 +53,50 @@
         </section>
         
         <!--main blog text-->
-        <main id="blogMain">
-        <p><em>Interaction for visualization is the interplay between a person and
-        
-            a data interface involving a data-related intent, at least one action
+        <main id="blogMain" class="entry-content">
+            <p>When creating data artwork it is important to understand the intention behind the data. I have found that working with data sets can often seem devoid of artistic expression. While data storytelling can focus on a literary narrative reminiscent of the original 3 part structure, for my data artwork, I have chosen to treat it as a visual piece. My intention behind my data art is to replicate the emotions within music in a visual form. My API for this semester has been largely music based and I believe that music has the ability to convey feelings in a short form effective manner - this is why many rely on music in such an intimate manner. The depiction of abstract emotion and sound is therefore what I strive to depict in my art across mediums. This has been the motivation behind the creation of my first artwork using quantitative data and my hopes to transform these numbers and values into a piece that embodies feeling. </p>
+
+            <h2>Research </h2>
+            <p>I have chosen to use the Spotify Web API for my site this semester. While the site offers a large amount of data, I have focused the site on one artist - Taylor Swift. The reason for making a website surrounding just one artist was due to a number of reasons - particularly the uses of data. Instead of creating different versions of personalized Spotify data analysis, I have chosen a musician who has a large catalogue of music, as well as well-established data sets regarding her discography. To better understand the Spotify Web API, the research I found that the API allows for insight into how Spotify ranks tracks popularity. The popularity index is based on a set of audio features that the Spotify algorithm uses to predict the success of a song. These audio features are easily accessed through the API yet Sciandra and Spera &#40;
+            2020, pp 216&#41;
+            question the use of this data in the application.  Currently, the popularity metrics are based on these sound signals. The individual sound signals can be accessed for a track on Spotify and therefore pose an interesting opportunity for visualization as Spotify itself does not use this information currently for any other process apart from popularity tracking.</p>
+             
             
-            from the person and an interface reaction that is perceived as such.</em><p>
+            <p>The use of the data in relation to a specific artist poses the question of the intended message. Alamalhodaei & Feigenbaun &#40;
+            2020, pp 37&#41;
+             highlight the importance of initially understanding your audience and therefore guiding the stories that you would like to tell. With Swifity, I have evidently created a niche site that targets the fan base of Taylor Swift and the understanding of the data behind her music. In previous assignments, I utilized the interest in charts and created visualizations regarding the popularity of her songs and albums. This, therefore, raised the question of 	&#39;what else would a fan like to see?	&#39; therefore I decided to create a visualization of the audio features in her songs. The story that would be told with this artwork is creating an understanding of the emotions and feelings behind specific albums. Through experimentation with the endpoints on Spotify&#39;s developer dashboard, I quickly noticed trends in the data regarding the audio features of tracks on different albums. Taylor Swift, according to Perone &#40;
+            2017, pp 13&#41;
+            is known to create music based on periods in her life and events that defined these eras of her own life. This can be seen in her album 	&#39;Reputation	&#39;, which was released following controversy with rapper Kanye West which caused a downfall in her public popularity &#40;
+            Arnold and Fogarty, 2020 pp4&#41;
+             where Spotify data shows tracks with higher loudness and energy metrics which coincide with the angry theme of the album. This is contrasted by the Spotify statics that shows higher metrics of instrumentals and lower tempo for her 2020 release of folklore, in which she has said to explore less biographical songwriting and a folk-indie genre. With the site being specified, the congruency between the change in lyrical style and message of Taylor Swift	&#39;s albums and the trends of audio signals lends itself to creating an interesting data visualization artwork.</p>
             
-            <p>Dimara and Perin’s paper deals with the idea of interaction and tries to define this broadly while catering this concept around interaction. The initial problem is that there is a lack of a unified concept of what interaction means. This is primarily influenced by the lack of the HCi - whom a large body of professionals who deal with interaction design look towards. The HCI currently defines interaction as a causal relationship between humans and data. This definition allows for confusion regarding the application of data visualization.</p>
+            <p>Knaflic explains in the chapter in 	&#39;Storytelling with Data	&#39;that visualizations should in some form show a narrative. The conceptual stance of my data art would be to reimagine the artwork originally created by Taylor Swift. Knaflic highlights the need for audience understanding. As previously discussed, the site is aimed at users who are familiar already with Swift	&#39;s body of work and therefore the information that they are gathering from the artwork itself would be in regard to what is being depicted. For this, showing a visual correlation with the original album will clarify details to the user and because I would like the initial entry point of the piece to be visual, descriptors and titles of the individual track will be hidden until the user hovers over aspects of the artwork. </p>
             
-            <p>As technology progresses, there is a bigger need for understanding the recent plethora of data. Keefe &#40;
-            2010&#41;
-             points out that data visualization is “interdisciplinary” &#40;
-            pp3&#41;
-             and therefore a suitable definition for the process is required in order to streamline the visualization process. It is argued that visualization is as important as interaction in order for the end-user to truly absorb the data. Goals for the future of this rapidly expanding need is to broaden the scope of interaction and give users a more freeform manner in which to interact with visualized data. Flexibility is a highlighted goal of creating better interaction for data. In order to understand a method to give users the freedom that is desired, a slimming down of what interaction means is necessary. </p>
             
-            <p>Dimara and Perin deploy a method of finding a definition for data visualization. To summarize their methodology, papers linked to interaction were collected, followed by seed papers which reference the original set and then other related papers to the second set. This process included tagging definitions of interaction in this body of research papers, as well as questioning the authors regarding their interpretations of the definitions for interaction. This process resulted in the following findings that often arose in their research that centred around the concept of interaction: definitions, critics, benefits, interaction concepts, interaction pipelines and history. The findings of the research seemed to focus particularly frequently on the idea of the user and data forming a sort of relationship. </p>
-            <p>The user is situated as an analyst who has a motivation to engage with the data. It is crucial to separate the designer and the user in order to create data that is best designed to interact with the users' specific motivations. Data is defined as intangible information and therefore requires a processing step in order for the interaction to be resultant(Büschel et. al 2018, pp7). The tools to achieve with can include representation, hardware and software. Another important aspect of processing data interaction is understanding that time as interaction occurs in real-time.</p>  
+            <h2>Planning </h2>
             
-            <p>Dimara and Perin use their findings to elaborate on what processes are involved in interaction for visualization. These include external and internal entities and external and internal actions. The properties of interaction include granularity to confirm the need for levels of interaction with one visualization and the idea of continuous vs discrete interaction. Continuous and discrete interactions must be implemented in order to create immersion in the data. The final property of interaction is direct vs indirectness. This refers to the spectrum on which interaction can be situated to fit the context of the data visualization. </p>
-            
-            <p>The findings regarding the benefits and criticism of interaction proved most interesting to me. The answers from researchers highlight the needs for interaction that can better define interaction. This includes the disdain of comparison to representation and the limited flexibility of interaction currently. This lack of flexibility has impactful consequences such as ignoring user goals and the lack of catering for human and technological modalities. This creates less successful visualization and therefore must be carefully considered when designing interaction. This poses the debate of creating task-centric interactions versus human-centric interactions. Initially, I have been aligned with user-centric design. This may be due to the corpus of content that places the user at the centre of the project yet as Dimara and Perin earlier state, there is a specific motivation from the user that initiates interaction. If the driving force of the interaction is the want to complete a specific task, would it not be better to cater towards the task in order to streamline the task completion? Medhi &#40;
-            2007, pp5&#41;
-             shows through their research that “users tend to focus on isolated tasks”. This may highlight a need to make the task easier to accomplish yet creating a task-orientated interaction proves to be incredibly rigid and socio-economics that affect humans have a deeper impact on the interaction. For this reason, Medhi argues that one should attempt to create both task-orientated and user-orientated interactions yet the process should begin by understanding the limitations of the user. </p>
-            <p>This supports Dimara and Perin’s observation that the current visualization view promotes a dialogue between the user and data as confining, in order to make the interaction impactful, the dialogue space must be flexible. </p>
-            <p>This means creating a form of interaction that can accommodate a number of requirements and accommodations for the user. By designing using this approach, one is creating flexible and more open-ended data visualizations. The limitations of this interaction are rooted in the HCi definitions of interaction. The HCI’s developed theory of interaction includes aspects that characterize the interaction. These include dialogue regarding cognitive interaction between data and user, the transmission of information, controls, tool usage, optimal behaviour and embodiment. There is a need to broaden the scope of both user profiling and user intent from these definitions from the HCI, as well as what good interaction means. Intent goes further than the transmission of information and therefore successful interaction can provide the user with a use for the acquired information.  The use of user personas in the UX space results in dichotomies that are often reductant and therefore stagnant. This creates a flow of interaction that feels disruptive&#40; Elmqvist et. al 2011, pp335&#41; It must be understood that visual literacy should not be given and therefore persona research must be broadened. The definition of good interaction must be rectified to accommodate more criteria rather than merely a dialogue occurring. There is a clear difference between the HCI definition of interaction and its use for interaction.</p>
-            
-            <p>The comparison of the lack of definition from the HCi and research has resulted in a new definition for interaction with data visualization. This includes visualization interaction that is subsequent to interaction systems and the dialogue with these systems being resultant of human modalities. The definition also includes essential components of interaction that must be considered which include people, data interfaces, actions and reactions and perceived actions. This definition allows for the development of more flexible interaction by creating more flexible interfaces to support border needs. Flexibility allows for the definition t be actualized. </p>
+            <p>For my data artwork, I explored the current applications of the Spotify Web API. Bars is a web application using web API and JavaScript to create visualizations regarding the audio analysis of individual tracks. This application inspired me to create a modification of this use of the API. The application allows users to search any track and display data based on the entire Spotify catalogue. This did not fit my site as I wanted to encapsulate Taylor Swift	&#39;s music. As mentioned before, I wanted to depict an audio analysis of an entire album. In regard to the display of the information, I found that a single visualisation that accounts for two static values did not seem adequate to depict the multiple audio features of multiple tracks. I explored the application of d3, specifically for visual art and found the use of d3 to create pixel art. The method by which this pixel art is created is by creating a grid and assigning specific colours to corresponding blocks on the grid. For my data artwork, I plan on assigning different colours for different audio qualities and then changing the saturation of the colour based on the Spotify value for the audio quality of the track. Attach below is an initial sketch of the proposed idea. This would mean that each column would be assigned a track and each row, an audio feature. At first glance, the user will see the colour chart alone and this acts as a standalone artwork. The mix of individual colours and tones to represent an entire album thus becomes a visual abstraction of Taylor Swift	&#39;s music. </p>
+            <img src="../assets/tayloralbumpalettw.JPG" alt="Colour Palettes that have been generated by Colour Picking elements of Taylor Swift's albums" id="blogImg" class="u-photo">
+            <p>In regard to the aesthetics of the artwork, I want the data artwork to be thematically congruent with the albums themselves. In order to achieve this, I have used an eye dropper tool in order to create specific colour palettes based on the album artwork. This creates a uniform feeling for each artwork and album. Knaflic highlights the importance of repetition for visualizations. This repetition will be deployed in the form of repeating colours in the artwork based on the specific audio feature. The frequency of the repeated colour therefore creates a pattern that the user is able to easily identify and therefore tells the story of the album. </p>
+            <img src="../assets/colors.JPG" alt="Rough sketch of proposed data art" id="blogImg" class="u-photo">
             </main>        
 <!--references-->
 
 <section id="referenceList">
 <ol id="olreflist">
-    <li id="liRef">
-       
-Büschel, W. et al. (2018) ‘Interaction for Immersive Analytics’, in K. Marriott et al. (eds) Immersive Analytics. Cham: Springer International Publishing (Lecture Notes in Computer Science), pp. 95–138. Available at: https://doi.org/10.1007/978-3-030-01388-2_4.
+    <li id="liRef" class="author">
+        Feigenbaum, A. and Alamalhodaei, A. (2020) The Data Storytelling Workbook. Routledge.
+
 </li> <br>
-        <li id="liRef">Dimara, E. and Perin, C. (2020) ‘What is Interaction for Data Visualization?’, IEEE Transactions on Visualization and Computer Graphics, 26(1), pp. 119–129. Available at: https://doi.org/10.1109/TVCG.2019.2934283.
+        <li id="liRef" class="author"> Fogarty, M. and Arnold, G. (2021) 	&#39;Are You Ready for It? Re-Evaluating Taylor Swift	&#39;, Contemporary Music Review, 40(1), pp. 1–10. Available at: https://doi.org/10.1080/07494467.2021.1976586.
         </li><br>
-<li id="liRef">Elmqvist, N. et al. (2011) ‘Fluid interaction for information visualization’, Information Visualization, 10(4), pp. 327–340. Available at: https://doi.org/10.1177/1473871611413180.
+<li id="liRef" class="author">Knaflic, C.N. (2015) Storytelling with Data: A Data Visualization Guide for Business Professionals. John Wiley & Sons.
+
 </li> <br>
-<li id="liRef">Medhi, I., 2007. User-centered design for development. interactions, 14(4), pp.12-14.</li> <br>
-<li id="liRef">Keefe, D.F. (2010) ‘Integrating Visualization and Interaction Research to Improve Scientific Workflows’, IEEE Computer Graphics and Applications, 30(2), pp. 8–13. Available at: https://doi.org/10.1109/MCG.2010.30.
-</li id="liRef"> <br>
+<li id="liRef" class="author">Perone, J.E. (2017) The Words and Music of Taylor Swift. ABC-CLIO.</li> <br>
+<li id="liRef" class="author">Sciandra, M. and Spera, I.C. (2022) 	&#39;A model-based approach to Spotify data analysis: a Beta GLMM	&#39;, Journal of Applied Statistics, 49(1), pp. 214–229. Available at: https://doi.org/10.1080/02664763.2020.1803810.
+
+</li> <br>
 </ol>
 </section>
 
@@ -107,7 +107,7 @@ Büschel, W. et al. (2018) ‘Interaction for Immersive Analytics’, in K. Marr
 
 <section id="buttonNav">
 <button id="button1"><i class="fa-solid fa-arrow-left-long" id="buttonI"></i><a href="blog.html" > All Blogs </a></button>
-<button id="button2"><i class="fa-solid fa-arrow-right-long" id="buttonI"></i><a href="blog4.html" > Next Blog </a></button>
+<button id="button2"><i class="fa-solid fa-arrow-right-long" id="buttonI"></i><a href="blog3.html" > Previous Blog </a></button>
 </section>
 
 
