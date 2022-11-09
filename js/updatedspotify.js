@@ -171,9 +171,11 @@ $('#taylorTopBut').on('click', function(){
         'Authorization': 'Bearer ' + access_token
       }, success: function (data3){
       
-       var unStrung = JSON.stringify(data3.tracks); //cocnvert into string
-       var afterJSON = JSON.parse(unStrung); //convert into array 
-       console.log("taylors top tracks: " + afterJSON.name);
+       var unStrung = JSON.stringify(data3.tracks); //convert into string
+       var afterJSON = JSON.parse(unStrung); //convert into array  aka new value to access the information from therefore since these are obj in the 
+       /*array, the name thing is a key and the actual name is the value so name(key): anti-hero(value) */
+       var trackTitle = Object.values(afterJSON.name)
+       console.log("taylors top tracks: " + trackTitle);
       
       
      
