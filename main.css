@@ -124,7 +124,7 @@ footer{
     color: black;
 }
 
-/*home page */
+/*//////////////////////////////////////////////////////////////////////////////////////home page///////////////////////////////////////////////////////////////// */
 h1{
     font-family: 'IM Fell DW Pica', serif;
     font-size: 36px;
@@ -165,9 +165,83 @@ button:hover{
     
     max-height: 500px;
 }
+/*data art*/
+#enterArt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+#nodeBubble{
+    stroke: black;
+    stroke-width: 1px;
+}
+#nodeshortBubble{
+    stroke: black;
+    stroke-width: 1px;
+}
 
-/*blog selection*/
+#bubbleTool{
+    position: absolute;
+    background-color: black;
+    color: rgb(78, 66, 66);
+    font-family: 'IM Fell DW Pica', serif;
+    opacity: 1;
+    transform: translateX(-50%);
+    transform: translateY(-60%);
+
+}
+
+.d3-charts :hover{
+ background-color: rgba(255, 255, 255, 0);
+}
+#enterSvg{
+align-self: center;
+}
+ 
+  
+
+ #backLong #backShort #backTop #backFolklore #backEvermore :hover{
+    color: #5c6a55;
+    text-decoration: underline;
+   }
+ #enterArt{
+    display: none;
+ }
+ #shortArt{display: none;}
+ #shortBut{display:none;}
+
+ #taylorTopTracks{display: none;}
+
+ #taylorTopBut{display: none;}
+
+ #toptrackLi{
+    font-family: 'Overpass Mono', monospace;
+    
+ }
+ #folkloreBut{
+    display: none;
+ }
+    #folkloreArt{
+    display: none;
+  }
+  #evermoreArt{
+    display: none;
+  }
+  #evermoreBut{
+    display: none;
+  }
+  #midnightsArt{
+    display: none;
+  }
+  #midnightsBut{
+    display: none;
+  }
+  #restart{
+    display: none;
+  }
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////blog selection*/
 
 h1{
     display: flex;
@@ -371,24 +445,10 @@ color: inherit;
         line-height: 20px;
 
     }
-/*data art*/
-#enterArt{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#enter{
-   margin-top: 15%;
-}
-#nodeBubble{
-    stroke: black;
-    stroke-width: 1px;
-}
-#nodeshortBubble{
-    stroke: black;
-    stroke-width: 1px;
-}
-#authMain{
+
+
+  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wireframes*/
+  #authMain{
 
     display: flex;
     flex-direction: column;
@@ -396,62 +456,6 @@ color: inherit;
     flex-wrap: wrap;
     justify-content: center;
 }
-#bubbleTool{
-    position: absolute;
-    background-color: black;
-    color: rgb(78, 66, 66);
-    font-family: 'IM Fell DW Pica', serif;
-    opacity: 1;
-    transform: translateX(-50%);
-    transform: translateY(-60%);
-
-}
-
-.d3-charts :hover{
- background-color: rgba(255, 255, 255, 0);
-}
-#enterSvg{
-align-self: center;
-}
- /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////toggling*/
-  
-
- #backLong #backShort #backTop #backFolklore #backEvermore :hover{
-    color: #5c6a55;
-    text-decoration: underline;
-   }
- #enterArt{
-    display: none;
- }
- #shortArt{display: none;}
- #shortBut{display:none;}
-
- #taylorTopTracks{display: none;}
- #taylorTopBut{display: none;}
- #folkloreBut{
-    display: none;
- }
-    #folkloreArt{
-    display: none;
-  }
-  #evermoreArt{
-    display: none;
-  }
-  #evermoreBut{
-    display: none;
-  }
-  #midnightsArt{
-    display: none;
-  }
-  #midnightsBut{
-    display: none;
-  }
-  #restart{
-    display: none;
-  }
-
-  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wireframes*/
-
   .wfMain{
    margin-left: 10%;
    margin-right: 10%;
