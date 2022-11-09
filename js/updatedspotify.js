@@ -361,7 +361,7 @@ function shortChart(){
     function chart2(selection){
 
       var data2 =
-      selection.enter().data2();
+      selection.enter().data();
 
       var svg = d3.select("#shortSvg");
       svg.attr('width', width).attr('height', height);
@@ -444,7 +444,7 @@ function toptrackChart(){
    function chart3(selection){
 
     var data3 =
-    selection.enter().data3();
+    selection.enter().data(data3);
 
     var svg = d3.select("#topTrackSvg");
     svg.attr('width', width)
