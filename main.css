@@ -13,13 +13,13 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #baceaf; 
+    background: #6b7463; 
   }
    
   /* Handle */
 
   ::-webkit-scrollbar-thumb {
-    background: #4f62447f; 
+    background: #3b4d31; 
   }
   
   /* Handle on hover */
@@ -28,6 +28,7 @@
     background: #75826e;}
 body{
     background-image: url(assets/tsbg.png);
+ 
     
     
     
@@ -393,6 +394,7 @@ color: inherit;
 #buttonNav button{
     margin: 1em;
 }
+
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*design*/
 
@@ -540,7 +542,31 @@ h4{
   .next:hover {
     background-color: rgba(202, 237, 197, 0.5);
   }
-  
+  .designguideMain{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(252, 252, 252, 0.494);
+    max-width: 90%;
+    margin-left: 5%;
+    box-shadow: outset;
+  }
+  #dgImg{
+    max-width: 80%;
+    padding-left: 10%;
+  }
+  #dgTitle{
+    align-self: center;
+    justify-self: center;
+    color: black;
+  }
+  #dgAn{
+    max-width: 80%;
+    padding-left: 10%;
+    font-family: 'Overpass Mono', monospace;
+    color: black;
+  }
   @keyframes fade {
     from {
       opacity: 0.4;
