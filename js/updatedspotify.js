@@ -266,7 +266,9 @@ var poptrack = function(data3){
         function chart(selection){
 
           var data =
-          selection.enter().data();
+          selection.data();
+
+          
 
           var svg = d3.select("#enterSvg");
           svg.attr('width', width).attr('height', height);
