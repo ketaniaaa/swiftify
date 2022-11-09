@@ -1,7 +1,14 @@
-## swiftify - interactive media project
+# swiftify - interactive media project
 
 
-# This website is deployed on Netlify
+## This website is deployed on Netlify
+
+This is a website that I created for my course Interactive Media 3B at the University of Witswaterstrand. This is a static website, with only front-end development. The task for this semester has been to create a site to hold assigned essays via [Blog Posts](https://swiftify.netlify.app/pages/blog.html) , [design documentation](https://swiftify.netlify.app/pages/design.html) and data visualizations. The main focus regarding the technical element of this project was to use the D3 library to create data visualizations that embody a narrative with data from a web API. My chosen API was the Spotify Web API and I have created a site that explores the data about Taylor Swift. For the course, I have focused my visualizations around Taylor Swifts most recent albums as of November 2022 (not including re-recording records such as Red (Taylor's Version) and Fearless (Taylor's Version)) being Midnights, Folklore and Evermore.
+
+external api's:
+- [D3.js](https://d3js.org/)
+- [jQuery](https://jquery.com/)
+-[Figma](https://www.figma.com/file/nXSbUGQVQb5hufBDDgLNSY/Swiftify?node-id=0%3A1)
 
 
 Click here: [Swiftify](https://swiftify.netlify.app/)
