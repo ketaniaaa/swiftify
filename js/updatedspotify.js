@@ -173,7 +173,7 @@ $('#taylorTopBut').on('click', function(){
       
        var unStrung = JSON.stringify(data3.tracks); //cocnvert into string
        var afterJSON = JSON.parse(unStrung); //convert into array 
-       console.log("taylors top tracks: " + afterJSON.tracks.name);
+       console.log("taylors top tracks: " + afterJSON.name);
       
       
      
