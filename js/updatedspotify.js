@@ -108,6 +108,8 @@ document.getElementById('login-button').addEventListener('click', function() { /
 
     //////////////////////////////////////////////////the main visualizations////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function startViz(){ //this function starts once the user has logged in 
+
+
          ////////////////////////////////////////////ON CLICK EVENT HANDLERS USING AJAX ////////////////////////////////////////
 
 
@@ -183,6 +185,10 @@ $('#taylorTopBut').on('click', function(){
                 $('#trackList').append(trackList);
            });*/
            console.log("track:", data3.tracks);
+           var topTracks = data3.tracks;
+           var chart3 = toptrackChart(topTracks);
+           d3.select("#topTrackChart").data(topTracks).call(chart3);
+
 
            data3.tracks.map(function(title){
             let track = $('<li>' + title.name + '</li>');
@@ -418,4 +424,77 @@ height = value;
 return chart2;
 };
 return chart2;
+}
+
+function toptrackChart(){
+
+   var width = 800;
+   var height = 600;
+   var margin = {top: 50, bottom: 50, left: 50, right: 50}; 
+   var title = "name";
+   var poptrack = "popularity";
+
+   function chart3(selection){
+
+    var data3 =
+    selection.enter().data();
+
+    var svg = d3.select("#topTrackSvg");
+    svg.attr('width', width)
+    .attr('height', height)
+    .attr('viewBox', [0,0,width, height] );
+
+    var tooltipTopChart = selection.append("div")
+    .attr('id','topTrackTool')
+    .style("position", "absolute")
+    .style("opacity", 0)
+    .style("text-decoration", "none")
+    .style("width", "200px")
+    .style("background-color", "#4f62447f")
+    .style("line-height", "150%").text("");
+
+     var x = d3.scaleBand()
+     .domain(d3.range(data3.length))
+     .range([margin.left, width - margin.right])
+     .padding(0.5);
+
+     var y = d3.scaleLinear()
+     .domain([88, 100])
+     .range([height-margin.bottom, margin.top]);
+  
+     svg.append('g')
+     .attr('fill', 'red')
+     .selectAll('rect')
+     .data(data3.sort((a,b) => d3.descending(a.poptrack, b.poptrack)))
+     .join('rect')
+     .attr('x', (d, i)=>x(i))
+     .attr('y', (d) => y(0)-y(d.poptrack))
+     .attr('height', d => y(0)-y(d.popularity))
+  .attr('width', x.bandwidth())
+  .attr('id', 'topTrackBar');
+  
+   }
+
+   function xAxis(g){
+  
+    g.call(d3.axisBottom(x).tickFormat(i=>data3[i].title))
+      g.attr('transform', 'translate(0, ${height - margin.bottom})')
+  
+      .attr('font-size', '10px')
+    
+      .tickPadding([25])
+      
+  };
+  
+  function yAxis(g){
+  g.attr('transform', 'translate(${margin.left},0)')
+  .call(d3.axisLeft(y).ticks(null, data.format))
+  };
+svg.append('g').call(yAxis);
+svg.append('g').call(xAxis);
+svg.node();
+
+return chart3();
+
+
 }
