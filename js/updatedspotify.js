@@ -178,7 +178,7 @@ $('#taylorTopBut').on('click', function(){
        for (let i in afterJSON){
         x += afterJSON[i].name;
        }
-       console.log("taylors top tracks: " + x);
+       console.log("taylors top tracks: " + (x + ","));  
       
       
      
