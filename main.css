@@ -595,6 +595,65 @@ h4{
       opacity: 1;
     }
   }
+/*//////////////    MEDIA QUERIES ////////////////////////////////////////////////////////////////////////////////////////////// /////////////*/
 
+@media only screen and (max-width:768px ) {
+   
+.navTitle{
+    position: relative;
+margin-top: 10%;
+    padding-left: 5%;
+}
+.liNav{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.aNav:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+    nav{
+        position: absolute;
+        left: 60%;
+    }
+    #hr1{ display: none;}
+    article{
+max-width: 90%;
+padding-left: 5%;
+        border: solid black;
+        
+       
+        margin-bottom: 5px;
+    }
+    #introImg{
+        max-height: 300px;
+    }
+    button{
+        padding: 5px;
+    }
+    #homeIntro{
+        font-size: medium;
+    }
+    footer{
+       transform: translateY(-20%) ;
+      
+    }
+    .blogmain{
+display: flex;
+align-content: center;
+justify-content: center;
+    }
+    #blogTitle{
+        padding-left: 20%;
+    }
+    #referenceList{
+        max-width: 80;
+        padding: 10px;
+       margin: 0;
+       align-self: center;
+       justify-self: center;
+    }
+}
 
  

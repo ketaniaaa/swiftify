@@ -44,9 +44,9 @@ const credLinks = document.createElement('ul');
 credLinks.className ="ulFoot";
 
 const footItems = [
-    {ftitle: 'references  /', flink: '../pages/refs.html'},
-    {ftitle: 'figma  /', flink: 'https://www.figma.com/file/nXSbUGQVQb5hufBDDgLNSY/Swiftify?node-id=0%3A1'},
-    {ftitle: 'github /', flink: 'https://github.com/ketaniaaa/swiftify'},
+    {ftitle: 'references-', flink: '../pages/refs.html'},
+    {ftitle: 'figma-', flink: 'https://www.figma.com/file/nXSbUGQVQb5hufBDDgLNSY/Swiftify?node-id=0%3A1'},
+    {ftitle: 'github-', flink: 'https://github.com/ketaniaaa/swiftify'},
     {ftitle: 'account access', flink: '../pages/accountaccess.html'}
 
 ];
