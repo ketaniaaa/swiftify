@@ -472,13 +472,16 @@ function toptrackChart(){
      svg.append('g')
      .attr('fill', 'red')
      .selectAll('rect')
-     .data(data3.sort((a,b) => d3.descending(a.poptrack, b.poptrack)))
+     .data(data3).enter()
      .join('rect')
      .attr('x', (d, i)=>x(i))
      .attr('y', (d) => y(0)-y(d.poptrack))
      .attr('height', d => y(0)-y(d.popularity))
   .attr('width', x.bandwidth())
   .attr('id', 'topTrackBar');
+
+
+
   function xAxis(g){
   
     g.call(d3.axisBottom(x).tickFormat(i=>data3[i].title))
@@ -492,7 +495,7 @@ function toptrackChart(){
   
   function yAxis(g){
   g.attr('transform', 'translate(${margin.left},0)')
-  .call(d3.axisLeft(y).ticks(null, data3.format))
+  .call(d3.axisLeft(y).ticks(null, data3.poptrack))
   };
 svg.append('g').call(yAxis);
 svg.append('g').call(xAxis);
