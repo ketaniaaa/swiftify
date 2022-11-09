@@ -186,11 +186,11 @@ $('#taylorTopBut').on('click', function(){
                 let trackList = $('<li>' + afterJSON + '</li>');
                 $('#trackList').append(trackList);
            });*/
-        /*   var track1JSON = JSON.stringify(data3.tracks);
+          var track1JSON = JSON.stringify(data3.tracks);
            var track2JSON = JSON.parse(track1JSON);
 
            var chart3 = toptrackChart(track2JSON);
-           d3.select("#topTrackChart").data(track2JSON).call(chart3);*/
+           d3.select("#topTrackChart").data(track2JSON).call(chart3);
            console.log("track:", data3.tracks);
            var topTracks = data3.tracks;
            
@@ -361,7 +361,7 @@ function shortChart(){
     function chart2(selection){
 
       var data2 =
-      selection.enter().data();
+      selection.enter().data2();
 
       var svg = d3.select("#shortSvg");
       svg.attr('width', width).attr('height', height);
@@ -433,7 +433,7 @@ return chart2;
 return chart2;
 }
 
-/*function toptrackChart(){
+function toptrackChart(){
 
    var width = 800;
    var height = 600;
@@ -492,16 +492,30 @@ return chart2;
   
   function yAxis(g){
   g.attr('transform', 'translate(${margin.left},0)')
-  .call(d3.axisLeft(y).ticks(null, data.format))
+  .call(d3.axisLeft(y).ticks(null, data3.format))
   };
 svg.append('g').call(yAxis);
 svg.append('g').call(xAxis);
 svg.node();
    }
 
-   
+   chart3.width = function(value) {
+    if (!arguments.length) {
+    return width;
+    }
+    width = value;
+    return chart3;
+    };
+    
+    chart3.height = function(value) {
+    if (!arguments.length) {
+    return height;
+    }
+    height = value;
+    return chart3;
+    };
+    return chart3();
 
-return chart3();
 
 
-}*/
+}
