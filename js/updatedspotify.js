@@ -153,6 +153,8 @@ d3.select("#bubbleChart").data(postJSON).call(chart);}
      console.log(" shortartist: " + data2.items); 
 var preJSON = JSON.stringify(data2.items);
 var postJSON = JSON.parse(preJSON);
+
+
 var chart2 = shortChart(postJSON);
 d3.select("#shortChart").data(postJSON).call(chart2);}
 }); 
@@ -184,10 +186,15 @@ $('#taylorTopBut').on('click', function(){
                 let trackList = $('<li>' + afterJSON + '</li>');
                 $('#trackList').append(trackList);
            });*/
+           var track1JSON = JSON.stringify(data3.tracks);
+           var track2JSON = JSON.parse(track1JSON);
+
+           var chart3 = toptrackChart(track2JSON);
+           d3.select("#topTrackChart").data(track2JSON).call(chart3);
            console.log("track:", data3.tracks);
            var topTracks = data3.tracks;
-           var chart3 = toptrackChart(topTracks);
-           d3.select("#topTrackChart").data(topTracks).call(chart3);
+           
+          
 
 
            data3.tracks.map(function(title){
@@ -472,10 +479,7 @@ function toptrackChart(){
      .attr('height', d => y(0)-y(d.popularity))
   .attr('width', x.bandwidth())
   .attr('id', 'topTrackBar');
-  
-   }
-
-   function xAxis(g){
+  function xAxis(g){
   
     g.call(d3.axisBottom(x).tickFormat(i=>data3[i].title))
       g.attr('transform', 'translate(0, ${height - margin.bottom})')
@@ -493,6 +497,9 @@ function toptrackChart(){
 svg.append('g').call(yAxis);
 svg.append('g').call(xAxis);
 svg.node();
+   }
+
+   
 
 return chart3();
 
