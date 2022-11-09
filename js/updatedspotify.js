@@ -186,11 +186,14 @@ $('#taylorTopBut').on('click', function(){
                 let trackList = $('<li>' + afterJSON + '</li>');
                 $('#trackList').append(trackList);
            });*/
-          var track1JSON = JSON.stringify(data3.tracks);
-           var track2JSON = JSON.parse(track1JSON);
-
-           var chart3 = toptrackChart(track2JSON);
-           d3.select("#topTrackChart").data(track2JSON).call(chart3);
+        var title = function (data3){
+            return data3.tracks.name;
+        }
+var poptrack = function(data3){
+    return data3.tracks.popularity;
+}
+           var chart3 = toptrackChart(title, poptrack);
+           d3.select("#topTrackChart").data(poptrack, title).call(chart3);
            console.log("track:", data3.tracks);
            var topTracks = data3.tracks;
            
