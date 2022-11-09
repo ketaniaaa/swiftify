@@ -34,7 +34,7 @@ body{
     
 
 }
-
+a{color:inherit}
 main{
     display: flex;
     flex-direction: column;
