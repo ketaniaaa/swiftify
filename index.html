@@ -5,29 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--SEO meta data -->
-    <link rel="canonical" href="https://https://swiftify.netlify.app/">
+    <link rel="canonical" href="https://swiftify.netlify.app/" /> <!--Show google that this is the main page of my site-->
     <meta name="description" content="Learn more about the data behind Taylor Swift's music using Spotify Data">
     <meta name="author" content="Ketania Govender" />
     <meta property="og:site_name" content="Swiftify" />
     <meta property="og:title" content="Swiftify Home Page" />
     <meta property="og:type" content="website" />
     <meta
-      property="og:url"
-      content="https://swiftify.netlify.app/"
-    />
+      property="og:url" content="https://swiftify.netlify.app/"/>
     <meta
-      property="og:image"
-      content="https://github.com/ketaniaaa/swiftify/blob/main/assets/swiftifylogo.png"/>
+      property="og:image"content="https://github.com/ketaniaaa/swiftify/blob/main/assets/swiftifylogo.png"/>
     <meta property="og:image:alt" content="Swiftify Logo" />
     <meta property="og:description" content="Taylor Swift data visualization" />
     <meta name="keywords" content="Taylor Swift, D3.js, Data visualization, Spotify Web Api, music, charts , music analytics, Taylor Swift statistics, Taylor Swift data"/>
     <meta name="google-site-verification" content="wC6AgGqYfwQng53y8HtFkV79541oEU3IWH5x63TLAOE" /> <!--google verification for seo-->
-
+    <script type="application/ld+json"> 
+      {
+        "@context": "https://swiftify.netlify.app/",
+        "homepage": {
+          "@id": "http://swiftify.netlify.app/index.html",
+          "@type": "@id"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Ketania Govender"
+        },
+        "graph": {
+          "@type": "img",
+          "name": "Taylor Swift data visualization  ",
+          "description": "visualizations of Taylor Swifts music analytics via the Spotify Web Api",
+          "contentUrl": "https://swiftify.netlify.app"
+         },
+         "performer":{
+          "@type": Person,
+          "name": "Taylor Swift",
+          "sameAs:"https://www.taylorswift.com/"
+         },
+         "image":{
+          "@type": "ImageObject"
+          "url:" "https://github.com/ketaniaaa/swiftify/blob/main/assets/hpimg.jpg"
+         },
+         "datePublished": "2022-11-01"
+      }
+      </script> <!--Microdata via ld+json for improved seo, I am sorry for more inline js but this is for seo-->
+  <!--Local Files including styles, d3 graph js and dynamic navigation -->
 
     <script src="js/main.js" type="text/javascript" defer></script>
 
     <link rel="stylesheet" href="main.css">
-    <title>Swiftify</title>
+    <title>Swiftify, Data visualizations all about Taylor Swift </title>
     <link rel="icon" href="assets/swiftifylogo.png" type="image/x-icon" class="u-photo">
 </head>
 <body>
@@ -51,6 +77,8 @@
           </p>
         <p id="subIntro" class="p-note">  <em class="p-note">  please log in to with spotify to view data </em> </p>
         <button id="login-button" class="btn btn-primary"> login ></button>
+
+        <p id="subIntro"> I do not own any rights to Taylor Swift's information and this is a fan-made site for non-commericial use</p> <!--making sure i dont get in trouble-->
     </section>
 
 

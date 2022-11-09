@@ -21,9 +21,9 @@ github site! This link allows the OAuth process to be returned :)!
 - fix mobile wireframes 
 - update planning docs
 - research image quality loading 
-- add more microformatting and change current classes to ids 
+- add more microformatting and change current classes to ids aka update json ld and meta for album pages 
 - improve seo for new charts 
-- add a please dont sue my taylor swift 
+
 
 
 
