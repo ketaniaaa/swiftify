@@ -375,7 +375,9 @@ background-color: rgba(255, 255, 255, 0.592);
    font-family: 'Overpass Mono', monospace;
 }
 
-
+#blogImg{
+max-width: 60%;
+}
 /*reference list*/ 
 
 #referenceList ol li a {
