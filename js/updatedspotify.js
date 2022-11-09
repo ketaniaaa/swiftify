@@ -163,22 +163,24 @@ $('#taylorTopBut').on('click', function(){
     $("#taylorTopTracks").fadeIn('slow');
     $("#folkloreBut").show();
 
-    $.ajax({
+    $.ajax({ //getting the json data 
         url: "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02/top-tracks?market=ZA", //check taylors top tracks in south africa!  NTS: CHECK CORRECT URL!!!!!!!1
     method: "GET",
     dataType: "json",
        headers: {
         'Authorization': 'Bearer ' + access_token
-      }, success: function (data3){
+      }, success: function (data3){ //once obtained, process data 
       
-       var unStrung = JSON.stringify(data3.tracks); //convert into string
-       var afterJSON = JSON.parse(unStrung); //convert into array  aka new value to access the information from therefore since these are obj in the 
-       /*array, the name thing is a key and the actual name is the value so name(key): anti-hero(value) */
+       var unStrung = JSON.stringify(data3.tracks); //convert json into string that contains only the track data 
+       var afterJSON = JSON.parse(unStrung.name); //convert into array  aka new value to access the information from therefore since these are obj in the 
+       /*array, the name thing is a key and the actual name is the value so name(key): anti-hero(value) 
        let x = "";
-       for (let i in afterJSON){
+       for (let i in afterJSON){ //x returns all values as one string so ideal x = anti-her , maroon, lavender haze etc 
         x += afterJSON[i].name;
        }
-       console.log("taylors top tracks: " + (x + ","));  
+       console.log("taylors top tracks: " + (x + ","));  */
+
+       console.log("top tracks: " + afterJSON)
       
       
      
