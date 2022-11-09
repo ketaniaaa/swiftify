@@ -310,7 +310,11 @@ h2{
 color: inherit;
     padding: 0;
 }
-
+#blogQuickUl{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
 .blogQuickSelect ul li a {
     font-size: 12px;
   text-decoration: none;
@@ -320,6 +324,22 @@ color: inherit;
    
     max-height: 30px;
    
+}
+#aBTR{
+    color: #000000;
+    
+    font-weight: 300;
+    font-family: 'IM Fell DW Pica', serif;
+
+}
+#aBT{
+padding-top: 10px;
+}
+#refBut{
+    background-color: rgb(125, 125, 125);
+    padding: 5px;
+    width: 100px;
+    border-radius: 10px;
 }
 
 /*blog info*/
@@ -351,7 +371,7 @@ color: inherit;
    padding-right: 10%;
    padding-bottom: 5%;
    padding-top: 5%;
-
+background-color: rgba(255, 255, 255, 0.592);
    font-family: 'Overpass Mono', monospace;
 }
 
