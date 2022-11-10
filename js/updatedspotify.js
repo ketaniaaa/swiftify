@@ -738,7 +738,7 @@ const svgPf = d3
 
 const translate = f => {
   const x = (f % pixelsWide) * pixelSize;
-  const y = Math.floor(d / pixelsWide) * pixelSize;
+  const y = Math.floor(f / pixelsWide) * pixelSize;
   return `translate(${x},${y})`;
 };
 

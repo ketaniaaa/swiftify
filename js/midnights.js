@@ -46,7 +46,7 @@ const chartMap ={
  "3,2": speechD,
  "4,2": acousB,
  "5,2": liveC,
- "6,2": danceA,
+ "6,2": valB,
 
 //the las great american dynasty
  "1,3": danceB,
@@ -123,7 +123,7 @@ Object.keys(chartMap).forEach(k => {
   }
 });
 
-const pixelSize = 40;
+const pixelSize = 60;
 const width = pixelSize * pixelsWide;
 const height = pixelSize * pixelsHigh;
 
@@ -136,7 +136,7 @@ const svgPf = d3
 
   const translate = f => {
     const x = (f % pixelsWide) * pixelSize;
-    const y = Math.floor(d / pixelsWide) * pixelSize;
+    const y = Math.floor(f / pixelsWide) * pixelSize;
     return `translate(${x},${y})`;
   };
   
@@ -155,4 +155,6 @@ const svgPf = d3
     .attr("transform", translate)
     .attr("width", pixelSize)
     .attr("height", pixelSize)
-    .style("fill", fill);
+    .style("fill", fill)
+    .attr("stroke", "white")
+    .attr("stroke-width", pixelSize / 70);
