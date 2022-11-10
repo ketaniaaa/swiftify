@@ -75,6 +75,6 @@ footer.appendChild(credLinks);
 const hedd = document.getElementById("main");
 const end = document.getElementById("end");
 document.body.insertBefore(header, hedd);
-document.body.insertBefore(footer, end )
+document.body.insertBefore(footer, end );
 }
 

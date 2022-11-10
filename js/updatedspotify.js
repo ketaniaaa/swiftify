@@ -34,7 +34,7 @@ document.getElementById('login-button').addEventListener('click', function() { /
       /**
   
        * @return 
-       */
+       */ 
       function getHashParams() {
         var hashParams = {};
         var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -63,10 +63,6 @@ document.getElementById('login-button').addEventListener('click', function() { /
       var userProfileSource = document.getElementById('user-profile-template').innerHTML,
           userProfileTemplate = Handlebars.compile(userProfileSource), //i used handle bars so when you login in, the handlebars set up a template to display your username, this information is collected throguh the parameters you gree to 
           userProfilePlaceholder = document.getElementById('user-profile');
-  
-          oauthSource = document.getElementById('oauth-template').innerHTML,
-          oauthTemplate = Handlebars.compile(oauthSource),
-          oauthPlaceholder = document.getElementById('oauth');
   
       var params = getHashParams();
   
@@ -122,7 +118,7 @@ document.getElementById('login-button').addEventListener('click', function() { /
           $('#shortBut').show(); //next page
           
           $.ajax({
-                url: "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", //check taylors top tracks in south africa!
+                url: "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", //check users long term artists 
             method: "GET",
             dataType: "json",
                headers: {
@@ -130,10 +126,10 @@ document.getElementById('login-button').addEventListener('click', function() { /
               }, success: function (data){
              console.log("artist: " + data.items); 
 var preJSON = JSON.stringify(data.items);
-var postJSON = JSON.parse(preJSON);
-var chart = bubbleChart(postJSON);
-d3.select("#bubbleChart").data(postJSON).call(chart);}
-});  //}
+var postJSON = JSON.parse(preJSON);  //create an array for d3 that only contains the relevant information that i want aka the items array only 
+var chart = bubbleChart(postJSON);  //bubblechart function which will create the chart will use this new array to populate the chart 
+d3.select("#bubbleChart").data(postJSON).call(chart);}  //use ajax to call the container that will hold the svg and then the chart function is the actual appending of the svg 
+});  //}  //the data used is postJSON
 });
 /*////////////////////////////////////////////////////////////////////////////  SHORT TERM GRAPH START//////////////////////////////////////////////////////////////////// */
    $('#shortBut').on('click', function(){
@@ -144,13 +140,13 @@ d3.select("#bubbleChart").data(postJSON).call(chart);}
 
     
     $.ajax({
-        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=40", //check taylors top tracks in south africa!
+        url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=40", //check recent artists, lowered the limit of artists returned here 
     method: "GET",
     dataType: "json",
        headers: {
         'Authorization': 'Bearer ' + access_token
       }, success: function (data2){
-     console.log(" shortartist: " + data2.items); 
+     console.log(" shortartist: " + data2.items);  //create an array for d3 that only contains the relevant information that i want aka the items array only 
 var preJSON = JSON.stringify(data2.items);
 var postJSON = JSON.parse(preJSON);
 
@@ -173,7 +169,10 @@ $('#taylorTopBut').on('click', function(){
     dataType: "json",
        headers: {
         'Authorization': 'Bearer ' + access_token
-      }, success: function (data3){ //once obtained, process data 
+      }, success: function (data3){ 
+        /*these are mainly notes for myself to explain my logic but I realized I was just converting an array into a string and then back into an array when the DOM is able to display
+        strings easily (the name item is a string in the json file) */
+        //once obtained, process data 
             /* var unStrung = JSON.stringify(data3.tracks); //convert json into string that contains only the track data 
        var afterJSON = JSON.parse(unStrung); //convert into array  aka new value to access the information from therefore since these are obj in the */
        /*array, the name thing is a key and the actual name is the value so name(key): anti-hero(value) 
@@ -267,12 +266,12 @@ console.log("track:", data3.tracks);
 
           var data =
           selection.enter().data();
-
+          //seleting svg that i have added to the container and seeting the parameters 
           var svg = d3.select("#enterSvg");
           svg.attr('width', width).attr('height', height);
 
           var tooltip = selection.append("div").attr('id','bubbleTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
-
+            //this code aims to make the bubbles move a little when the chart loads though ideally I would like to improve this so that the bubbles move a little when clicked on
           var simulation = d3.forceSimulation(data).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
           function ticked(e){
             node.attr("cx", function(d) {
@@ -294,8 +293,8 @@ console.log("track:", data3.tracks);
 var node = svg.selectAll("circle").data(data).enter().append("circle").attr('r', function(d) {
     return scaleRadius(d[colRad]);
 }).style("fill", function() {
-    return '#5c6a55c8';
-}).attr("id", 'nodeBubble')
+    return '#5c6a55c8'; //green nodes that reflect the site color palette
+}).attr("id", 'nodeBubble') //id so that I can style the bubbles from my css file because styling in JS is sometimes confusing.
 
 .attr('transform', 'translate(' + [
     width / 2,
@@ -318,7 +317,8 @@ tooltip.html(d[colCol] + "<br>" + "popularity: " + d[colRad])
   return tooltip.style("opacity", 0);
 });
 
-
+//was struggling a bit at first to get the tooltip in view but fixed it with the window.page[axis]Offset and translating the tooltip by so its attached to the users 
+//mouse instead of it floating away: the tooltip being attached to the mouse is less confusing to the user 
 
 /*  .on("mouseover", function(d) {
     tooltip.html(d[colCol] + "<br>" + "Followers: " + d.followers.total + "<br>" + "Popularity: " + d[colCol]);
@@ -368,7 +368,7 @@ function shortChart(){
 
       var svg = d3.select("#shortSvg");
       svg.attr('width', width).attr('height', height);
-
+      
       var tooltipShort = selection.append("div").attr('id','bubbletwoTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
 
       var simulation = d3.forceSimulation(data2).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
