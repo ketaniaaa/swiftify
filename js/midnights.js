@@ -143,7 +143,7 @@ const translate = d => {
 const fill = d => {
   const x = (d % 12) + 1;
   const y = Math.floor(d / 12) + 1;
-  return pixelMap[`${x},${y}`] || "white";
+  return chartMap[`${x},${y}`] || "white";
 };
 
 const data = d3.range(pixelsWide * pixelsHigh);
