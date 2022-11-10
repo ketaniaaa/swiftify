@@ -1,5 +1,7 @@
 # swiftify - interactive media project
 
+**This app is in development mode as it is a student project. This means only specfic accounts which I have added on the developer dashboard can view the application and Andre and Hanli have been added. If this is not enough data to return a chart for marking purposes, please see the [Account Access](#) page. This will redirect you to a password protected pdf that contains the username and password to a  dummy Spotify account. If you are a Wits lecturer, you will be able to access this file**  
+
 
 ## This website is deployed on Netlify so please use the netlify link NOT github-pages
 ![Home Page](https://github.com/ketaniaaa/swiftify/blob/main/assets/home.png) 
@@ -19,22 +21,11 @@ I have hosted the site on Netlify for faster deployment  at **https://swiftify.n
 It is ***crucial*** to use the Netlify url rather than GitHub Pages because my API callback uri that I have put on the Spotify Developer Dashboard is https://swiftify.netlify.app/ 
 If you do not use this link, you will not be able to view any visualizations or the site at all because there will be an INCORRECT_URI alert that will prevent the use of the 
 github site! This link allows the OAuth token to be returned :)!
-**If you do not have a Spotify Account, for marking purposes, please see the [Account Access](#) page. This will redirect you to a password protected pdf that contains the username and password to a Spotify account. If you are a Wits lecturer, you will be able to access this file**
+**This app is in development mode as it is a student project. This means only specfic accounts which I have added on the developer dashboard can view the application and Andre and Hanli have been added. If this is not enough data to return a chart for marking purposes, please see the [Account Access](#) page. This will redirect you to a password protected pdf that contains the username and password to a  dummySpotify account. If you are a Wits lecturer, you will be able to access this file**  
 
 
 
 
-### To-Do 
-- media queries 
-- update static array for indiv albums 
-- fix back navigation for visualizations 
-- use playback sdk and embeds for further music plays 
-- fix mobile wireframes 
-- update planning docs
-- research image quality loading 
-- add more microformatting and change current classes to ids aka update json ld and meta for album pages 
-- improve seo for new charts 
-- add tooltip for data art
 
 
 
