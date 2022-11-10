@@ -729,7 +729,7 @@ const width = pixelSize * pixelsWide;
 const height = pixelSize * pixelsHigh;
 
 const svgPf = d3
-  .select("folkloreArt")
+  .select("folklorePixel")
   .style("text-align", "center")
   .append("svg")
   .attr("width", width)
