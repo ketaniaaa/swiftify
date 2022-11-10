@@ -198,7 +198,7 @@ $('#taylorTopBut').on('click', function(){
 console.log("track:", data3.tracks);
 
   data3.tracks.map(function(title){
-  let track = $('<td>' + title.name + '</td>' + '<td>'+ title.popularity + '</td>' );
+  let track = $('<li>' + title.name + 'popularity:'+ title.popularity + '</li>' );
   track.appendTo($('#trackList'));
   track.attr('id', 'toptrackLi');
 
