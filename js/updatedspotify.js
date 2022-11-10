@@ -166,7 +166,7 @@ $('#taylorTopBut').on('click', function(){
     $("#taylorTopBut").hide();
     $("#taylorTopTracks").fadeIn('slow');
     $("#folkloreBut").show();
-   folklorePixel();
+  
     $.ajax({ //getting the json data 
         url: "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02/top-tracks?market=ZA", //check taylors top tracks in south africa!  NTS: CHECK CORRECT URL!!!!!!!1
     method: "GET",
@@ -289,6 +289,7 @@ avgfeatTopTrack(dataSet); //call chart function
             $("#folkloreBut").hide();
             $("#evermoreBut").show();
             $('#taylorTopTracks').hide();
+            folklorePixel();
          
           });
 /*////////////////////////////////////////////////////////////////////////////  EVERMORE GRAPH START//////////////////////////////////////////////////////////////////// */
