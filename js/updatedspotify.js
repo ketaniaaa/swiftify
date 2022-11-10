@@ -192,11 +192,10 @@ $('#taylorTopBut').on('click', function(){
         console.log("track:", data3.tracks);
 
   data3.tracks.map(function(title){
-    let pop = title.popularity;
   let track = $('<li>' + title.name + '<br>'+ 'popularity:'+ title.popularity + '</li>' );
   track.appendTo($('#trackList'));
   track.attr('id', 'toptrackLi');
-pop.attr('id', 'popularityStat');
+
  })
 //map id data to array to get audio feature function
           /*      var ids = data3.tracks.map(function (singleId){
