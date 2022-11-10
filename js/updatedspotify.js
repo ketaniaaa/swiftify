@@ -3,7 +3,9 @@
   //the script was originally made for node.js so I have modified it for vanilla js and jquery - jquery allows me to access objects alot easier and control what is in view since 
   //most of the visual elements are on the home page ! 
 //var has been used instead of const because this allows easy calling and redeclaration 
- 
+ var date= new Date();
+ var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ data.getDate();
+ document.getElementById("date").innerHTML = current_date;
 
 
 document.getElementById('login').addEventListener('click', function() { //event listener so that the token retrival starts when the login in button is clicked 
@@ -59,12 +61,7 @@ document.getElementById('login').addEventListener('click', function() { //event 
         }
         return text;
       };
-      var dateList ={
-        day: "numeric",
-        year:"numeric",
-        month:"long",
-        };
-        var todaysDate = new Date();
+   
       var userProfileSource = document.getElementById('user-profile-template').innerHTML,
           userProfileTemplate = Handlebars.compile(userProfileSource), //i used handle bars so when you login in, the handlebars set up a template to display your username, this information is collected throguh the parameters you gree to 
           userProfilePlaceholder = document.getElementById('user-profile');
@@ -190,54 +187,17 @@ $('#taylorTopBut').on('click', function(){
                 let trackList = $('<li>' + afterJSON + '</li>');
                 $('#trackList').append(trackList);
            });*/
-   
- 
-    let data ={
-      trackList: data3.items,
-      total: 0,
-      date: todaysDate.toLocaleDateString("en-ZA", dateOptions).toUpperCase(),
-      json: true,
-    }
-    for (var i = 0; i < data.trackList.length; i++) {
-      data.trackList[i].name = data.trackList[i].name.toUpperCase() + " - ";
-      data.total += data.trackList[i].duration_ms;
-      data.trackList[i].id = (i + 1 < 10 ? "0" : "") + (i + 1);
-      let minutes = Math.floor(data.trackList[i].duration_ms / 60000);
-      let seconds = (
-        (data.trackList[i].duration_ms % 60000) /
-        1000
-      ).toFixed(0);
-      data.trackList[i].duration_ms =
-        minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-      for (var j = 0; j < data.trackList[i].artists.length; j++) {
-        data.trackList[i].artists[j].name =
-          data.trackList[i].artists[j].name.trim();
-        data.trackList[i].artists[j].name =
-          data.trackList[i].artists[j].name.toUpperCase();
-        if (j != data.trackList[i].artists.length - 1) {
-          data.trackList[i].artists[j].name =
-            data.trackList[i].artists[j].name + ", ";
-        }
-      }
-    } 
-    minutes = Math.floor(data.total / 60000);
-    seconds = ((data.total % 60000) / 1000).toFixed(0);
-    data.total = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-
-    userProfilePlaceholder.innerHTML = userProfileTemplate({
-      tracks: data.trackList,
-      total: data.total,
-      time: data.date,
-      num: domNumber,
-      });
            
 console.log("track:", data3.tracks);
 
 
            data3.tracks.map(function(title){
-            let track = $('<li>' + title.name + '</li>');
-            track.appendTo($('#trackList'));
+            let track = $(title.name);
+            let pop = $(title.popularity);
+            track.appendTo($('#track'));
             track.attr('id', 'toptrackLi');
+            pop.appendTo($('#pop'));
+            pop.attr('id', 'pop')
            })
 
       
