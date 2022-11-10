@@ -137,27 +137,19 @@
 
 <!--Taylor Swift Top Tracks-->
 <section id="taylorTopTracks">
-<h1>Taylor Swifts Top Tracks in South Africa </h1>
+<h1>Taylor Swifts Top Tracks in South Africa on <span id="date"></span> </h1>
 
-<p id="date">{{time}}</p>
-<table id="topTracks">
+<ol id="trackList"></ol>
+<table>
   <thead>
-    <td id="rank"> DES</td>
-    <td>TRACK</td>
-    <td id="length">00:00</td>
+    <td>Track</td>
+    <td>Popularity</td>
   </thead>
-  {{#each track}}
-  <tr><td id="rank">{{this.id}}</td>
-    <td id="name">{{this.name}}
-      {{#each this.artist}}
-      <section>{{this.name}}</section>{{/each}}
-    </td>
-    <td id="length">{{this.duration_ms}}</td>
-  </tr> {{/each}}
-  </table>
+  <tr>
+    <td id="track"></td>
+    <td id="pop"></td>
+  </tr>
 </table>
-
-<!--  <ol id="trackList"></ol>-->
  <!-- <picture>
     <svg id="taylorTopTrackSvg"></svg>
   </picture>-->
