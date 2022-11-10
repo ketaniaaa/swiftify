@@ -67,6 +67,7 @@
 
 
 
+
         <section id="login" class="h-card">
         <h1 class="p-name">taylor swift</h1>
         <img class="u-photo" src="assets/hpimg.jpg" alt="image of taylor swift running through a meadow" id="loginImg"> <br>
@@ -84,11 +85,11 @@
     
     </main>
 
-    <section id="loggedin" class="h-form">
-        <p id="user-profile">
-        </p>
-        <p id="oauth">
-        </p></section>
+    <section id="loggedin">
+        <div id="user-profile">
+        </div>
+        <div id="oauth">
+        </div></section>
 
     
   
@@ -137,19 +138,8 @@
 
 <!--Taylor Swift Top Tracks-->
 <section id="taylorTopTracks">
-<h1>Taylor Swifts Top Tracks in South Africa on <span id="date"></span> </h1>
-
-<ol id="trackList"></ol>
-<table>
-  <thead>
-    <td>Track</td>
-    <td>Popularity</td>
-  </thead>
-  <tr>
-    <td id="track"></td>
-    <td id="pop"></td>
-  </tr>
-</table>
+<h1>Taylor Swifts Top Tracks in South Africa </h1>
+  <ol id="trackList"></ol>
  <!-- <picture>
     <svg id="taylorTopTrackSvg"></svg>
   </picture>-->
@@ -197,6 +187,12 @@
 
 </script>
 
+    <script id="oauth-template" type="text/x-handlebars-template">
+      <h2>oAuth info</h2>
+      <dl class="dl-horizontal">
+        <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+      </dl>
+    </script>
 
 
   </main>
