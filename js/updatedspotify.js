@@ -601,21 +601,22 @@ svg.node();
 }
 
  function folklorePixel(){
+ 
   var danceA = "#67230e";
   var danceB = "#956556";
-  var danceC = "#4a7b6e";
+  var danceC = "#763926";
   var danceD = "#c2a79f";
 
 var energyA = '#070b0c';
 var energyB = '#6a6d6d';
-var energyC = '#838568';
-var energyD = '#9c9d9e';
+var energyC = '#b5b6b6';
+var energyD = '#b5b6b6';
 
 
 var speechA = "#c27251";
 var speechB = "#c88062";
 var speechC = "#d49c85";
-var speechD = "#e1b948";
+var speechD = "#e1b9a8";
 
 var acousA = "#7e5c43";
 var acousB = "#8b6c56";
@@ -646,9 +647,9 @@ const chartMap ={
  "1,2": danceC,
  "2,2": energyB,
  "3,2": speechD,
- "4,2": acoub,
+ "4,2": acousB,
  "5,2": liveC,
- "6,2": danceA,
+ "6,2": valB,
 
 //the las great american dynasty
  "1,3": danceB,
@@ -725,7 +726,7 @@ Object.keys(chartMap).forEach(k => {
   }
 });
 
-const pixelSize = 40;
+const pixelSize = 60;
 const width = pixelSize * pixelsWide;
 const height = pixelSize * pixelsHigh;
 
@@ -736,27 +737,29 @@ const svgPf = d3
   .attr("width", width)
   .attr("height", height);
 
-const translate = f => {
-  const x = (f % pixelsWide) * pixelSize;
-  const y = Math.floor(f / pixelsWide) * pixelSize;
-  return `translate(${x},${y})`;
-};
-
-const fill = f => {
-  const x = (f % 6) + 1;
-  const y = Math.floor(f / 6) + 1;
-  return  chartMap[`${x},${y}`] || "white";
-};
-
-const data4 = d3.range(pixelsWide * pixelsHigh);
-svgPf
-  .selectAll("rect")
-  .data(data4)
-  .enter()
-  .append("rect")
-  .attr("transform", translate)
-  .attr("width", pixelSize)
-  .attr("height", pixelSize)
-  .style("fill", fill);
+  const translate = f => {
+    const x = (f % pixelsWide) * pixelSize;
+    const y = Math.floor(f / pixelsWide) * pixelSize;
+    return `translate(${x},${y})`;
+  };
+  
+  const fill = f => {
+    const x = (f % 6) + 1;
+    const y = Math.floor(f / 6) + 1;
+    return  chartMap[`${x},${y}`] || "white";
+  };
+  
+  const data4 = d3.range(pixelsWide * pixelsHigh);
+  svgPf
+    .selectAll("rect")
+    .data(data4)
+    .enter()
+    .append("rect")
+    .attr("transform", translate)
+    .attr("width", pixelSize)
+    .attr("height", pixelSize)
+    .style("fill", fill)
+    .attr("stroke", "white")
+    .attr("stroke-width", pixelSize / 70);
 
 }

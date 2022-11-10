@@ -1,19 +1,19 @@
 
   var danceA = "#67230e";
   var danceB = "#956556";
-  var danceC = "#4a7b6e";
+  var danceC = "#763926";
   var danceD = "#c2a79f";
 
 var energyA = '#070b0c';
 var energyB = '#6a6d6d';
-var energyC = '#838568';
-var energyD = '#9c9d9e';
+var energyC = '#b5b6b6';
+var energyD = '#b5b6b6';
 
 
 var speechA = "#c27251";
 var speechB = "#c88062";
 var speechC = "#d49c85";
-var speechD = "#e1b948";
+var speechD = "#e1b9a8";
 
 var acousA = "#7e5c43";
 var acousB = "#8b6c56";
@@ -156,5 +156,6 @@ const svgPf = d3
     .attr("width", pixelSize)
     .attr("height", pixelSize)
     .style("fill", fill)
-    .attr("stroke", "white")
-    .attr("stroke-width", pixelSize / 70);
+    .attr("stroke", "#ffffff")
+    .attr("stroke-width", "10px")
+    .attr("id", "fpixSvg");
