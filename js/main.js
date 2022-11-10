@@ -76,5 +76,12 @@ const hedd = document.getElementById("main");
 const end = document.getElementById("end");
 document.body.insertBefore(header, hedd);
 document.body.insertBefore(footer, end );
+
+
 }
+ 
+function alertUser(){
+    alert("log in on home page first for more accurate visualizations");
+}
+
 

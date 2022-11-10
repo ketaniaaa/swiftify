@@ -71,7 +71,7 @@ document.getElementById('login-button').addEventListener('click', function() { /
           storedState = localStorage.getItem(stateKey);
   
       if (access_token && (state == null || state !== storedState)) {
-        alert('There was an error during the authentication'); // display error if login does not work 
+        alert('Authorization failed, please try to log in again'); // display error if login does not work 
       } else {
         localStorage.removeItem(stateKey); //use prev access token to allow the app to access user data 
         if (access_token) {
