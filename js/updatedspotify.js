@@ -189,40 +189,97 @@ $('#taylorTopBut').on('click', function(){
                 let trackList = $('<li>' + afterJSON + '</li>');
                 $('#trackList').append(trackList);
            });*/
-   
- 
-
-          
-           
-           
-console.log("track:", data3.tracks);
+        console.log("track:", data3.tracks);
 
   data3.tracks.map(function(title){
+    let pop = title.popularity;
   let track = $('<li>' + title.name + '<br>'+ 'popularity:'+ title.popularity + '</li>' );
   track.appendTo($('#trackList'));
   track.attr('id', 'toptrackLi');
-
+pop.attr('id', 'popularityStat');
  })
-
-          /* data3.tracks.map(function(title){
-            let track = $('<li>' + title.name + '</li>');
-            track.appendTo($('#trackList'));
-            track.attr('id', 'toptrackLi');
-           })*/
+//map id data to array to get audio feature function
+                var ids = data3.tracks.map(function (singleId){
+                  return singleId.id;
+                });
+                var stringId = ids.join();
+                audioFeatTop(stringId);
 
       
       
-  var preTracks = JSON.stringify(data3.tracks);
+ /* var preTracks = JSON.stringify(data3.tracks);
   var postTracks = JSON.parse(preTracks);
 
   var chart3 = toptrackChart(postTracks);
-    d3.select("#topTrackChart").data(postTracks).call(chart3);
+    d3.select("#topTrackChart").data(postTracks).call(chart3);*/
    
       
      
     }
 }); 
+function audioFeatTop(stringId){
+  $.ajax({
+    url: "https://api.spotify.com/v1/audio-features?", //endpoint for getting features for multiple tracks 
+method: "GET",
+data: { ids: stringId},
+   headers: {
+    'Authorization': 'Bearer ' + access_token
+  }, 
+  success: function (data){
+ var stats = {
+  energy: 0,
+  danceability:0,
+  liveness: 0,
+  acousticness: 0,
+  valence: 0,
+  speechiness: 0
+ };
+ data.audio_features.forEach(function(audioFeature) {
+  for (let prop in stats) {
+      stats[prop] += audioFeature[prop];}});
 
+var dataSet = [
+  {
+    name: "energy",
+   
+    value: stats.energy /data.audio_features.length
+}, {
+    name: "danceability",
+   
+    value: totals.danceability / data.audio_features.length
+}, {
+    name: "liveness",
+   
+    value: totals.liveness / data.audio_features.length
+}, {
+    name: "acousticness",
+    
+    value: totals.acousticness / data.audio_features.length
+}, {
+    name: "valence",
+   
+    value: totals.valence / data.audio_features.length
+}, {
+    name: "speechiness",
+   
+    value: totals.speechiness / data.audio_features.length
+}
+];
+  
+// must make chart 
+
+
+
+
+
+
+
+
+
+
+}   
+});
+}
 
 });
 /*////////////////////////////////////////////////////////////////////////////  FOLKLORE GRAPH START//////////////////////////////////////////////////////////////////// */
