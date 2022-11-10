@@ -59,7 +59,12 @@ document.getElementById('login').addEventListener('click', function() { //event 
         }
         return text;
       };
-  
+      var dateList ={
+        day: "numeric",
+        year:"numeric",
+        month:"long",
+        };
+        var todaysDate = new Date();
       var userProfileSource = document.getElementById('user-profile-template').innerHTML,
           userProfileTemplate = Handlebars.compile(userProfileSource), //i used handle bars so when you login in, the handlebars set up a template to display your username, this information is collected throguh the parameters you gree to 
           userProfilePlaceholder = document.getElementById('user-profile');
@@ -187,8 +192,44 @@ $('#taylorTopBut').on('click', function(){
            });*/
    
  
-    
-           
+    let data ={
+      trackList: data3.items,
+      total: 0,
+      date: todaysDate.toLocaleDateString("en-ZA", dateOptions).toUpperCase(),
+      json: true,
+    }
+    for (var i = 0; i < data.trackList.length; i++) {
+      data.trackList[i].name = data.trackList[i].name.toUpperCase() + " - ";
+      data.total += data.trackList[i].duration_ms;
+      data.trackList[i].id = (i + 1 < 10 ? "0" : "") + (i + 1);
+      let minutes = Math.floor(data.trackList[i].duration_ms / 60000);
+      let seconds = (
+        (data.trackList[i].duration_ms % 60000) /
+        1000
+      ).toFixed(0);
+      data.trackList[i].duration_ms =
+        minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+      for (var j = 0; j < data.trackList[i].artists.length; j++) {
+        data.trackList[i].artists[j].name =
+          data.trackList[i].artists[j].name.trim();
+        data.trackList[i].artists[j].name =
+          data.trackList[i].artists[j].name.toUpperCase();
+        if (j != data.trackList[i].artists.length - 1) {
+          data.trackList[i].artists[j].name =
+            data.trackList[i].artists[j].name + ", ";
+        }
+      }
+    } 
+    minutes = Math.floor(data.total / 60000);
+    seconds = ((data.total % 60000) / 1000).toFixed(0);
+    data.total = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+    userProfilePlaceholder.innerHTML = userProfileTemplate({
+      tracks: data.trackList,
+      total: data.total,
+      time: data.date,
+      num: domNumber,
+      });
            
 console.log("track:", data3.tracks);
 
