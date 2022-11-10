@@ -78,7 +78,7 @@ document.body.insertBefore(header, hedd);
 document.body.insertBefore(footer, end );
 var date = new Date();
 var today = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
-document.getElementById('date').innerHTML = today;
+document.getElementById('date').innerText = today;
 }
  
 function alertUser(){

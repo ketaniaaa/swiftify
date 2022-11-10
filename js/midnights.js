@@ -44,7 +44,7 @@ const chartMap ={
  "1,2": danceC,
  "2,2": energyB,
  "3,2": speechD,
- "4,2": acoub,
+ "4,2": acousB,
  "5,2": liveC,
  "6,2": danceA,
 
