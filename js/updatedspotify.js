@@ -725,40 +725,38 @@ Object.keys(chartMap).forEach(k => {
   }
 });
 
-const pixelSize = 25;
+const pixelSize = 40;
 const width = pixelSize * pixelsWide;
 const height = pixelSize * pixelsHigh;
 
 const svgPf = d3
-  .select("#folklorePixel")
+  .select("#pixelFolk")
   .style("text-align", "center")
   .append("svg")
   .attr("width", width)
   .attr("height", height);
 
-const translate = d => {
-  const x = (d % pixelsWide) * pixelSize;
+const translate = f => {
+  const x = (f % pixelsWide) * pixelSize;
   const y = Math.floor(d / pixelsWide) * pixelSize;
   return `translate(${x},${y})`;
 };
 
-const fill = d => {
-  const x = (d % 12) + 1;
-  const y = Math.floor(d / 12) + 1;
+const fill = f => {
+  const x = (f % 6) + 1;
+  const y = Math.floor(f / 6) + 1;
   return  chartMap[`${x},${y}`] || "white";
 };
 
-const data = d3.range(pixelsWide * pixelsHigh);
+const data4 = d3.range(pixelsWide * pixelsHigh);
 svgPf
   .selectAll("rect")
-  .data(data)
+  .data(data4)
   .enter()
   .append("rect")
   .attr("transform", translate)
   .attr("width", pixelSize)
   .attr("height", pixelSize)
-  .style("fill", fill)
-  .attr("stroke", "black")
-  .attr("stroke-width", pixelSize / 100);
+  .style("fill", fill);
 
 }
