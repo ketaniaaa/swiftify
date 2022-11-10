@@ -34,6 +34,9 @@ github site! This link allows the OAuth token to be returned :)!
 - research image quality loading 
 - add more microformatting and change current classes to ids aka update json ld and meta for album pages 
 - improve seo for new charts 
+- add tooltip for data art
+
+
 
 
 
