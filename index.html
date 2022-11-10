@@ -67,7 +67,6 @@
 
 
 
-
         <section id="login" class="h-card">
         <h1 class="p-name">taylor swift</h1>
         <img class="u-photo" src="assets/hpimg.jpg" alt="image of taylor swift running through a meadow" id="loginImg"> <br>
@@ -139,7 +138,26 @@
 <!--Taylor Swift Top Tracks-->
 <section id="taylorTopTracks">
 <h1>Taylor Swifts Top Tracks in South Africa </h1>
-  <ol id="trackList"></ol>
+
+<p id="date">{{time}}</p>
+<table id="topTracks">
+  <thead>
+    <td id="rank"> DES</td>
+    <td>TRACK</td>
+    <td id="length">00:00</td>
+  </thead>
+  {{#each track}}
+  <tr><td id="rank">{{this.id}}</td>
+    <td id="name">{{this.name}}
+      {{#each this.artist}}
+      <section>{{this.name}}</section>{{/each}}
+    </td>
+    <td id="length">{{this.duration_ms}}</td>
+  </tr> {{/each}}
+  </table>
+</table>
+
+<!--  <ol id="trackList"></ol>-->
  <!-- <picture>
     <svg id="taylorTopTrackSvg"></svg>
   </picture>-->
