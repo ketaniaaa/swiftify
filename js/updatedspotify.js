@@ -191,17 +191,24 @@ $('#taylorTopBut').on('click', function(){
            });*/
    
  
-    
+
+          
            
            
 console.log("track:", data3.tracks);
 
+  data3.tracks.map(function(title){
+  let track = $('<td>' + title.name + '</td>' + '<td>'+ title.popularity + '</td>' );
+  track.appendTo($('#trackList'));
+  track.attr('id', 'toptrackLi');
 
-           data3.tracks.map(function(title){
+ })
+
+          /* data3.tracks.map(function(title){
             let track = $('<li>' + title.name + '</li>');
             track.appendTo($('#trackList'));
             track.attr('id', 'toptrackLi');
-           })
+           })*/
 
       
       
