@@ -1,6 +1,6 @@
 document.body.onload = makeNav;
 function makeNav(){
-
+//header 
 const header = document.createElement('header');
 const navTitle = document.createElement('a');
 navTitle.href ='../index.html';
@@ -14,7 +14,7 @@ header.appendChild(navBar);
 
 const navList = document.createElement('ul');
 navList.className="ulNav";
-
+//simple list of items to create navigation
 const navItems =[
     {title: 'blog', link: '../pages/blog.html'},
     {title: 'design' , link: '../pages/design.html'},
@@ -32,7 +32,7 @@ for(let item of navItems){
     navList.appendChild(li);
 }
 navBar.appendChild(navList);
-
+//dynamically creating a footer that is universal
 const footer = document.createElement('footer');
 footer.className = 'universalFoot';
 
@@ -69,7 +69,7 @@ footer.appendChild(credLinks);
 
 
 
-
+//appending the items to the document body via tags so the navbar will be inserted before any element that has the id "main" 
 
 
 const hedd = document.getElementById("main");
