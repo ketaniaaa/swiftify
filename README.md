@@ -1,6 +1,6 @@
 # swiftify - interactive media project
 
-**This app is in development mode as it is a student project. This means only specfic accounts which I have added on the developer dashboard can view the application and Andre and Hanli have been added. If this is not enough data to return a chart for marking purposes, please see the [Account Access](#) page. This will redirect you to a password protected pdf that contains the username and password to a  dummy Spotify account. If you are a Wits lecturer, you will be able to access this file**  
+**This app is in development mode as it is a student project. This means only specfic accounts which I have added on the developer dashboard can view the application and Andre and Hanli have been added. If this is not enough data to return a chart for marking purposes, please see the [Account Access](#) page. This will redirect you to a password protected pdf that contains the username and password to a  dummy Spotify account. If you are a Wits lecturer, you will be able to access this file. This website uses the Implicit Flow Auth flow because this is a client-side front-end application. Using the other flows requires server side requests for access tokens**  
 
 
 ## This website is deployed on Netlify so please use the netlify link NOT github-pages
@@ -20,8 +20,8 @@ Click here: [Swiftify](https://swiftify.netlify.app/)
 I have hosted the site on Netlify for faster deployment  at **https://swiftify.netlify.app/** . Netlify uses the commits to my repo to update the deployment live.
 It is ***crucial*** to use the Netlify url rather than GitHub Pages because my API callback uri that I have put on the Spotify Developer Dashboard is https://swiftify.netlify.app/ 
 If you do not use this link, you will not be able to view any visualizations or the site at all because there will be an INCORRECT_URI alert that will prevent the use of the 
-github site! This link allows the OAuth token to be returned :)!
-**This app is in development mode as it is a student project. This means only specfic accounts which I have added on the developer dashboard can view the application and Andre and Hanli have been added. If this is not enough data to return a chart for marking purposes, please see the [Account Access](#) page. This will redirect you to a password protected pdf that contains the username and password to a  dummySpotify account. If you are a Wits lecturer, you will be able to access this file**  
+github site! This link allows the OAuth token to be returned :)! This is also why there are so many commits- I have had to use the deployed site to see changes rather than being able to use the live server.
+
 
 
 
