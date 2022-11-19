@@ -1,5 +1,5 @@
-document.body.onload = makeNav;
-function makeNav(){
+/*document.body.onload = makeNav;
+function makeNav(){*/
 //header 
 const header = document.createElement('header');
 const navTitle = document.createElement('a');
@@ -79,11 +79,11 @@ document.body.insertBefore(footer, end );
 var date = new Date();
 var today = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
 document.getElementById('date').innerText = today.date;
-}
+/*}
  
 function alertUser(){
     alert("log in on home page first for more accurate visualizations");
-}
+}*/
 
 
 
