@@ -1,6 +1,8 @@
 
   //this authorization code is based off the example authorization guide for implicit grant - this allows me to read users librarys as well as the rest of the spotify end points
-  //the script was originally made for node.js so I have modified it for vanilla js and jquery - jquery allows me to access objects alot easier and control what is in view since 
+  //the spotify documentation clearly sets out how the authorization code should be laid out and so I used that.
+
+//the script was originally made for node.js so I have modified it for vanilla js and jquery - jquery allows me to access objects alot easier and control what is in view since 
   //most of the visual elements are on the home page ! 
 //var has been used instead of const because this allows easy calling and redeclaration 
  
@@ -339,9 +341,24 @@ avgfeatTopTrack(dataSet); //call chart function
           var svg = d3.select("#enterSvg");
           svg.attr('width', width).attr('height', height);
 
-          var tooltip = selection.append("div").attr('id','bubbleTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
-            //this code aims to make the bubbles move a little when the chart loads though ideally I would like to improve this so that the bubbles move a little when clicked on
-          var simulation = d3.forceSimulation(data).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
+          var tooltip = selection.append("div")
+          .attr('id','bubbleTool')
+          .style("position", "absolute")
+          .style("opacity", 0)
+          .style("text-decoration", "none")
+          .style("padding", "12px")
+          .style("background-color", "rgb(230, 230, 230)")
+          .style("border-radius", "4px")
+          .style("text-align", "left")
+          .style("width", "200px")
+          .style("line-height", "150%").text("");
+            
+          
+          //this code aims to make the bubbles move a little when the chart loads though ideally I would like to improve this so that the bubbles move a little when clicked on
+          var simulation = d3.forceSimulation(data)
+          .force("charge", d3.forceManyBody().strength([-90]))
+          .force("x", d3.forceX())
+          .force("y", d3.forceY()).on("tick", ticked); 
           function ticked(e){
             node.attr("cx", function(d) {
               return d.x * 1;
@@ -438,7 +455,18 @@ function shortChart(){
       var svg = d3.select("#shortSvg");
       svg.attr('width', width).attr('height', height);
       
-      var tooltipShort = selection.append("div").attr('id','bubbletwoTool').style("position", "absolute").style("opacity", 0).style("text-decoration", "none").style("padding", "12px").style("background-color", "rgb(230, 230, 230)").style("border-radius", "4px").style("text-align", "left")/*.style("font-family", "helvetica")*/.style("width", "200px").style("line-height", "150%").text("");
+      var tooltipShort = selection.append("div")
+      .attr('id','bubbletwoTool')
+      .style("position", "absolute")
+      .style("opacity", 0)
+      .style("text-decoration", "none")
+      .style("padding", "12px")
+      .style("background-color", "rgb(230, 230, 230)")
+      .style("border-radius", "4px")
+      .style("text-align", "left")
+      .style("width", "200px")
+      .style("line-height", "150%")
+      .text("");
 
       var simulation = d3.forceSimulation(data2).force("charge", d3.forceManyBody().strength([-90])).force("x", d3.forceX()).force("y", d3.forceY()).on("tick", ticked); 
       function ticked(e){
