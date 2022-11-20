@@ -173,9 +173,11 @@ button{
     border-radius: 30px;
     padding: 15px;
     width: 200px;
+    transition-delay: 0.2s;
 }
 button:hover{
     background-color: #757c7179;
+    transition: 0.2s;
 }
 #loginImg{
     width: 400px;
@@ -273,13 +275,14 @@ article{
     border-width: 5px;
    padding-top: 2%;
    padding-bottom: 2%;
+  
    
 }
 article:hover{
     background-color: #868f76a5;
 }
 #blogOneImg{
-    width: 100px;
+    width: 150px;
     filter: grayscale(1);
     
 }
@@ -289,6 +292,10 @@ h2{
     color: black;
     padding-left: 5%;  
     padding-right: 5%;
+    padding-top: 25px;
+}
+#blogTitle{
+    font-size: 28px;
 }
 #blogLinks{
     text-decoration: none;
@@ -440,7 +447,7 @@ max-width: 60%;
 /*design*/
 
 #designImg{
-    width: 100px;
+    width: 150px;
     
 }
 #designLinks{
@@ -456,7 +463,7 @@ max-width: 60%;
     /*/////////////////////////////////////////////////////////////////////////////////////////DATAVISUALIZATIONS///////////////////////////////////////////////////////////////////////*/
 /*data static and interactive*/
 #dataImg{
-    width: 100px;
+    width: 150px;
     
 }
 #dataLinks{
@@ -575,6 +582,9 @@ h4{
     max-width: 50%;
     
 }
+#wfSmall{
+    font-size: 11px;
+}
 #wireframeSub{
 
     align-self: center;
@@ -612,6 +622,12 @@ writing-mode: vertical-lr;
     max-width: 300px;
 
 }
+.wireframeP{
+    font-family: 'Overpass Mono', monospace;
+    align-self: center;
+    justify-self: center;
+}
+
 #oldPS{
     font-family: 'Overpass Mono', monospace;
     color: white;
@@ -643,8 +659,12 @@ writing-mode: vertical-lr;
   justify-items: center; 
   align-items: center; 
     background-color: black;
+    padding-top: 20px;
+ 
     
 }
+
+
 #wfdataartwork { grid-area: wfdataartwork; max-width: 500px;  }
 #wfhome { grid-area: wfhome;  max-width: 500px; ;  }
 #wfselection { grid-area: wfselection; max-width: 500px;   }
@@ -652,7 +672,19 @@ writing-mode: vertical-lr;
 #blogtemplate { grid-area: blogtemplate; max-width: 500px;   }
 #datawf { grid-area: datawf; max-width: 500px; }
 #wfgrid { grid-area: wfgrid; max-width: 500px;  }
+#hideOld{
+    display: none;
+}
 
+#expandIcon{
+    padding-left: 10px;
+    transition-delay: 0.2s;
+}
+#expandIcon:hover{
+   color: #414c30c1;
+   transition: 0.5s;
+   
+}
  /*slider
 
 */
@@ -794,8 +826,66 @@ justify-content: center;
     #wfSection{
         flex-direction: column;
     }
-    
-    
+    #wireframeImage{
+        max-width: 600px;
+     
+    }
+    #wireframeAnnotations{
+        min-width: 500px;
+        padding-left: 5%;
+        
+        
+    }
+    #wireframeCard{
+        max-width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 10%;
+
+    }
+    .wireframeMain{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      
+        background-color: black;
+        padding-left: 10%;}
+       
+        
+          #oldContent{
+              background-color: black;
+              display: none;
+              
+          }
+         
+          #oldWireframesSlide{
+              display: grid; 
+            grid-auto-flow: column dense; 
+            grid-template-columns: max-content max-content max-content; 
+            grid-template-rows: max-content max-content max-content; 
+            gap: 0px 0px; 
+            grid-template-areas: 
+              "wfdataartwork wfhome wfselection"
+              "wfdataartwork wfselection2 blogtemplate"
+              "wfgrid datawf blogtemplate"; 
+            justify-content: center; 
+            align-content: center; 
+            justify-items: center; 
+            align-items: center; 
+              background-color: black;
+              padding-top: 10px;
+           
+              
+          }
+          
+          
+          #wfdataartwork { grid-area: wfdataartwork; max-width: 250px;  }
+          #wfhome { grid-area: wfhome;  max-width: 250px; }
+          #wfselection { grid-area: wfselection; max-width: 250px;  }
+          #wfselection2 { grid-area: wfselection2; max-width: 250px;   }
+          #blogtemplate { grid-area: blogtemplate; max-width: 250px;   }
+          #datawf { grid-area: datawf; max-width: 250px; }
+          #wfgrid { grid-area: wfgrid; max-width: 250px;  }
 }
 
  

@@ -85,6 +85,15 @@ function alertUser(){
     alert("log in on home page first for more accurate visualizations");
 }*/
 
+function showOld(){
+   
+        var x = document.getElementById("hideOld");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
 
+};
 
 
