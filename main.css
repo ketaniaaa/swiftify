@@ -508,6 +508,67 @@ max-width: 60%;
 #mdntContainer{
     align-self: center;
 }
+.evermoreMain{
+    display: flex;
+    max-width: 95%;
+    background-color: #dd89559b;
+    padding-left: 10%;
+    padding-right: 5%;
+    margin: 0;
+    z-index: -1;
+    transform: translateY(-120px);
+ margin-top: 20px;
+    font-family: 'IM Fell DW Pica', serif;
+    height: fit-content;
+}
+#evermoreIntroP{
+    font-family: 'Overpass Mono', monospace;
+  
+    padding-top: 10%;
+    font-size: 18px;
+    margin-top: 130px;
+    line-height: 120%;
+    z-index: inherit;
+}
+.folkloreMain{
+    display: flex;
+    max-width: 95%;
+    background-color: #828282b1;
+    padding-left: 10%;
+    padding-right: 5%;
+    margin: 0;
+    z-index: -1;
+    transform: translateY(-120px);
+ margin-top: 20px;
+    font-family: 'IM Fell DW Pica', serif;
+    height: fit-content;
+}
+#folkloreList{
+    font-size: 36px;
+    align-items: center;
+    justify-content: center;
+    background-color: #b9c49500;
+  
+}
+#folkloreButtons{
+    background-color: #00000000;
+    
+    font-size: 36px;
+    width: 900px;
+    margin: 20px;
+    align-self: center;
+
+
+}
+#folkloreButtons :hover{
+    background-color: #00000000;
+    font-size: 40px;
+    color: #3f3f3f;
+    border: solid #3f3f3f 2px;
+    padding-left: 20%;
+
+}
+#chart1{display: none;} #chart2{display: none;}#chart3{display: none;}
 #dataImg{
     width: 150px;
     

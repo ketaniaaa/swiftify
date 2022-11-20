@@ -16,18 +16,51 @@
     <link rel="icon" href="../assets/swiftifylogo.png" type="image/x-icon">
 </head>
 <body>
-    <main id="main">
-
-<h1 id="folkloreH1">folklore</h1>
- 
-
-<h2>Popularity </h2>
-<section id="tooltip"></section>
+    <main id="main" class="folkloreMain">
 
 
-<section id="folkloreContainer" class="hidden"></section>
+        <!--<h1 id="midnightsH1">Midnights</h1>-->
         
-    </main>
+            <section id="midnightsIntro" class="h-card">
+                <img id="midnightsIntroImg" class="u-photo p-name" src="../assets/folkloreImg.png" alt="Taylor Swift sitting in a chair which is a still from the Anit-hero music video whiich is the title track of her album Midnights with the title midnights overlayed ">
+                <p class="p-summary entry-summary" id="evermoreIntroP"><i class="fa-solid fa-quote-left"></i>evermore, Taylor Swift’s ninth studio album, was released five months after folklore. It was first announced via social media by Swift sixteen hours prior to release.
+    
+                    The deluxe edition contains the bonus tracks “right where you left me” and “it’s time to go”.
+                    
+                    As with its ‘sister record’ folklore, the writing on evermore was a collaborative effort between Swift, Aaron Dessner (of The National), Jack Antonoff, William Bowery, and Bon Iver. The record is notable for containing three artist features (HAIM, The National, and Bon Iver), the most of any of Swift’s studio albums to date.
+                    
+                    In a post, Swift explained that her excitement over turning 31–her lucky number, 13, backwards–in 2020 was the reason for releasing evermore when she did. After years of fans giving her birthday gifts, she thought she would return the favor.<i class="fa-solid fa-quote-right"></i> <br/>
+                    - <em class="h-cite p-name p-comment">Genius.com Commentors,</em> <a href="https://genius.com/albums/Taylor-swift/Evermore-deluxe-version" target="_blank" class="u-uid url">Genuis</a>
+        
+                </p>
+            </section>
+        
+        
+        
+        
+        <section id="folkloreContainer" class="uphoto"><h1 class="p-name">Folklore Visualizations</h1>
+        </section>
+          <h2 style="align-self: center;" onclick="hideCharts()">Data by Track</h2>
+          <ol id="folkloreList" class="p-list">
+            <li class="p-list-item h-entry">
+             <button id="folkloreButtons" onclick="chart1()"><h3 class="p-name">the 1</h3></button> 
+                <picture id="chart1" class="u-photo" ></picture></li>
+                <li class="p-list-item h-entry">
+                    <button id="folkloreButtons" onclick="chart2()"><h3 class="p-name">cardigan</h3></button> 
+                       <picture id="chart2" class="u-photo" ></picture></li>
+
+                       <li class="p-list-item h-entry">
+                        <button id="folkloreButtons" onclick="chart3()"><h3 class="p-name">the last great american dynasty</h3></button> 
+                           <picture id="chart3" class="u-photo" ></picture></li>    
+                           
+                       <li class="p-list-item h-entry">
+                        <button id="folkloreButtons" onclick="chart4()"><h3 class="p-name">exhile (featuring Bon Iver)</h3></button> 
+                           <picture id="chart4" class="u-photo" ></picture></li>           
+          </ol>
+
+            </main>
+        
+    
 
 
 
