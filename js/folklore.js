@@ -732,6 +732,16 @@ svg.append("text") //valence
 .attr("y", 380)
 .attr("id", "songFeatLabel");
 }
+
+function hideCharts(){
+  
+  $("#folkloresub").hide();
+  $("#chart1").hide();
+  $("#chart2").hide();
+  $("#chart3").hide();
+  $("#chart4").hide();
+
+}
 /*const data=[
     { title: 'the 1', popularity: 64},
     { title: 'cardigan', popularity: 65},

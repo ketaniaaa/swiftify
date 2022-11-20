@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Essay</title>
+    <link rel="icon" href="../assets/swiftifylogo.png" type="image/x-icon" class="u-photo">
+    <!--SEO meta data -->
+    <link rel="canonical" href="https://swiftify.netlify.app/" /> <!--Show google that this is the main page of my site-->
+    <meta name="description" content="Blog post essay exploring what data visualization is and what it means">
+    <meta name="author" content="Ketania Govender" />
+    <meta property="og:site_name" content="Swiftify" />
+    <meta property="og:title" content="Reflection on Data Art" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url" content="https://swiftify.netlify.app/pages/blog3.html"/>
+    <meta
+      property="og:image"content="https://github.com/ketaniaaa/swiftify/blob/main/assets/swiftifylogo.png"/>
+    <meta property="og:image:alt" content="Swiftify Logo" />
+    <meta property="og:description" content="planning and research regarding the creation of a piece of data art" />
+    <meta name="keywords" content="data visualization, blog, data, d3.js, data art, web art, data plotting, taylor swift"/>
+   
+    
+  <!--Local Files including styles, d3 graph js and dynamic navigation -->
+
+<!--local scripts and styles-->
+<script src="../js/main.js" type="text/javascript" async></script>
+<link rel="stylesheet" href="../main.css">
+
+<!--external scripts and links-->
+
+<script src="https://kit.fontawesome.com/07bc5db923.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <!--the just navigation is not working on blog posts, so here is an html navigation-->
+
+  <header>
+    <a href="../index.html" class="navTitle"> swiftify</a>
+    <nav class="navigation">
+        <ul class="ulNav">
+            <li class="liNav"><a href="blog.html" class="aNav">blog</a></li>
+            <li class="liNav"><a href="design.html" class="aNav">design</a></li>
+            <li class="liNav"><a href="data.html" class="aNav">data</a></li>
+        </ul>
+    </nav>
+  </header>
+    
+     <!--quick selection-->
+     <aside id="main" class="blogQuickSelect">
+        <ul id="blogQuickUl">
+            <li id="blogTemLi"><button id="refBut"><a href="#referenceList" id="aBTR"> References > </a></button></li>
+            <li id="blogTemLi"><a href="blog3.html" id="aBT"> BlogThree</a></li>
+            <li id="blogTemLi"><a href="blog4.html" id="aBT"> Blog Four</a></li>
+        </ul>
+    </aside>
+    <main id="blogBody" class="h-entry">
+    <h1 id="btHeading" class="entry-title p-name">Exam Essay: Data Visualisation, Art and Representation</h1>
+
+    <section id="blogInfo" class="entry-summary">
+       
+        <p class="entry-summary">An analysis of the relationship between data and artisitc practice and this conjuctive ability to create representation</p>
+       
+        <time datetime="21 November 2022" class="published">21-11-2022</time> <cite> Ketania Govender blah words</cite>
+
+        <hr id="hr2" >
+        
+        </section>
+        
+        
+        </section>
+        
+        <!--main blog text-->
+        <main id="blogMain" class="entry-content">
+            <p class="e-content">When creating data artwork it is important to understand the intention behind the data. I have found that working with data sets can often seem devoid of artistic expression. While data storytelling can focus on a literary narrative reminiscent of the original 3 part structure, for my data artwork, I have chosen to treat it as a visual piece. My intention behind my data art is to replicate the emotions within music in a visual form. My API for this semester has been largely music based and I believe that music has the ability to convey feelings in a short form effective manner - this is why many rely on music in such an intimate manner. The depiction of abstract emotion and sound is therefore what I strive to depict in my art across mediums. This has been the motivation behind the creation of my first artwork using quantitative data and my hopes to transform these numbers and values into a piece that embodies feeling. </p>
+
+            <h2>Research </h2>
+            <p class="e-content">I have chosen to use the Spotify Web API for my site this semester. While the site offers a large amount of data, I have focused the site on one artist - Taylor Swift. The reason for making a website surrounding just one artist was due to a number of reasons - particularly the uses of data. Instead of creating different versions of personalized Spotify data analysis, I have chosen a musician who has a large catalogue of music, as well as well-established data sets regarding her discography. To better understand the Spotify Web API, the research I found that the API allows for insight into how Spotify ranks tracks popularity. The popularity index is based on a set of audio features that the Spotify algorithm uses to predict the success of a song. These audio features are easily accessed through the API yet Sciandra and Spera &#40;
+            2020, pp 216&#41;
+            question the use of this data in the application.  Currently, the popularity metrics are based on these sound signals. The individual sound signals can be accessed for a track on Spotify and therefore pose an interesting opportunity for visualization as Spotify itself does not use this information currently for any other process apart from popularity tracking.</p>
+             
+            
+            <p class="e-content">The use of the data in relation to a specific artist poses the question of the intended message. Alamalhodaei & Feigenbaun &#40;
+            2020, pp 37&#41;
+             highlight the importance of initially understanding your audience and therefore guiding the stories that you would like to tell. With Swifity, I have evidently created a niche site that targets the fan base of Taylor Swift and the understanding of the data behind her music. In previous assignments, I utilized the interest in charts and created visualizations regarding the popularity of her songs and albums. This, therefore, raised the question of 	&#39;what else would a fan like to see?	&#39; therefore I decided to create a visualization of the audio features in her songs. The story that would be told with this artwork is creating an understanding of the emotions and feelings behind specific albums. Through experimentation with the endpoints on Spotify&#39;s developer dashboard, I quickly noticed trends in the data regarding the audio features of tracks on different albums. Taylor Swift, according to Perone &#40;
+            2017, pp 13&#41;
+            is known to create music based on periods in her life and events that defined these eras of her own life. This can be seen in her album 	&#39;Reputation	&#39;, which was released following controversy with rapper Kanye West which caused a downfall in her public popularity &#40;
+            Arnold and Fogarty, 2020 pp4&#41;
+             where Spotify data shows tracks with higher loudness and energy metrics which coincide with the angry theme of the album. This is contrasted by the Spotify statics that shows higher metrics of instrumentals and lower tempo for her 2020 release of folklore, in which she has said to explore less biographical songwriting and a folk-indie genre. With the site being specified, the congruency between the change in lyrical style and message of Taylor Swift	&#39;s albums and the trends of audio signals lends itself to creating an interesting data visualization artwork.</p>
+            
+            <p class="e-content">Knaflic explains in the chapter in 	&#39;Storytelling with Data	&#39;that visualizations should in some form show a narrative. The conceptual stance of my data art would be to reimagine the artwork originally created by Taylor Swift. Knaflic highlights the need for audience understanding. As previously discussed, the site is aimed at users who are familiar already with Swift	&#39;s body of work and therefore the information that they are gathering from the artwork itself would be in regard to what is being depicted. For this, showing a visual correlation with the original album will clarify details to the user and because I would like the initial entry point of the piece to be visual, descriptors and titles of the individual track will be hidden until the user hovers over aspects of the artwork. </p>
+            
+            
+            <h2>Planning </h2>
+            
+           
+            </main>        
+<!--references-->
+
+<section id="referenceList">
+<ol id="olreflist">
+    <li id="liRef" class="author e-cite">
+        Feigenbaum, A. and Alamalhodaei, A. (2020) The Data Storytelling Workbook. Routledge.
+
+</li> <br>
+        <li id="liRef" class="author e-cite"> Fogarty, M. and Arnold, G. (2021) 	&#39;Are You Ready for It? Re-Evaluating Taylor Swift	&#39;, Contemporary Music Review, 40(1), pp. 1–10. Available at: https://doi.org/10.1080/07494467.2021.1976586.
+        </li><br>
+<li id="liRef" class="author e-cite">Knaflic, C.N. (2015) Storytelling with Data: A Data Visualization Guide for Business Professionals. John Wiley & Sons.
+
+</li> <br>
+<li id="liRef" class="author e-cite">Perone, J.E. (2017) The Words and Music of Taylor Swift. ABC-CLIO.</li> <br>
+<li id="liRef" class="author e-cite">Sciandra, M. and Spera, I.C. (2022) 	&#39;A model-based approach to Spotify data analysis: a Beta GLMM	&#39;, Journal of Applied Statistics, 49(1), pp. 214–229. Available at: https://doi.org/10.1080/02664763.2020.1803810.
+
+</li> <br>
+</ol>
+</section>
+
+
+
+<!--secondary blog navigation-->
+
+
+<section id="buttonNav">
+<button id="button1"><i class="fa-solid fa-arrow-left-long" id="buttonI"></i><a href="blog.html" > All Blogs </a></button>
+<button id="button2"><i class="fa-solid fa-arrow-right-long" id="buttonI"></i><a href="blog4.html" > Previous Blog </a></button>
+</section>
+</main>
+
+
+</body>
+</html>
