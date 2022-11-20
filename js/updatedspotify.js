@@ -301,23 +301,13 @@ avgfeatTopTrack(dataSet); //call chart function
             $('#folkloreArt').hide();
             $("#evermoreArt").show();
             $('#evermoreBut').hide();
-            $('#midnightsBut').show();
-          });
-
-/*////////////////////////////////////////////////////////////////////////////  MIDNIGHTS GRAPH START//////////////////////////////////////////////////////////////////// */
-          $('#midnightsBut').on('click', function(){
-
-            $('#evermoreArt').hide();
-            $('#midnightsArt').show();
-            $('#midnightsBut').hide();
             $('#restart').show();
           });
 
-
           $('#restart').on('click', function(){
             $('#restart').hide();
-            $('#midnightsArt').hide();
-            $('#folkloreBut').show();
+            $('#evermoreArt').hide();
+            $('#enter').show();
           });
 
 

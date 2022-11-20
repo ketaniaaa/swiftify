@@ -70,11 +70,13 @@ header{
  padding-top: 15%;
  padding-left: 20%;
  color: inherit;
+ z-index: 2;
 }
 nav{
     display: inline-flex;
 position: absolute;
 left: 77%;
+z-index: 2;
 }
 
 .ulNav{
@@ -117,6 +119,7 @@ footer{
 .universalFoot{
     position: relative;
     bottom: 0;
+    z-index: 2;
 }
 .ulFoot{
     display: inline-flex;
@@ -462,6 +465,49 @@ max-width: 60%;
 
     /*/////////////////////////////////////////////////////////////////////////////////////////DATAVISUALIZATIONS///////////////////////////////////////////////////////////////////////*/
 /*data static and interactive*/
+
+.midnightsMain{
+    display: flex;
+    max-width: 90%;
+    background-color: #d0ac7692;
+    padding-left: 10%;
+    z-index: -1;
+    transform: translateY(-120px);
+ margin-top: 20px;
+    font-family: 'IM Fell DW Pica', serif;
+}
+#midnightsIntro{
+    display: inline-flex;
+  width: 90%;
+    margin: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding:none;
+}
+#midnightsIntroImg{
+    transform: translateX(-200px);
+    z-index: inherit;
+    opacity: 0.9;
+}
+#midnightsIntroP{
+    font-family: 'Overpass Mono', monospace;
+    padding: 12px;
+    margin-top: 130px;
+    line-height: 140%;
+    z-index: inherit;
+}
+#quoteIcon{
+    font-size: 16px;
+}
+#midnightsTooltip{
+    font-family: 'IM Fell DW Pica', serif;  
+    font-size: large;
+    transition-delay: 0.3s;
+ 
+}
+#mdntContainer{
+    align-self: center;
+}
 #dataImg{
     width: 150px;
     
@@ -479,7 +525,7 @@ max-width: 60%;
 }
 
     .bar:hover{
-        fill: rgb(93, 81, 81);
+        fill:#792713;
     }
 
 
@@ -499,6 +545,7 @@ max-width: 60%;
         line-height: 20px;
 
     }
+
 
 
   /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wireframes*/
@@ -685,43 +732,7 @@ writing-mode: vertical-lr;
    transition: 0.5s;
    
 }
- /*slider
-
-*/
-.slider {
-    width: 600px;
-    height: 600px;
-  position: relative;
-  
-  }
-  .slide {
-    width: 600px;
-    height: 500px;
-    background-size: cover;
-    
-    animation: fade 1.5s;
-    display: none;
-  }
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    
-    top: 50%;
-   
-    padding: 16px;
-    color: rgb(255, 0, 0);
-    font-size: 2rem;
-    transition: 0.6s ease;
-   
-  }
-  .next {
-    right: 0;
-  }
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(202, 237, 197, 0.5);
-  }
+/*design guide */
   .designguideMain{
     display: flex;
     flex-direction: column;
@@ -755,6 +766,10 @@ writing-mode: vertical-lr;
       opacity: 1;
     }
   }
+
+
+
+
 /*//////////////    MEDIA QUERIES ////////////////////////////////////////////////////////////////////////////////////////////// /////////////*/
 
 @media only screen and (max-width:768px ) {
