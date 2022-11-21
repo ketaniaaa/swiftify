@@ -557,6 +557,7 @@ max-width: 60%;
     width: 900px;
     margin: 20px;
     align-self: center;
+    transition-delay: 0.3s;
 
 
 }
@@ -566,6 +567,7 @@ max-width: 60%;
     color: #3f3f3f;
     border: solid #3f3f3f 2px;
     padding-left: 20%;
+    transition: 0.3s;
 
 }
 #chart1{display: none;} #chart2{display: none;}#chart3{display: none;}#char4{display: none;}
@@ -865,7 +867,7 @@ writing-mode: vertical-lr;
 
 /*//////////////    MEDIA QUERIES ////////////////////////////////////////////////////////////////////////////////////////////// /////////////*/
 
-@media only screen and (max-width:768px ) {
+@media only screen and (max-width:768px ) { /*IPAD MINI//////////////////////////////////////////////////////////////////////////////*/
    
 .navTitle{
     position: relative;
@@ -994,6 +996,332 @@ justify-content: center;
           #blogtemplate { grid-area: blogtemplate; max-width: 250px;   }
           #datawf { grid-area: datawf; max-width: 250px; }
           #wfgrid { grid-area: wfgrid; max-width: 250px;  }
-}
+          .midnightsMain{
+            display: flex;
+            max-width: 100%;
+            background-color: #d0ac7692;
+            padding-left: 0;
+            z-index: -1;
+            transform: translateY(-120px);
+         margin-top: 20px;
+            font-family: 'IM Fell DW Pica', serif;}
+            #midnightsIntroImg{
+                transform: translateX(-50px);
+                z-index: inherit;
+                opacity: 0.9;
+                max-width: 50%;
+            }
+            #midnightsIntroP{
+                font-family: 'Overpass Mono', monospace;
+                padding: 0;
+                margin-top: 120px;
+                line-height: 100%;
+                z-index: inherit;
+                font-size: 11px;}
+         body{
+            max-width: 100%;
+            overflow-x: hidden;
+         }
+         #midnightsTooltip{
+            font-family: 'IM Fell DW Pica', serif;  
+            font-size: large;
+            max-width: 90%;
+            transition-delay: 0.4s;
+            margin-left: 70px;
+            transform: translateY(-100px);
+         
+        }
+    
 
- 
+        .evermoreMain{
+            display: flex;
+            max-width: 100%;
+            background-color: #dd89559b;
+            margin: 0;
+            z-index: -1;
+            transform: translateY(-100px);
+         margin-top: 20px;
+            font-family: 'IM Fell DW Pica', serif;
+            
+        }
+        #evermoreIntroP{
+            font-family: 'Overpass Mono', monospace;
+          
+            
+            font-size: 12px;
+            margin-top: 80px;
+            line-height: 100%;
+            z-index: inherit;
+        }
+
+        .folkloreMain{
+            display: flex;
+            max-width: 95%;
+            background-color: #828282b1;
+            padding-left: 10%;
+            padding-right: 5%;
+            margin: 0;
+            z-index: -1;
+            transform: translateY(-80px);
+         margin-top: 20px;
+            font-family: 'IM Fell DW Pica', serif;
+           
+        }
+        #folkloreList{
+            font-size: 24px;
+            align-items: center;
+            justify-content: center;
+            background-color: #b9c49500;
+          list-style: none;
+        }
+        #folkloreButtons{
+            background-color: #00000000;
+            
+            font-size: 26px;
+            width: 600px;
+            margin: 0px;
+            align-self: center;
+        
+        
+        }
+}
+/*IPHONE 12 media queriesssssssss/////////////////////////////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width:400px ){
+    .navTitle{
+        position: relative;
+    margin-top: 20%;
+        padding-left: 45%;
+    }
+    .liNav{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .aNav:hover{
+        background-color: black;
+        color: white;
+        text-decoration: none;
+    }
+        nav{
+            position: absolute;
+            left: 40%;
+        }
+        #hr1{ display: none;}
+        article{
+    min-width: 500px;
+   
+            border: solid black;
+            
+           
+            margin-bottom: 5px;
+        }
+        #login{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(30px);
+            position: absolute;
+        }
+        #introImg{
+            max-height: 300px;
+        
+        }
+        button{
+            padding: 5px;
+        }
+        #homeIntro{
+            font-size: medium;
+        }
+        footer{
+           transform: translateY(800px) ;
+          padding-left: 40px;
+        }
+        .blogmain{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    overflow-y: hidden;
+        }
+        #blogBody{
+          width: 100%;
+          min-width: 300px;
+         align-content: center;
+         transform: translateX(100px);
+        }
+        #blogTitle{
+            padding-left: 10%;
+        }
+        #referenceList{
+            max-width: 80;
+            padding: 10px;
+           margin: 0;
+           align-self: center;
+           justify-self: center
+        }
+        #figmaPrototype{
+            width: 600px;
+        }
+        .wfMain{
+           width: 380px;
+        }
+        #wfImg{
+            max-width: 500px;
+        }
+        #wfSection{
+            flex-direction: column;
+        }
+        #wireframeImage{
+            max-width: 500px;
+         
+        }
+        #wireframeAnnotations{
+            min-width: 500px;
+            padding-left: 5%;
+            
+            
+        }
+        #wireframeCard{
+            min-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            
+            background-color: #ffffff00;
+    
+        }
+        .wireframeMain{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+          
+            background-color: black;
+            }
+           
+            
+              #oldContent{
+                  background-color: black;
+                  display: none;
+                  
+              }
+             
+              #oldWireframesSlide{
+                  display: grid; 
+                grid-auto-flow: column dense; 
+                grid-template-columns: max-content max-content max-content; 
+                grid-template-rows: max-content max-content max-content; 
+                gap: 0px 0px; 
+                grid-template-areas: 
+                  "wfdataartwork wfhome wfselection"
+                  "wfdataartwork wfselection2 blogtemplate"
+                  "wfgrid datawf blogtemplate"; 
+                justify-content: center; 
+                align-content: center; 
+                justify-items: center; 
+                align-items: center; 
+                  background-color: black;
+                  padding-top: 10px;
+               transform: translateX(30px);
+                  
+              }
+              
+              
+              #wfdataartwork { grid-area: wfdataartwork; max-width: 200px;  }
+              #wfhome { grid-area: wfhome;  max-width: 200px; }
+              #wfselection { grid-area: wfselection; max-width: 200px;  }
+              #wfselection2 { grid-area: wfselection2; max-width: 200px;   }
+              #blogtemplate { grid-area: blogtemplate; max-width: 200px;   }
+              #datawf { grid-area: datawf; max-width: 200px; }
+              #wfgrid { grid-area: wfgrid; max-width: 200px;  }
+              .midnightsMain{
+                display: flex;
+                max-width: 100%;
+                background-color: #d0ac7692;
+                padding-left: 0;
+                z-index: -1;
+                transform: translateY(-120px);
+             margin-top: 20px;
+                font-family: 'IM Fell DW Pica', serif;}
+                #midnightsIntroImg{
+                    transform: translateX(-50px);
+                    z-index: inherit;
+                    opacity: 0.9;
+                    max-width: 50%;
+                    display: none;
+                }
+                #midnightsIntroP{
+                    font-family: 'Overpass Mono', monospace;
+                    padding: 0;
+                    margin-top: 120px;
+                    line-height: 100%;
+                    z-index: inherit;
+                    font-size: 11px;}
+             body{
+                max-width: 100%;
+                overflow-x: hidden;
+             }
+             #midnightsTooltip{
+                font-family: 'IM Fell DW Pica', serif;  
+                font-size: large;
+                max-width: 90%;
+                transition-delay: 0.4s;
+                margin-left: 70px;
+                transform: translateY(-100px);
+             
+            }
+        
+    
+            .evermoreMain{
+                display: flex;
+                max-width: 100%;
+                background-color: #dd89559b;
+                margin: 0;
+                z-index: -1;
+                transform: translateY(-100px);
+             margin-top: 20px;
+                font-family: 'IM Fell DW Pica', serif;
+                
+            }
+            #evermoreIntroP{
+                font-family: 'Overpass Mono', monospace;
+              
+                
+                font-size: 12px;
+                margin-top: 80px;
+                line-height: 100%;
+                z-index: inherit;
+            }
+    
+            .folkloreMain{
+                display: flex;
+               
+                background-color: #828282b1;
+                
+               align-items: flex-end;
+               align-self: center;
+               justify-self: center;
+              margin-left: 15%;
+                z-index: -1;
+                transform: translateY(-80px);
+             margin-top: 20px;
+                font-family: 'IM Fell DW Pica', serif;
+               
+            }
+            #folkloreList{
+                font-size: 16px;
+                align-items: center;
+                justify-content: center;
+                background-color: #b9c49500;
+              list-style: none;
+            }
+            #folkloreButtons{
+                background-color: #00000000;
+                
+                font-size: 16px;
+                width: 300px;
+                margin: 0px;
+                align-self: center;
+            
+          
+            }
+            #chart1{
+                width: 805;
+            }
+}

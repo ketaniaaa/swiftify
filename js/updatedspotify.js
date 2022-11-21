@@ -198,37 +198,6 @@ $('#taylorTopBut').on('click', function(){
   track.appendTo($('#trackList'));
   track.attr('id', 'toptrackLi');
 
-  //second call using fetch bc for some reason AJAX and rapid api were not cooperating
-  const auth = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '5693254345msh210c1f64ca7ef9ap1c28fcjsn0b60a0ba5298',
-      'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
-    }
-  };
-  const taylorUrl = 'https://spotify23.p.rapidapi.com/artist_related/?id=06HL4z0CvFAxyc27GXpf02'
-  async function getRelated(){
-      var data ={};
-      
-      const response = await fetch (taylorUrl, auth);
-      const taylorRel = await response.json();
-      const artistJSON = taylorRel.artists;
-      const Images = artistJSON.images;
-      console.log(artistJSON);
-  
-      let names = artistJSON.map( a => a.name);
-      let pop = artistJSON.map( b => b.popularity);
-      let images1 = artistJSON.map( c => c.images);
-  
-  
-      let images2 = images1.map( d => d[1]);
-      let imageUrl = images2.map (e => e.url);
-      let result = pop.map((popstat, i) => ({popstat, artistname: names[i], img: imageUrl[i]})); //made all three arrays into one array
-      console.log(result);  //result for d3 calls
-      var chart = relatedChart(result);
-        d3.select("#relatedChart").data(result).call(chart);
-  }
-  getRelated();
  })
 //map id data to array to get audio feature function
           /*      var ids = data3.tracks.map(function (singleId){
@@ -316,6 +285,39 @@ avgfeatTopTrack(dataSet); //call chart function
 });
 
 */
+
+
+  //second call using fetch bc for some reason AJAX and rapid api were not cooperating
+  const auth = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '5693254345msh210c1f64ca7ef9ap1c28fcjsn0b60a0ba5298',
+      'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+    }
+  };
+  const taylorUrl = 'https://spotify23.p.rapidapi.com/artist_related/?id=06HL4z0CvFAxyc27GXpf02'
+  async function getRelated(){
+      var data ={};
+      
+      const response = await fetch (taylorUrl, auth);
+      const taylorRel = await response.json();
+      const artistJSON = taylorRel.artists;
+      const Images = artistJSON.images;
+      console.log(artistJSON);
+  
+      let names = artistJSON.map( a => a.name);
+      let pop = artistJSON.map( b => b.popularity);
+      let images1 = artistJSON.map( c => c.images);
+  
+  
+      let images2 = images1.map( d => d[1]);
+      let imageUrl = images2.map (e => e.url);
+      let result = pop.map((popstat, i) => ({popstat, artistname: names[i], img: imageUrl[i]})); //made all three arrays into one array
+      console.log(result);  //result for d3 calls
+      var chart = relatedChart(result);
+        d3.select("#relatedChart").data(result).call(chart);
+  }
+  getRelated();
 });
 /*////////////////////////////////////////////////////////////////////////////  FOLKLORE GRAPH START//////////////////////////////////////////////////////////////////// */
 

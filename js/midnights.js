@@ -104,3 +104,20 @@ g.attr('transform', 'translate(${margin.left},0)')
 svg.append('g').call(yAxis);
 //svg.append('g').call(xAxis);
 svg.node();
+
+
+$.ajax({ //getting the json data 
+  url: "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02/top-tracks?market=ZA", //check taylors top tracks in south africa!  NTS: CHECK CORRECT URL!!!!!!!1
+method: "GET",
+dataType: "json",
+ headers: {
+  'Authorization': 'Bearer ' + access_token
+}, success: function (data3){ 
+  console.log("track:", data3.tracks);
+
+data3.tracks.map(function(title){
+let track = $('<li>' + title.name + '<br>'+ 'popularity:'+ title.popularity + '</li>' );
+track.appendTo($('#trackList'));
+track.attr('id', 'toptrackLi');
+});}
+});
