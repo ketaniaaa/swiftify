@@ -606,8 +606,30 @@ max-width: 60%;
         line-height: 20px;
 
     }
+.examMain{
+    background-color: #54434a79;
+    z-index: -2;
+    transform: translateY(-120px);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+#examWarning{
+    max-width: 800px;
+    align-self: center;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size:large;
+    color: rgb(121, 19, 19); 
+    border: 3px solid rgb(121, 19, 19);
+}
+#examExplanation{
+    font-family: 'Overpass Mono', monospace;
+}
+#dataArtworkExam{ align-self: center;}
 
-
+.examSvg :hover{
+    border: solid black 1px;
+}
 
   /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wireframes*/
   #authMain{
