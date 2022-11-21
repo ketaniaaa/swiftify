@@ -144,8 +144,8 @@ var myColor = d3.scaleLinear()
   var examtooltip = d3.select("#dataArtworkExam")
   .append("div")
   .style("opacity", 0)
-  .attr("class", "tooltip")
-  .style("background-color", "000000")
+  .attr("class", "examtooltip")
+  .style("background-color", "rgba(255, 255, 255, 0.474)")
   .style("border", "solid")
   .style("padding", "5px")
   .style("padding", "5px")
@@ -153,8 +153,7 @@ var myColor = d3.scaleLinear()
   .text("");
 
 //move tooltip 
-var tracktit = finalData.name;
-var breaky = finalData[i].name;
+
 var mouseover = function(d) {
   examtooltip.style("opacity", 1)
   d3.select(this)
@@ -165,7 +164,7 @@ var mousemove = function(event, d) {
     var matrix = this.getScreenCTM()
   .translate(+ this.getAttribute("x"), + this.getAttribute("y"));
   examtooltip
-    .html("title: " + d.name + " <br>breakup-ability word matches:" + d.totalMatches)
+    .html("the track '" + d.name + "' has " + d.totalMatches + "break-up word matches")
    .style("left", (window.pageXOffset + matrix.e + 15) + "px")
     .style("top", (window.pageYOffset + matrix.f - 30)+ "px")
 }
@@ -173,7 +172,7 @@ var mouseleave = function(d) {
   examtooltip.style("opacity", 0)
   d3.select(this)
   .style("stroke", "none")
-  .style("opacity", 0.6)
+  .style("opacity", 0.9)
 }
 
   svg.selectAll()
@@ -188,7 +187,8 @@ var mouseleave = function(d) {
       .style("fill", function(d) { return myColor(d.totalMatches)} )
       .style("stroke-width", 2)
       .style("stroke", "none")
-      .style("opacity", 0.6)
+      .style("opacity", 0.9)
+      .style("padding", "2px")
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)

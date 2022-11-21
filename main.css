@@ -630,6 +630,16 @@ max-width: 60%;
 .examSvg :hover{
     border: solid black 1px;
 }
+.examtooltip{
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 20px;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    border: rgb(107, 16, 16);
+    color: rgb(107, 16, 16);
+    
+}
 
   /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wireframes*/
   #authMain{
