@@ -4,7 +4,7 @@
 
 
 
-If this is not enough data to return a chart for marking purposes, please see the [Account Access](#) page. This will redirect you to a protected pdf that contains the username and password to a  dummy Spotify account. If you are a Wits lecturer, you will be able to access this file. This website uses the Implicit Flow Auth flow because this is a client-side front-end application. Using the other flows requires server side requests for access tokens and this application is not ready for public release as yet. I would like to continue working on this post exam.  
+ This website uses the Implicit Flow Auth flow because this is a client-side front-end application. Using the other flows requires server side requests for access tokens and this application is not ready for public release as yet. I would like to continue working on this post exam.  
 
 
 ## This website is deployed on Netlify so please use the netlify link NOT github-pages
